@@ -1,6 +1,10 @@
 #pragma once
 #include <chrono>
 #include <thread>
+#include <Windows.h>
+#include <CommCtrl.h>
+#include <windowsx.h>
+#include <string>
 namespace AccountManager {
 
 	using namespace System;
@@ -50,6 +54,17 @@ namespace AccountManager {
 	private: System::Windows::Forms::PictureBox^ HorLin;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Timer^ ToBkgRepeat;
+	private: System::Windows::Forms::PictureBox^ Staaart;
+	private: System::Windows::Forms::Timer^ StartAnimation;
+	private: System::Windows::Forms::PictureBox^ Agree;
+	private: System::Windows::Forms::PictureBox^ Gen;
+	private: System::Windows::Forms::Timer^ GenRepeat;
+	private: System::Windows::Forms::TextBox^ SigPas;
+
+	
+
+
+
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -74,6 +89,10 @@ namespace AccountManager {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MainForm::typeid));
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->SigPas = (gcnew System::Windows::Forms::TextBox());
+			this->Gen = (gcnew System::Windows::Forms::PictureBox());
+			this->Agree = (gcnew System::Windows::Forms::PictureBox());
+			this->Staaart = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->LefTo = (gcnew System::Windows::Forms::PictureBox());
 			this->ToLow = (gcnew System::Windows::Forms::PictureBox());
@@ -83,7 +102,13 @@ namespace AccountManager {
 			this->HorLin = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->ToBkgRepeat = (gcnew System::Windows::Forms::Timer(this->components));
+			this->StartAnimation = (gcnew System::Windows::Forms::Timer(this->components));
+			this->GenRepeat = (gcnew System::Windows::Forms::Timer(this->components));
 			this->tabControl1->SuspendLayout();
+			this->tabPage1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Agree))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Staaart))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LefTo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToLow))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToBackgr))->BeginInit();
@@ -107,6 +132,10 @@ namespace AccountManager {
 			// tabPage1
 			// 
 			this->tabPage1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tabPage1.BackgroundImage")));
+			this->tabPage1->Controls->Add(this->SigPas);
+			this->tabPage1->Controls->Add(this->Gen);
+			this->tabPage1->Controls->Add(this->Agree);
+			this->tabPage1->Controls->Add(this->Staaart);
 			this->tabPage1->Location = System::Drawing::Point(4, 4);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
@@ -114,6 +143,51 @@ namespace AccountManager {
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"tabPage1";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// SigPas
+			// 
+			this->SigPas->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(49)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->SigPas->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->SigPas->Font = (gcnew System::Drawing::Font(L"Arial Black", 12, System::Drawing::FontStyle::Bold));
+			this->SigPas->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(168)), static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(173)));
+			this->SigPas->Location = System::Drawing::Point(9999, 9999);
+			this->SigPas->MaxLength = 25;
+			this->SigPas->Name = L"SigPas";
+			this->SigPas->Size = System::Drawing::Size(338, 23);
+			this->SigPas->TabIndex = 3;
+			// 
+			// Gen
+			// 
+			this->Gen->Location = System::Drawing::Point(9999, 9999);
+			this->Gen->Name = L"Gen";
+			this->Gen->Size = System::Drawing::Size(37, 40);
+			this->Gen->TabIndex = 2;
+			this->Gen->TabStop = false;
+			this->Gen->Click += gcnew System::EventHandler(this, &MainForm::Gen_Click);
+			this->Gen->MouseEnter += gcnew System::EventHandler(this, &MainForm::Gen_MouseEnter);
+			this->Gen->MouseLeave += gcnew System::EventHandler(this, &MainForm::Gen_MouseLeave);
+			// 
+			// Agree
+			// 
+			this->Agree->Location = System::Drawing::Point(9999, 9999);
+			this->Agree->Name = L"Agree";
+			this->Agree->Size = System::Drawing::Size(358, 34);
+			this->Agree->TabIndex = 1;
+			this->Agree->TabStop = false;
+			this->Agree->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::Agree_MouseClick);
+			this->Agree->MouseEnter += gcnew System::EventHandler(this, &MainForm::Agree_MouseEnter);
+			this->Agree->MouseLeave += gcnew System::EventHandler(this, &MainForm::Agree_MouseLeave);
+			// 
+			// Staaart
+			// 
+			this->Staaart->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Staaart.Image")));
+			this->Staaart->Location = System::Drawing::Point(0, 0);
+			this->Staaart->Name = L"Staaart";
+			this->Staaart->Size = System::Drawing::Size(1053, 518);
+			this->Staaart->TabIndex = 0;
+			this->Staaart->TabStop = false;
 			// 
 			// tabPage2
 			// 
@@ -200,6 +274,16 @@ namespace AccountManager {
 			this->ToBkgRepeat->Interval = 300;
 			this->ToBkgRepeat->Tick += gcnew System::EventHandler(this, &MainForm::ToBkgRepeat_Tick);
 			// 
+			// StartAnimation
+			// 
+			this->StartAnimation->Interval = 16;
+			this->StartAnimation->Tick += gcnew System::EventHandler(this, &MainForm::StartAnimation_Tick);
+			// 
+			// GenRepeat
+			// 
+			this->GenRepeat->Interval = 300;
+			this->GenRepeat->Tick += gcnew System::EventHandler(this, &MainForm::GenRepeat_Tick);
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -221,6 +305,11 @@ namespace AccountManager {
 			this->Text = L"MainForm";
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->tabControl1->ResumeLayout(false);
+			this->tabPage1->ResumeLayout(false);
+			this->tabPage1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Agree))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Staaart))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LefTo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToLow))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToBackgr))->EndInit();
@@ -238,9 +327,11 @@ namespace AccountManager {
 		ToBackgr->Image = gcnew Bitmap("Resources\\TopPart\\ToBkgNonAct.png");
 		Clo->Image = gcnew Bitmap("Resources\\TopPart\\CloseNonAct.png");
 		HorLin->Image = gcnew Bitmap("Resources\\TopPart\\HorLin.png");
+		Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\Agree.png");
+		Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\Gen.png");
 		this->ClientSize = System::Drawing::Size(1050, 550);
 			SetRegion();
-			
+			StartAnimation->Enabled = true;
 	}
 		   void SetRegion()
 		   {
@@ -303,6 +394,38 @@ private: System::Void ToBackgr_MouseClick(System::Object^ sender, System::Window
 private: System::Void ToBkgRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
 	ToBackgr->Image = gcnew Bitmap("Resources\\TopPart\\ToBkg.png");
 	ToBkgRepeat->Enabled = false;
+}
+	   int* i = new int(0);
+private: System::Void StartAnimation_Tick(System::Object^ sender, System::EventArgs^ e) {
+	if (*i <= 35) { Staaart->Image = gcnew Bitmap("Resources\\SignUpPart\\Animation\\LetsStart_" + *i + ".png");  }
+	else { delete i; StartAnimation->Enabled = false; this->Agree->Location = System::Drawing::Point(346, 288); this->Gen->Location = System::Drawing::Point(720, 226); this->SigPas->Location = System::Drawing::Point(357, 235);
+	}
+	*i += 1;
+}
+
+
+private: System::Void Agree_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\AgreeEnter.png");
+}
+private: System::Void Agree_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\Agree.png");
+}
+private: System::Void Agree_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\Agree.png");
+}
+private: System::Void Gen_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\GenEnter.png");
+}
+private: System::Void Gen_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\Gen.png");
+}
+	private: System::Void GenRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
+		Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\GenEnter.png");
+		GenRepeat->Enabled = false;
+	}
+private: System::Void Gen_Click(System::Object^ sender, System::EventArgs^ e) {
+	Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\GenClick.png");
+	GenRepeat->Enabled = true;
 }
 };
 }
