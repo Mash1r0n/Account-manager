@@ -61,6 +61,15 @@ namespace AccountManager {
 	private: System::Windows::Forms::PictureBox^ Gen;
 	private: System::Windows::Forms::Timer^ GenRepeat;
 	private: System::Windows::Forms::TextBox^ SigPas;
+	private: System::Windows::Forms::PictureBox^ LetsLog;
+	private: System::Windows::Forms::Timer^ Lgn;
+	private: System::Windows::Forms::PictureBox^ TxtLog;
+	private: System::Windows::Forms::PictureBox^ AgreeLogIn;
+	private: System::Windows::Forms::TextBox^ LogInBox;
+
+
+
+
 
 	
 
@@ -95,6 +104,10 @@ namespace AccountManager {
 			this->Agree = (gcnew System::Windows::Forms::PictureBox());
 			this->Staaart = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->LogInBox = (gcnew System::Windows::Forms::TextBox());
+			this->AgreeLogIn = (gcnew System::Windows::Forms::PictureBox());
+			this->TxtLog = (gcnew System::Windows::Forms::PictureBox());
+			this->LetsLog = (gcnew System::Windows::Forms::PictureBox());
 			this->LefTo = (gcnew System::Windows::Forms::PictureBox());
 			this->ToLow = (gcnew System::Windows::Forms::PictureBox());
 			this->ToLowRepeat = (gcnew System::Windows::Forms::Timer(this->components));
@@ -105,11 +118,16 @@ namespace AccountManager {
 			this->ToBkgRepeat = (gcnew System::Windows::Forms::Timer(this->components));
 			this->StartAnimation = (gcnew System::Windows::Forms::Timer(this->components));
 			this->GenRepeat = (gcnew System::Windows::Forms::Timer(this->components));
+			this->Lgn = (gcnew System::Windows::Forms::Timer(this->components));
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Agree))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Staaart))->BeginInit();
+			this->tabPage2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AgreeLogIn))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TxtLog))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LetsLog))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LefTo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToLow))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToBackgr))->BeginInit();
@@ -128,7 +146,7 @@ namespace AccountManager {
 			this->tabControl1->Padding = System::Drawing::Point(0, 0);
 			this->tabControl1->SelectedIndex = 0;
 			this->tabControl1->Size = System::Drawing::Size(1061, 544);
-			this->tabControl1->TabIndex = 1;
+			this->tabControl1->TabIndex = 2;
 			// 
 			// tabPage1
 			// 
@@ -192,6 +210,11 @@ namespace AccountManager {
 			// 
 			// tabPage2
 			// 
+			this->tabPage2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tabPage2.BackgroundImage")));
+			this->tabPage2->Controls->Add(this->LogInBox);
+			this->tabPage2->Controls->Add(this->AgreeLogIn);
+			this->tabPage2->Controls->Add(this->TxtLog);
+			this->tabPage2->Controls->Add(this->LetsLog);
 			this->tabPage2->Location = System::Drawing::Point(4, 4);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
@@ -199,6 +222,50 @@ namespace AccountManager {
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"tabPage2";
 			this->tabPage2->UseVisualStyleBackColor = true;
+			// 
+			// LogInBox
+			// 
+			this->LogInBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(49)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->LogInBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->LogInBox->Font = (gcnew System::Drawing::Font(L"Arial Black", 12, System::Drawing::FontStyle::Bold));
+			this->LogInBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(168)), static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(173)));
+			this->LogInBox->Location = System::Drawing::Point(9999, 9999);
+			this->LogInBox->MaxLength = 25;
+			this->LogInBox->Name = L"LogInBox";
+			this->LogInBox->Size = System::Drawing::Size(337, 23);
+			this->LogInBox->TabIndex = 4;
+			// 
+			// AgreeLogIn
+			// 
+			this->AgreeLogIn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AgreeLogIn.Image")));
+			this->AgreeLogIn->Location = System::Drawing::Point(9999, 9999);
+			this->AgreeLogIn->Name = L"AgreeLogIn";
+			this->AgreeLogIn->Size = System::Drawing::Size(358, 34);
+			this->AgreeLogIn->TabIndex = 2;
+			this->AgreeLogIn->TabStop = false;
+			this->AgreeLogIn->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::AgreeLogIn_MouseClick);
+			this->AgreeLogIn->MouseEnter += gcnew System::EventHandler(this, &MainForm::AgreeLogIn_MouseEnter);
+			this->AgreeLogIn->MouseLeave += gcnew System::EventHandler(this, &MainForm::AgreeLogIn_MouseLeave);
+			// 
+			// TxtLog
+			// 
+			this->TxtLog->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"TxtLog.Image")));
+			this->TxtLog->Location = System::Drawing::Point(9999, 9999);
+			this->TxtLog->Name = L"TxtLog";
+			this->TxtLog->Size = System::Drawing::Size(358, 45);
+			this->TxtLog->TabIndex = 1;
+			this->TxtLog->TabStop = false;
+			// 
+			// LetsLog
+			// 
+			this->LetsLog->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"LetsLog.Image")));
+			this->LetsLog->Location = System::Drawing::Point(0, 0);
+			this->LetsLog->Name = L"LetsLog";
+			this->LetsLog->Size = System::Drawing::Size(1053, 518);
+			this->LetsLog->TabIndex = 0;
+			this->LetsLog->TabStop = false;
 			// 
 			// LefTo
 			// 
@@ -285,6 +352,11 @@ namespace AccountManager {
 			this->GenRepeat->Interval = 300;
 			this->GenRepeat->Tick += gcnew System::EventHandler(this, &MainForm::GenRepeat_Tick);
 			// 
+			// Lgn
+			// 
+			this->Lgn->Interval = 5;
+			this->Lgn->Tick += gcnew System::EventHandler(this, &MainForm::Lgn_Tick);
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -311,6 +383,11 @@ namespace AccountManager {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Agree))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Staaart))->EndInit();
+			this->tabPage2->ResumeLayout(false);
+			this->tabPage2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AgreeLogIn))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TxtLog))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LetsLog))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LefTo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToLow))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToBackgr))->EndInit();
@@ -331,6 +408,8 @@ namespace AccountManager {
 		HorLin->Image = gcnew Bitmap("Resources\\TopPart\\HorLin.png");
 		Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\Agree.png");
 		Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\Gen.png");
+		// После этого инициализация рисунков в LetsLog
+
 		this->ClientSize = System::Drawing::Size(1050, 550);
 			SetRegion();
 			StartAnimation->Enabled = true;
@@ -341,7 +420,6 @@ namespace AccountManager {
 			   int cornerRadius = 30;
 			   int width = this->Width;
 			   int height = this->Height;
-
 			   path->StartFigure();
 			   path->AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
 			   path->AddLine(cornerRadius, 0, width - cornerRadius, 0);
@@ -418,6 +496,10 @@ private: System::Void Agree_MouseLeave(System::Object^ sender, System::EventArgs
 }
 private: System::Void Agree_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\Agree.png");
+	tabControl1->SelectedIndex = 1;
+	Lgn->Enabled = true;
+	
+	
 }
 private: System::Void Gen_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\GenEnter.png");
@@ -435,6 +517,25 @@ private: System::Void Gen_Click(System::Object^ sender, System::EventArgs^ e) {
 	Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\GenClick.png");
 	GenRepeat->Enabled = true;
 }
-
+//Действия окна логина
+	   int *k = new int(0);
+private: System::Void Lgn_Tick(System::Object^ sender, System::EventArgs^ e) {
+	if (*k <= 85) { 
+		LetsLog->Image = gcnew Bitmap("Resources\\LogInPart\\Animation\\LogIn_" + *k + ".png");  
+	}
+	else {
+		delete k; Lgn->Enabled = false; this->TxtLog->Location = System::Drawing::Point(346, 273); this->AgreeLogIn->Location = System::Drawing::Point(346, 341); this->LogInBox->Location = System::Drawing::Point(358, 287);
+	}
+	*k += 1;
+}
+private: System::Void AgreeLogIn_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	AgreeLogIn->Image = gcnew Bitmap("Resources\\LogInPart\\AgreeEnter.png");
+}
+private: System::Void AgreeLogIn_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	AgreeLogIn->Image = gcnew Bitmap("Resources\\LogInPart\\Agree.png");
+}
+private: System::Void AgreeLogIn_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	AgreeLogIn->Image = gcnew Bitmap("Resources\\LogInPart\\Agree.png");
+}
 };
 }
