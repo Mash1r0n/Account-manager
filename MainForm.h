@@ -21,6 +21,8 @@ namespace AccountManager {
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
 	public:
+		bool isDragging;
+		Point dragStartPosition;
 		MainForm(void)
 		{
 			InitializeComponent();
@@ -377,6 +379,9 @@ namespace AccountManager {
 			this->Name = L"MainForm";
 			this->Text = L"MainForm";
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
+			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::MainForm_MouseDown);
+			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::MainForm_MouseMove);
+			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::MainForm_MouseUp);
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
@@ -398,7 +403,7 @@ namespace AccountManager {
 
 		}
 #pragma endregion
-		
+		bool isHovered = false;
 	Bitmap^ LefTop = gcnew Bitmap("Resources\\TopPart\\LeftTop.png");
 	private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->LefTo->Image = LefTop;
@@ -536,6 +541,28 @@ private: System::Void AgreeLogIn_MouseLeave(System::Object^ sender, System::Even
 }
 private: System::Void AgreeLogIn_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	AgreeLogIn->Image = gcnew Bitmap("Resources\\LogInPart\\Agree.png");
+	//Тут я сча сделаю перенос окна
+	
+
+}
+private: System::Void MainForm_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		isDragging = false;
+}
+
+private: System::Void MainForm_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	if (e->Button == System::Windows::Forms::MouseButtons::Left && e->Y < 50)
+	{
+		isDragging = true;
+		dragStartPosition = Point(e->X, e->Y);
+	}
+}
+
+private: System::Void MainForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	if (isDragging)
+	{
+		Point pointDifference = Point(e->X - dragStartPosition.X, e->Y - dragStartPosition.Y);
+		this->Location = Point(this->Location.X + pointDifference.X, this->Location.Y + pointDifference.Y);
+	}
 }
 };
 }
