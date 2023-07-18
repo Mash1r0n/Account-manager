@@ -5,6 +5,7 @@
 #include <CommCtrl.h>
 #include <windowsx.h>
 #include <string>
+static bool bns[50] = { false, false, false, false, false, false, false };
 namespace AccountManager {
 
 	using namespace System;
@@ -320,6 +321,7 @@ namespace AccountManager {
 
 		}
 #pragma endregion
+		
 	Bitmap^ LefTop = gcnew Bitmap("Resources\\TopPart\\LeftTop.png");
 	private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->LefTo->Image = LefTop;
@@ -359,9 +361,11 @@ namespace AccountManager {
 	}
 	private: System::Void ToLow_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 		ToLow->Image = gcnew Bitmap("Resources\\TopPart\\LowSize.png");
+		bns[0] = false;
 	}
 private: System::Void ToLow_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	ToLow->Image = gcnew Bitmap("Resources\\TopPart\\LowSizeNonAct.png");
+	bns[0] = true;
 }
 
 private: System::Void ToLow_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
@@ -369,14 +373,16 @@ private: System::Void ToLow_MouseClick(System::Object^ sender, System::Windows::
 	ToLowRepeat->Enabled = true;
 }
 private: System::Void ToLowRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
-	ToLow->Image = gcnew Bitmap("Resources\\TopPart\\LowSize.png");
+	if (!bns[0]) ToLow->Image = gcnew Bitmap("Resources\\TopPart\\LowSize.png");
 	ToLowRepeat->Enabled = false;
 }
 private: System::Void ToBackgr_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	ToBackgr->Image = gcnew Bitmap("Resources\\TopPart\\ToBkg.png");
+	bns[1] = false;
 }
 private: System::Void ToBackgr_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	ToBackgr->Image = gcnew Bitmap("Resources\\TopPart\\ToBkgNonAct.png");
+	bns[1] = true;
 }
 private: System::Void Clo_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	Clo->Image = gcnew Bitmap("Resources\\TopPart\\Close.png");
@@ -392,7 +398,7 @@ private: System::Void ToBackgr_MouseClick(System::Object^ sender, System::Window
 	ToBkgRepeat->Enabled = true;
 }
 private: System::Void ToBkgRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
-	ToBackgr->Image = gcnew Bitmap("Resources\\TopPart\\ToBkg.png");
+	if (!bns[1]) ToBackgr->Image = gcnew Bitmap("Resources\\TopPart\\ToBkg.png");
 	ToBkgRepeat->Enabled = false;
 }
 	   int* i = new int(0);
@@ -415,17 +421,20 @@ private: System::Void Agree_MouseClick(System::Object^ sender, System::Windows::
 }
 private: System::Void Gen_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\GenEnter.png");
+	bns[2] = false;
 }
 private: System::Void Gen_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\Gen.png");
+	bns[2] = true;
 }
 	private: System::Void GenRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
-		Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\GenEnter.png");
+		if (!bns[2]) Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\GenEnter.png");
 		GenRepeat->Enabled = false;
 	}
 private: System::Void Gen_Click(System::Object^ sender, System::EventArgs^ e) {
 	Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\GenClick.png");
 	GenRepeat->Enabled = true;
 }
+
 };
 }
