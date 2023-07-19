@@ -5,7 +5,17 @@
 #include <CommCtrl.h>
 #include <windowsx.h>
 #include <string>
+#include <fstream>
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+#include <iomanip>
+#include <vector>
+#include <random>
+#include <msclr/marshal_cppstd.h>
 static bool bns[50] = { false, false, false, false, false, false, false };
+static int verify = 0;
+
 namespace AccountManager {
 
 	using namespace System;
@@ -14,7 +24,8 @@ namespace AccountManager {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace std;
+	using namespace msclr::interop;
 	/// <summary>
 	/// Сводка для MainForm
 	/// </summary>
@@ -22,6 +33,14 @@ namespace AccountManager {
 	{
 	public:
 		bool isDragging;
+	private: System::Windows::Forms::TabPage^ tabPage3;
+	private: System::Windows::Forms::Timer^ OpacityMinimized;
+	private: System::Windows::Forms::NotifyIcon^ Traaay;
+	private: System::Windows::Forms::Timer^ FromHide;
+	private: System::Windows::Forms::Timer^ HideTxt;
+
+
+	public:
 		Point dragStartPosition;
 		MainForm(void)
 		{
@@ -110,6 +129,7 @@ namespace AccountManager {
 			this->AgreeLogIn = (gcnew System::Windows::Forms::PictureBox());
 			this->TxtLog = (gcnew System::Windows::Forms::PictureBox());
 			this->LetsLog = (gcnew System::Windows::Forms::PictureBox());
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->LefTo = (gcnew System::Windows::Forms::PictureBox());
 			this->ToLow = (gcnew System::Windows::Forms::PictureBox());
 			this->ToLowRepeat = (gcnew System::Windows::Forms::Timer(this->components));
@@ -121,6 +141,10 @@ namespace AccountManager {
 			this->StartAnimation = (gcnew System::Windows::Forms::Timer(this->components));
 			this->GenRepeat = (gcnew System::Windows::Forms::Timer(this->components));
 			this->Lgn = (gcnew System::Windows::Forms::Timer(this->components));
+			this->OpacityMinimized = (gcnew System::Windows::Forms::Timer(this->components));
+			this->Traaay = (gcnew System::Windows::Forms::NotifyIcon(this->components));
+			this->FromHide = (gcnew System::Windows::Forms::Timer(this->components));
+			this->HideTxt = (gcnew System::Windows::Forms::Timer(this->components));
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->BeginInit();
@@ -143,6 +167,7 @@ namespace AccountManager {
 			this->tabControl1->Alignment = System::Windows::Forms::TabAlignment::Bottom;
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
+			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->Location = System::Drawing::Point(-4, 34);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->Padding = System::Drawing::Point(0, 0);
@@ -178,6 +203,8 @@ namespace AccountManager {
 			this->SigPas->Name = L"SigPas";
 			this->SigPas->Size = System::Drawing::Size(338, 23);
 			this->SigPas->TabIndex = 3;
+			this->SigPas->Text = L"Введіть пароль від 8 до 25 символів";
+			this->SigPas->Click += gcnew System::EventHandler(this, &MainForm::SigPas_Click);
 			// 
 			// Gen
 			// 
@@ -269,6 +296,16 @@ namespace AccountManager {
 			this->LetsLog->TabIndex = 0;
 			this->LetsLog->TabStop = false;
 			// 
+			// tabPage3
+			// 
+			this->tabPage3->Location = System::Drawing::Point(4, 4);
+			this->tabPage3->Name = L"tabPage3";
+			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage3->Size = System::Drawing::Size(1053, 518);
+			this->tabPage3->TabIndex = 2;
+			this->tabPage3->Text = L"tabPage3";
+			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
 			// LefTo
 			// 
 			this->LefTo->BackColor = System::Drawing::Color::Transparent;
@@ -286,6 +323,7 @@ namespace AccountManager {
 			this->ToLow->Size = System::Drawing::Size(43, 9);
 			this->ToLow->TabIndex = 1;
 			this->ToLow->TabStop = false;
+			this->ToLow->Click += gcnew System::EventHandler(this, &MainForm::ToLow_Click);
 			this->ToLow->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::ToLow_MouseClick);
 			this->ToLow->MouseEnter += gcnew System::EventHandler(this, &MainForm::ToLow_MouseEnter);
 			this->ToLow->MouseLeave += gcnew System::EventHandler(this, &MainForm::ToLow_MouseLeave);
@@ -303,6 +341,7 @@ namespace AccountManager {
 			this->ToBackgr->Size = System::Drawing::Size(43, 9);
 			this->ToBackgr->TabIndex = 1;
 			this->ToBackgr->TabStop = false;
+			this->ToBackgr->Click += gcnew System::EventHandler(this, &MainForm::ToBackgr_Click);
 			this->ToBackgr->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::ToBackgr_MouseClick);
 			this->ToBackgr->MouseEnter += gcnew System::EventHandler(this, &MainForm::ToBackgr_MouseEnter);
 			this->ToBackgr->MouseLeave += gcnew System::EventHandler(this, &MainForm::ToBackgr_MouseLeave);
@@ -359,6 +398,28 @@ namespace AccountManager {
 			this->Lgn->Interval = 5;
 			this->Lgn->Tick += gcnew System::EventHandler(this, &MainForm::Lgn_Tick);
 			// 
+			// OpacityMinimized
+			// 
+			this->OpacityMinimized->Interval = 300;
+			this->OpacityMinimized->Tick += gcnew System::EventHandler(this, &MainForm::OpacityMinimized_Tick);
+			// 
+			// Traaay
+			// 
+			this->Traaay->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"Traaay.Icon")));
+			this->Traaay->Text = L"Account Manager by Akayn team";
+			this->Traaay->Visible = true;
+			this->Traaay->DoubleClick += gcnew System::EventHandler(this, &MainForm::Traaay_DoubleClick);
+			// 
+			// FromHide
+			// 
+			this->FromHide->Interval = 300;
+			this->FromHide->Tick += gcnew System::EventHandler(this, &MainForm::FromHide_Tick);
+			// 
+			// HideTxt
+			// 
+			this->HideTxt->Interval = 300;
+			this->HideTxt->Tick += gcnew System::EventHandler(this, &MainForm::HideTxt_Tick);
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -379,6 +440,7 @@ namespace AccountManager {
 			this->Name = L"MainForm";
 			this->Text = L"MainForm";
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
+			this->SizeChanged += gcnew System::EventHandler(this, &MainForm::MainForm_SizeChanged);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::MainForm_MouseDown);
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::MainForm_MouseMove);
 			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::MainForm_MouseUp);
@@ -404,8 +466,46 @@ namespace AccountManager {
 		}
 #pragma endregion
 		bool isHovered = false;
+		String^ MainPassword = "";
+		//Генерация паролей тут
+		int RN(int min, int max) {
+			random_device rd;
+			mt19937 gen(rd());
+			uniform_int_distribution<> dis(min, max);
+			int rn = dis(gen);
+			return rn;
+		}
+		char RNS(char* mas) {
+			int hwm = strlen(mas) - 1;
+			random_device rd;
+			mt19937 gen(rd());
+			uniform_int_distribution<> dis(0, hwm);
+			int rn = dis(gen);
+			return mas[rn];
+		}
+		String^ RandomPass() {
+			char stage1[27] = { "ABCDEFGHIJKLMNOPQRSTUVWXYZ" };
+			char stage2[27] = { "abcdefghijklmnopqrstuvwxyz" };
+			char stage3[11] = { "1234567890" };
+			char stage4[27] = { "!@#$%^&*()-_=+[]{}|:<>,.?/" };
+			int num;
+			string passw;
+			for (int i = 0; i < 18; i++) {
+				num = RN(1, 4);
+				switch (num) {
+				case 1: {passw += RNS(stage1); break; }
+				case 2: {passw += RNS(stage2); break; }
+				case 3: {passw += RNS(stage3); break; }
+				case 4: {passw += RNS(stage4); break; }
+				}
+			}
+			const char* password = passw.c_str();
+			return marshal_as<String^>(password);
+		}
+		//Весь фарш там 
 	Bitmap^ LefTop = gcnew Bitmap("Resources\\TopPart\\LeftTop.png");
 	private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		
 		this->LefTo->Image = LefTop;
 		ToLow->Image = gcnew Bitmap("Resources\\TopPart\\LowSizeNonAct.png");
 		ToBackgr->Image = gcnew Bitmap("Resources\\TopPart\\ToBkgNonAct.png");
@@ -413,8 +513,13 @@ namespace AccountManager {
 		HorLin->Image = gcnew Bitmap("Resources\\TopPart\\HorLin.png");
 		Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\Agree.png");
 		Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\Gen.png");
-		// После этого инициализация рисунков в LetsLog
-
+		// После этого всё в основном окне
+		ApplyConfig();
+		if (verify==1) {
+			tabControl1->SelectedIndex = 1;
+			Lgn->Enabled = true;
+		}
+		else tabControl1->SelectedIndex = 0;
 		this->ClientSize = System::Drawing::Size(1050, 550);
 			SetRegion();
 			StartAnimation->Enabled = true;
@@ -487,12 +592,18 @@ private: System::Void ToBkgRepeat_Tick(System::Object^ sender, System::EventArgs
 	   int* i = new int(0);
 private: System::Void StartAnimation_Tick(System::Object^ sender, System::EventArgs^ e) {
 	if (*i <= 35) { Staaart->Image = gcnew Bitmap("Resources\\SignUpPart\\Animation\\LetsStart_" + *i + ".png");  }
-	else { delete i; StartAnimation->Enabled = false; this->Agree->Location = System::Drawing::Point(346, 288); this->Gen->Location = System::Drawing::Point(720, 226); this->SigPas->Location = System::Drawing::Point(357, 235);
+	else { *i = 0; StartAnimation->Enabled = false; this->Agree->Location = System::Drawing::Point(346, 288); this->Gen->Location = System::Drawing::Point(720, 226); this->SigPas->Location = System::Drawing::Point(357, 235);
 	}
 	*i += 1;
 }
 
-
+//Проверяем пароль на действительность
+	   bool VerifyPassword() {
+		   if (SigPas->Text->Length > 8 && SigPas->Text->Length <= 25) {
+			   return true;
+		   }
+		   return false;
+}
 private: System::Void Agree_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\AgreeEnter.png");
 }
@@ -501,8 +612,11 @@ private: System::Void Agree_MouseLeave(System::Object^ sender, System::EventArgs
 }
 private: System::Void Agree_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\Agree.png");
-	tabControl1->SelectedIndex = 1;
-	Lgn->Enabled = true;
+	if (VerifyPassword()) {
+		tabControl1->SelectedIndex = 2;
+		verify = 1;
+		SaveConfig();
+	}
 	
 	
 }
@@ -521,6 +635,7 @@ private: System::Void Gen_MouseLeave(System::Object^ sender, System::EventArgs^ 
 private: System::Void Gen_Click(System::Object^ sender, System::EventArgs^ e) {
 	Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\GenClick.png");
 	GenRepeat->Enabled = true;
+	SigPas->Text = RandomPass();
 }
 //Действия окна логина
 	   int *k = new int(0);
@@ -529,7 +644,7 @@ private: System::Void Lgn_Tick(System::Object^ sender, System::EventArgs^ e) {
 		LetsLog->Image = gcnew Bitmap("Resources\\LogInPart\\Animation\\LogIn_" + *k + ".png");  
 	}
 	else {
-		delete k; Lgn->Enabled = false; this->TxtLog->Location = System::Drawing::Point(346, 273); this->AgreeLogIn->Location = System::Drawing::Point(346, 341); this->LogInBox->Location = System::Drawing::Point(358, 287);
+		 *k = 0; Lgn->Enabled = false; this->TxtLog->Location = System::Drawing::Point(346, 273); this->AgreeLogIn->Location = System::Drawing::Point(346, 341); this->LogInBox->Location = System::Drawing::Point(358, 287);
 	}
 	*k += 1;
 }
@@ -541,6 +656,12 @@ private: System::Void AgreeLogIn_MouseLeave(System::Object^ sender, System::Even
 }
 private: System::Void AgreeLogIn_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	AgreeLogIn->Image = gcnew Bitmap("Resources\\LogInPart\\Agree.png");
+	if (MainPassword == LogInBox->Text) {
+		tabControl1->SelectedIndex = 2;
+	}
+	else {
+		LogInBox->Text = "Неправильний пароль"; HideTxt->Enabled = true; LogInBox->Enabled = false;
+	}
 	//Тут я сча сделаю перенос окна
 	
 
@@ -563,6 +684,67 @@ private: System::Void MainForm_MouseMove(System::Object^ sender, System::Windows
 		Point pointDifference = Point(e->X - dragStartPosition.X, e->Y - dragStartPosition.Y);
 		this->Location = Point(this->Location.X + pointDifference.X, this->Location.Y + pointDifference.Y);
 	}
+}
+	   //Кабздец какой-то тут основное окно будет
+	   
+	   //Тут сохраним или обновим конфиг
+	   void SaveConfig() {
+		   if (verify==1) {
+			   fstream cfg("Config.acm", ios::out);
+			   if (cfg.is_open()) {
+				   cfg << 1 << endl;
+				   cfg << marshal_as<string>(SigPas->Text) << endl;
+				   cfg.close();
+			   }
+		}
+	   }
+	   //Тут конфиг будет обновлять данные в программу
+	   void ApplyConfig() {
+		   string MainPas;
+		   fstream CfgUpd("Config.acm", ios::in);
+		   CfgUpd >> verify;
+		   CfgUpd >> MainPas;
+		   MainPassword = marshal_as<String^>(MainPas);
+		   CfgUpd.close();
+		}
+	  
+	   
+private: System::Void SigPas_Click(System::Object^ sender, System::EventArgs^ e) {
+	SigPas->Text = "";
+}
+private: System::Void ToLow_Click(System::Object^ sender, System::EventArgs^ e) {
+	WindowState = FormWindowState::Minimized;
+}
+private: System::Void MainForm_SizeChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (WindowState == FormWindowState::Minimized)
+	{
+		Opacity = 0;
+	}
+	else if (WindowState == FormWindowState::Normal)
+	{
+		OpacityMinimized->Enabled = true;
+	}
+}
+private: System::Void OpacityMinimized_Tick(System::Object^ sender, System::EventArgs^ e) {
+	Opacity = 1;
+	OpacityMinimized->Enabled = false;
+}
+private: System::Void Traaay_DoubleClick(System::Object^ sender, System::EventArgs^ e) {
+	Show();
+	FromHide->Enabled = true;
+}
+private: System::Void ToBackgr_Click(System::Object^ sender, System::EventArgs^ e) {
+	Hide();
+	Opacity = 0;
+}
+private: System::Void FromHide_Tick(System::Object^ sender, System::EventArgs^ e) {
+	Opacity = 1;
+	FromHide->Enabled = false;
+}
+private: System::Void HideTxt_Tick(System::Object^ sender, System::EventArgs^ e) {
+	LogInBox->Text = "";
+	LogInBox->Enabled = true;
+	HideTxt->Enabled = false;
 }
 };
 }
