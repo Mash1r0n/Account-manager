@@ -15,7 +15,7 @@
 #include <msclr/marshal_cppstd.h>
 static bool bns[50] = { false, false, false, false, false, false, false };
 static int verify = 0;
-
+static int buttons[3] = { 0,0,0 };
 namespace AccountManager {
 
 	using namespace System;
@@ -38,6 +38,14 @@ namespace AccountManager {
 	private: System::Windows::Forms::NotifyIcon^ Traaay;
 	private: System::Windows::Forms::Timer^ FromHide;
 	private: System::Windows::Forms::Timer^ HideTxt;
+	private: System::Windows::Forms::PictureBox^ MainBkg;
+	private: System::Windows::Forms::PictureBox^ Search;
+	private: System::Windows::Forms::PictureBox^ Settings;
+	private: System::Windows::Forms::PictureBox^ About;
+	private: System::Windows::Forms::Timer^ SearchRepeat;
+	private: System::Windows::Forms::Timer^ SettingsRepeat;
+	private: System::Windows::Forms::Timer^ AboutRepeat;
+
 
 
 	public:
@@ -130,6 +138,10 @@ namespace AccountManager {
 			this->TxtLog = (gcnew System::Windows::Forms::PictureBox());
 			this->LetsLog = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->About = (gcnew System::Windows::Forms::PictureBox());
+			this->Settings = (gcnew System::Windows::Forms::PictureBox());
+			this->Search = (gcnew System::Windows::Forms::PictureBox());
+			this->MainBkg = (gcnew System::Windows::Forms::PictureBox());
 			this->LefTo = (gcnew System::Windows::Forms::PictureBox());
 			this->ToLow = (gcnew System::Windows::Forms::PictureBox());
 			this->ToLowRepeat = (gcnew System::Windows::Forms::Timer(this->components));
@@ -145,6 +157,9 @@ namespace AccountManager {
 			this->Traaay = (gcnew System::Windows::Forms::NotifyIcon(this->components));
 			this->FromHide = (gcnew System::Windows::Forms::Timer(this->components));
 			this->HideTxt = (gcnew System::Windows::Forms::Timer(this->components));
+			this->SearchRepeat = (gcnew System::Windows::Forms::Timer(this->components));
+			this->SettingsRepeat = (gcnew System::Windows::Forms::Timer(this->components));
+			this->AboutRepeat = (gcnew System::Windows::Forms::Timer(this->components));
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->BeginInit();
@@ -154,6 +169,11 @@ namespace AccountManager {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AgreeLogIn))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TxtLog))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LetsLog))->BeginInit();
+			this->tabPage3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->About))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Settings))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Search))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MainBkg))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LefTo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToLow))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToBackgr))->BeginInit();
@@ -298,6 +318,12 @@ namespace AccountManager {
 			// 
 			// tabPage3
 			// 
+			this->tabPage3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tabPage3.BackgroundImage")));
+			this->tabPage3->Controls->Add(this->About);
+			this->tabPage3->Controls->Add(this->Settings);
+			this->tabPage3->Controls->Add(this->Search);
+			this->tabPage3->Controls->Add(this->MainBkg);
+			this->tabPage3->ForeColor = System::Drawing::Color::Transparent;
 			this->tabPage3->Location = System::Drawing::Point(4, 4);
 			this->tabPage3->Name = L"tabPage3";
 			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
@@ -305,6 +331,51 @@ namespace AccountManager {
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"tabPage3";
 			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
+			// About
+			// 
+			this->About->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"About.Image")));
+			this->About->Location = System::Drawing::Point(0, 320);
+			this->About->Name = L"About";
+			this->About->Size = System::Drawing::Size(229, 134);
+			this->About->TabIndex = 4;
+			this->About->TabStop = false;
+			this->About->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::About_MouseClick);
+			this->About->MouseEnter += gcnew System::EventHandler(this, &MainForm::About_MouseEnter);
+			this->About->MouseLeave += gcnew System::EventHandler(this, &MainForm::About_MouseLeave);
+			// 
+			// Settings
+			// 
+			this->Settings->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Settings.Image")));
+			this->Settings->Location = System::Drawing::Point(0, 186);
+			this->Settings->Name = L"Settings";
+			this->Settings->Size = System::Drawing::Size(229, 134);
+			this->Settings->TabIndex = 3;
+			this->Settings->TabStop = false;
+			this->Settings->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::Settings_MouseClick);
+			this->Settings->MouseEnter += gcnew System::EventHandler(this, &MainForm::Settings_MouseEnter);
+			this->Settings->MouseLeave += gcnew System::EventHandler(this, &MainForm::Settings_MouseLeave);
+			// 
+			// Search
+			// 
+			this->Search->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Search.Image")));
+			this->Search->Location = System::Drawing::Point(0, 52);
+			this->Search->Name = L"Search";
+			this->Search->Size = System::Drawing::Size(229, 134);
+			this->Search->TabIndex = 2;
+			this->Search->TabStop = false;
+			this->Search->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::Search_MouseClick);
+			this->Search->MouseEnter += gcnew System::EventHandler(this, &MainForm::Search_MouseEnter);
+			this->Search->MouseLeave += gcnew System::EventHandler(this, &MainForm::Search_MouseLeave);
+			// 
+			// MainBkg
+			// 
+			this->MainBkg->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"MainBkg.Image")));
+			this->MainBkg->Location = System::Drawing::Point(0, -36);
+			this->MainBkg->Name = L"MainBkg";
+			this->MainBkg->Size = System::Drawing::Size(1050, 548);
+			this->MainBkg->TabIndex = 0;
+			this->MainBkg->TabStop = false;
 			// 
 			// LefTo
 			// 
@@ -371,7 +442,7 @@ namespace AccountManager {
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
 				static_cast<System::Int32>(static_cast<System::Byte>(39)));
-			this->pictureBox1->Location = System::Drawing::Point(0, 34);
+			this->pictureBox1->Location = System::Drawing::Point(0, 26);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(1057, 18);
 			this->pictureBox1->TabIndex = 1;
@@ -420,6 +491,21 @@ namespace AccountManager {
 			this->HideTxt->Interval = 300;
 			this->HideTxt->Tick += gcnew System::EventHandler(this, &MainForm::HideTxt_Tick);
 			// 
+			// SearchRepeat
+			// 
+			this->SearchRepeat->Interval = 300;
+			this->SearchRepeat->Tick += gcnew System::EventHandler(this, &MainForm::SearchRepeat_Tick);
+			// 
+			// SettingsRepeat
+			// 
+			this->SettingsRepeat->Interval = 300;
+			this->SettingsRepeat->Tick += gcnew System::EventHandler(this, &MainForm::SettingsRepeat_Tick);
+			// 
+			// AboutRepeat
+			// 
+			this->AboutRepeat->Interval = 300;
+			this->AboutRepeat->Tick += gcnew System::EventHandler(this, &MainForm::AboutRepeat_Tick);
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -427,8 +513,8 @@ namespace AccountManager {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->ClientSize = System::Drawing::Size(1090, 590);
-			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->HorLin);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->Clo);
 			this->Controls->Add(this->ToBackgr);
 			this->Controls->Add(this->ToLow);
@@ -455,6 +541,11 @@ namespace AccountManager {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AgreeLogIn))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TxtLog))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LetsLog))->EndInit();
+			this->tabPage3->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->About))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Settings))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Search))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MainBkg))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LefTo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToLow))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToBackgr))->EndInit();
@@ -745,6 +836,63 @@ private: System::Void HideTxt_Tick(System::Object^ sender, System::EventArgs^ e)
 	LogInBox->Text = "";
 	LogInBox->Enabled = true;
 	HideTxt->Enabled = false;
+}
+	   //Тут самый сок крч (Главная страница)
+
+private: System::Void Search_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Search->Image = gcnew Bitmap("Resources\\MainPart\\SearchEnter.png");
+}
+private: System::Void Search_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	Search->Image = gcnew Bitmap("Resources\\MainPart\\Search.png");
+	buttons[0] = 0;
+}
+private: System::Void Settings_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Settings->Image = gcnew Bitmap("Resources\\MainPart\\SettingsEnter.png");
+}
+private: System::Void Settings_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	Settings->Image = gcnew Bitmap("Resources\\MainPart\\Settings.png");
+	buttons[1] = 0;
+}
+private: System::Void About_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	About->Image = gcnew Bitmap("Resources\\MainPart\\AboutEnter.png");
+}
+private: System::Void About_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	About->Image = gcnew Bitmap("Resources\\MainPart\\About.png");
+	buttons[2] = 0;
+}
+	   
+private: System::Void SearchRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
+	if (buttons[0] == 1) {
+		Search->Image = gcnew Bitmap("Resources\\MainPart\\SearchEnter.png");
+	}
+	SearchRepeat->Enabled = false;
+}
+private: System::Void Search_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	Search->Image = gcnew Bitmap("Resources\\MainPart\\SearchClick.png");
+	buttons[0] = 1;
+	SearchRepeat->Enabled = true;
+}
+private: System::Void Settings_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	Settings->Image = gcnew Bitmap("Resources\\MainPart\\SettingsClick.png");
+	buttons[1] = 1;
+	SettingsRepeat->Enabled = true;
+}
+private: System::Void SettingsRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
+	if (buttons[1] == 1) {
+		Settings->Image = gcnew Bitmap("Resources\\MainPart\\SettingsEnter.png");
+	}
+	SettingsRepeat->Enabled = false;
+}
+private: System::Void About_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	About->Image = gcnew Bitmap("Resources\\MainPart\\AboutClick.png");
+	buttons[2] = 1;
+	AboutRepeat->Enabled = true;
+}
+private: System::Void AboutRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
+	if (buttons[2] == 1) {
+		About->Image = gcnew Bitmap("Resources\\MainPart\\AboutEnter.png");
+	}
+	AboutRepeat->Enabled = false;
 }
 };
 }
