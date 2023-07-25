@@ -3,7 +3,7 @@
 #include <mmsystem.h>
 #pragma comment(lib, "winmm.lib")
 #include <Windows.h>
-#include "MainForm.h"
+
 namespace AccountManager {
 
     using namespace System;
@@ -27,7 +27,8 @@ namespace AccountManager {
     private: System::Windows::Forms::Timer^ timer1;
     private: System::Windows::Forms::Label^ label1;
     private: System::Windows::Forms::Timer^ timer2;
-
+    private: System::Windows::Forms::Timer^ Add;
+    public: bool end = false, back = false;
            ref class RoundedPictureBox : public PictureBox
            {
            public:
@@ -116,6 +117,7 @@ namespace AccountManager {
             this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
             this->label1 = (gcnew System::Windows::Forms::Label());
             this->timer2 = (gcnew System::Windows::Forms::Timer(this->components));
+            this->Add = (gcnew System::Windows::Forms::Timer(this->components));
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
             this->SuspendLayout();
             // 
@@ -147,6 +149,11 @@ namespace AccountManager {
             this->timer2->Enabled = true;
             this->timer2->Tick += gcnew System::EventHandler(this, &Start::timer2_Tick);
             // 
+            // Add
+            // 
+            this->Add->Enabled = true;
+            this->Add->Interval = 10;
+            // 
             // Start
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -171,13 +178,12 @@ namespace AccountManager {
         }
 #pragma endregion
         bool isHovered = false;
-        MainForm^ Begin = gcnew MainForm;
+        
+        
     private:
         void Start_Load(System::Object^ sender, System::EventArgs^ e)
         {
-
             this->timer1->Enabled = true;
-            Begin->Opacity = 0;
             SetRegion();
 
         }
@@ -248,30 +254,24 @@ namespace AccountManager {
         this->label1->Text = Convert::ToString(this->timer1->Interval);
         if (i < 179) { Bitmap^ alphaImage = gcnew Bitmap("Resources\\Animation\\PngAnim_" + i + ".png"); pictureBox->Image = alphaImage; }
         i++;
-        if (i == 165) {
-            
-            Begin->Show();
-            Begin->Location = this->Location;
+        if (i == 173) {
+            back = true; end = true;
         }
         if (i == 179) {
-            this->Opacity = 0;
+            
             this->Hide();
         }
-        if (i == 179) { Begin->Opacity = 1; this->timer1->Enabled = false;
+        if (i == 179) {
+            this->timer1->Enabled = false; 
         }
         else if (i == 1) { this->Opacity = 1; }
         if (i == 69) {PlaySound(L"Str.wav", NULL, SND_FILENAME | SND_ASYNC); }
 
     }
     private: System::Void timer2_Tick(System::Object^ sender, System::EventArgs^ e) {
-        if (Begin->isclose) {
-            timer1->Enabled = false;
-            timer2->Enabled = false;
-            Begin->Hide();
-            Begin->Close();
-            System::Environment::Exit(0);
-            Application::Exit();
+       
     }
-    }
+           //Тут всё, что нужно адаптировать
+
 };
 }
