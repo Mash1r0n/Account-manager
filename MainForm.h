@@ -1288,7 +1288,7 @@ namespace AccountManager {
 		Opacity = 0;
 		Begin->Show(this);
 		Begin->Location = Location;
-			//Решить проблему с мигающим окном
+			
 	}
 		   void SetRegion()
 		   {

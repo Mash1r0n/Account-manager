@@ -13,10 +13,12 @@
 #include <vector>
 #include <random>
 #include <msclr/marshal_cppstd.h>
+#include <regex>
 static int AddIndex = -1;
-
+static bool act[3] = { true, true, true };
+static bool Agree[3] = { false, false, false };
 namespace AccountManager {
-
+	
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -30,7 +32,9 @@ namespace AccountManager {
 	/// </summary>
 	public ref class AddPassword : public System::Windows::Forms::Form
 	{
+		bool TisDragging;
 	public:
+		Point dragStartPosition;
 		AddPassword(void)
 		{
 			InitializeComponent();
@@ -59,6 +63,11 @@ namespace AccountManager {
 	private: System::Windows::Forms::PictureBox^ gen;
 	private: System::Windows::Forms::Timer^ GenRepeat;
 	private: System::ComponentModel::IContainer^ components;
+	private: System::Windows::Forms::Label^ Error1;
+	private: System::Windows::Forms::Label^ Error2;
+	private: System::Windows::Forms::Label^ Error3;
+
+
 	public: bool ConfirmAdd = false;
 	protected:
 
@@ -84,6 +93,9 @@ namespace AccountManager {
 			this->name = (gcnew System::Windows::Forms::TextBox());
 			this->gen = (gcnew System::Windows::Forms::PictureBox());
 			this->GenRepeat = (gcnew System::Windows::Forms::Timer(this->components));
+			this->Error1 = (gcnew System::Windows::Forms::Label());
+			this->Error2 = (gcnew System::Windows::Forms::Label());
+			this->Error3 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Back))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Apply))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->gen))->BeginInit();
@@ -173,6 +185,42 @@ namespace AccountManager {
 			this->GenRepeat->Interval = 300;
 			this->GenRepeat->Tick += gcnew System::EventHandler(this, &AddPassword::GenRepeat_Tick);
 			// 
+			// Error1
+			// 
+			this->Error1->Font = (gcnew System::Drawing::Font(L"Arial Black", 11.25F, System::Drawing::FontStyle::Bold));
+			this->Error1->ForeColor = System::Drawing::Color::Maroon;
+			this->Error1->Location = System::Drawing::Point(105, 90);
+			this->Error1->Name = L"Error1";
+			this->Error1->Size = System::Drawing::Size(423, 23);
+			this->Error1->TabIndex = 6;
+			this->Error1->Text = L"Мінімальна кількість символів: 6";
+			this->Error1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Error1->MouseEnter += gcnew System::EventHandler(this, &AddPassword::label1_MouseEnter);
+			// 
+			// Error2
+			// 
+			this->Error2->Font = (gcnew System::Drawing::Font(L"Arial Black", 11.25F, System::Drawing::FontStyle::Bold));
+			this->Error2->ForeColor = System::Drawing::Color::Maroon;
+			this->Error2->Location = System::Drawing::Point(143, 162);
+			this->Error2->Name = L"Error2";
+			this->Error2->Size = System::Drawing::Size(382, 23);
+			this->Error2->TabIndex = 7;
+			this->Error2->Text = L"Мінімальна кількість символів: 16";
+			this->Error2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Error2->MouseEnter += gcnew System::EventHandler(this, &AddPassword::Error2_MouseEnter);
+			// 
+			// Error3
+			// 
+			this->Error3->Font = (gcnew System::Drawing::Font(L"Arial Black", 11.25F, System::Drawing::FontStyle::Bold));
+			this->Error3->ForeColor = System::Drawing::Color::Maroon;
+			this->Error3->Location = System::Drawing::Point(154, 235);
+			this->Error3->Name = L"Error3";
+			this->Error3->Size = System::Drawing::Size(304, 23);
+			this->Error3->TabIndex = 8;
+			this->Error3->Text = L"Мінімальна кількість символів: 8";
+			this->Error3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Error3->MouseEnter += gcnew System::EventHandler(this, &AddPassword::Error3_MouseEnter);
+			// 
 			// AddPassword
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -181,6 +229,9 @@ namespace AccountManager {
 				static_cast<System::Int32>(static_cast<System::Byte>(39)));
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(550, 350);
+			this->Controls->Add(this->Error3);
+			this->Controls->Add(this->Error2);
+			this->Controls->Add(this->Error1);
 			this->Controls->Add(this->gen);
 			this->Controls->Add(this->name);
 			this->Controls->Add(this->email);
@@ -191,6 +242,9 @@ namespace AccountManager {
 			this->Name = L"AddPassword";
 			this->Text = L"AddPassword";
 			this->Load += gcnew System::EventHandler(this, &AddPassword::AddPassword_Load);
+			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &AddPassword::AddPassword_MouseDown);
+			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &AddPassword::AddPassword_MouseMove);
+			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &AddPassword::AddPassword_MouseUp);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Back))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Apply))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->gen))->EndInit();
@@ -199,8 +253,12 @@ namespace AccountManager {
 
 		}
 #pragma endregion
+		bool isHovered = false;
 	private: System::Void AddPassword_Load(System::Object^ sender, System::EventArgs^ e) {
 		SetRegion();
+		Error1->Hide();
+		Error2->Hide();
+		Error3->Hide();
 	}
 		   void SetRegion()
 		   {
@@ -227,9 +285,42 @@ namespace AccountManager {
 		ConfirmAdd = false;
 		Hide();
 	}
+	String^ nameTEMP;
+	String^ emailTEMP;
+	String^ passwordTEMP;
+	
+	bool ValidEmail(string email)
+	{
+		const regex pattern("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
+
+		return regex_match(email, pattern);
+	}
 	private: System::Void Apply_Click(System::Object^ sender, System::EventArgs^ e) {
 		ConfirmAdd = true;
-		Hide();
+		act[0] = false;
+		act[1] = false;
+		act[2] = false;
+		if (name->Text->Length < 6) {
+			Error1->Show();
+		}
+		else Agree[0] = true;
+		if (email->Text->Length < 16 ) {
+			Error2->Text = "Мінімальна кількість символів: 16";
+			Error2->Show();
+		}
+		else if (!ValidEmail(marshal_as<string>(email->Text))) {
+			Error2->Text = "Адреса не дійсна";
+			Error2->Show();
+		}
+		else Agree[1] = true;
+		if (Password->Text->Length < 8) {
+			Error3->Show();
+			
+		}
+		else Agree[2] = true;
+		if (Agree[0] && Agree[1] && Agree[2]) {
+			Hide();
+		}
 	}
 		   int RN(int min, int max) {
 			   random_device rd;
@@ -268,6 +359,7 @@ private: System::Void gen_Click(System::Object^ sender, System::EventArgs^ e) {
 	gen->Image = gcnew Bitmap("Resources\\AddPassword\\GenClick.png");
 	Password->Text = RandomPass();
 	GenRepeat->Enabled = true;
+	passwordTEMP = Password->Text;
 }
 private: System::Void gen_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	gen->Image = gcnew Bitmap("Resources\\AddPassword\\GenEnter.png");
@@ -281,6 +373,32 @@ private: System::Void GenRepeat_Tick(System::Object^ sender, System::EventArgs^ 
 	if (press) {
 		gen->Image = gcnew Bitmap("Resources\\AddPassword\\GenEnter.png");
 		GenRepeat->Enabled = false;
+	}
+}
+private: System::Void label1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Error1->Hide();
+}
+private: System::Void Error2_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Error2->Hide();
+}
+private: System::Void Error3_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Error3->Hide();
+}
+private: System::Void AddPassword_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	TisDragging = false;
+}
+private: System::Void AddPassword_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	if (e->Button == System::Windows::Forms::MouseButtons::Left && e->Y < this->Height)
+	{
+		TisDragging = true;
+		dragStartPosition = Point(e->X, e->Y);
+	}
+}
+private: System::Void AddPassword_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	if (TisDragging)
+	{
+		Point pointDifference = Point(e->X - dragStartPosition.X, e->Y - dragStartPosition.Y);
+		this->Location = Point(this->Location.X + pointDifference.X, this->Location.Y + pointDifference.Y);
 	}
 }
 };
