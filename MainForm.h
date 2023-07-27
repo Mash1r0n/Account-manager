@@ -15,7 +15,10 @@
 #include <msclr/marshal_cppstd.h>
 #include "Start.h"
 #include <vcclr.h>
+#include <cstring>
 #include "AddPassword.h"
+#pragma warning(disable:4996)
+static int massiveofseed[999];
 static bool bns[50] = { false, false, false, false, false, false, false };
 static int verify = 0;
 static int buttons[3] = { 0,0,0 };
@@ -53,43 +56,31 @@ namespace AccountManager {
 	private: System::Windows::Forms::Timer^ AboutRepeat;
 	private: System::Windows::Forms::TabControl^ tabControl2;
 	private: System::Windows::Forms::TabPage^ Group1;
-
 	private: System::Windows::Forms::TabPage^ tabPage5;
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::PictureBox^ Add;
-
-
 	private: System::Windows::Forms::PictureBox^ Place2;
 	private: System::Windows::Forms::PictureBox^ Place1;
 	private: System::Windows::Forms::PictureBox^ Place3;
 	private: System::Windows::Forms::PictureBox^ Place4;
 	private: System::Windows::Forms::PictureBox^ Add1;
-
-
-
-
 	private: System::Windows::Forms::Panel^ Censore1;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::PictureBox^ pictureBox7;
 	private: System::Windows::Forms::PictureBox^ pictureBox6;
-	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::PictureBox^ Add2;
+
+
+
 	private: System::Windows::Forms::PictureBox^ Place5;
 	private: System::Windows::Forms::PictureBox^ pictureBox8;
 	private: System::Windows::Forms::Label^ Password1;
-
-
-
 	private: System::Windows::Forms::Label^ Email1;
 	private: System::Windows::Forms::PictureBox^ pictureBox9;
 	private: System::Windows::Forms::PictureBox^ CopyEmail1;
 	private: System::Windows::Forms::PictureBox^ CopyPassword1;
 	private: System::Windows::Forms::PictureBox^ Etc1;
-
-
-
-	
-
 	private: System::Windows::Forms::Label^ Name1;
 	private: System::Windows::Forms::Timer^ Discover;
 	private: System::Windows::Forms::Timer^ Bck;
@@ -100,31 +91,14 @@ namespace AccountManager {
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::PictureBox^ pictureBox10;
 	private: System::Windows::Forms::PictureBox^ Etc2;
-
-
-
-
-
 	private: System::Windows::Forms::PictureBox^ CopyPassword2;
-
 	private: System::Windows::Forms::PictureBox^ CopyEmail2;
-
 	private: System::Windows::Forms::PictureBox^ pictureBox14;
 	private: System::Windows::Forms::Label^ Password2;
-
-
 	private: System::Windows::Forms::Label^ Email2;
 	private: System::Windows::Forms::Panel^ Censore2;
 	private: System::Windows::Forms::Label^ Name2;
 	private: System::Windows::Forms::PictureBox^ BlockAllTabs;
-
-
-
-
-
-		   
-
-
 
 	public:
 		Point dragStartPosition;
@@ -178,25 +152,12 @@ namespace AccountManager {
 	private: System::Windows::Forms::TextBox^ LogInBox;
 	public: bool StatusAdd = false;
 
-
-
-
-	
-
-
-
-
-
 	private: System::ComponentModel::IContainer^ components;
-
-
-
 
 	private:
 		/// <summary>
 		/// Обязательная переменная конструктора.
 		/// </summary>
-
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -219,6 +180,7 @@ namespace AccountManager {
 			this->TxtLog = (gcnew System::Windows::Forms::PictureBox());
 			this->LetsLog = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->BlockAllTabs = (gcnew System::Windows::Forms::PictureBox());
 			this->Add = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
@@ -247,7 +209,7 @@ namespace AccountManager {
 			this->pictureBox8 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox7 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->Add2 = (gcnew System::Windows::Forms::PictureBox());
 			this->Add1 = (gcnew System::Windows::Forms::PictureBox());
 			this->Place5 = (gcnew System::Windows::Forms::PictureBox());
 			this->Place4 = (gcnew System::Windows::Forms::PictureBox());
@@ -282,7 +244,6 @@ namespace AccountManager {
 			this->Bck = (gcnew System::Windows::Forms::Timer(this->components));
 			this->AddDat = (gcnew System::Windows::Forms::Timer(this->components));
 			this->ConAdd = (gcnew System::Windows::Forms::Timer(this->components));
-			this->BlockAllTabs = (gcnew System::Windows::Forms::PictureBox());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->BeginInit();
@@ -293,6 +254,7 @@ namespace AccountManager {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TxtLog))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LetsLog))->BeginInit();
 			this->tabPage3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BlockAllTabs))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -315,7 +277,7 @@ namespace AccountManager {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Place5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Place4))->BeginInit();
@@ -333,7 +295,6 @@ namespace AccountManager {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Clo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HorLin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BlockAllTabs))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -491,6 +452,14 @@ namespace AccountManager {
 			this->tabPage3->Text = L"tabPage3";
 			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
+			// BlockAllTabs
+			// 
+			this->BlockAllTabs->Location = System::Drawing::Point(9999, 9999);
+			this->BlockAllTabs->Name = L"BlockAllTabs";
+			this->BlockAllTabs->Size = System::Drawing::Size(39, 483);
+			this->BlockAllTabs->TabIndex = 7;
+			this->BlockAllTabs->TabStop = false;
+			// 
 			// Add
 			// 
 			this->Add->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
@@ -543,7 +512,7 @@ namespace AccountManager {
 			this->Group1->Controls->Add(this->pictureBox8);
 			this->Group1->Controls->Add(this->pictureBox7);
 			this->Group1->Controls->Add(this->pictureBox6);
-			this->Group1->Controls->Add(this->pictureBox2);
+			this->Group1->Controls->Add(this->Add2);
 			this->Group1->Controls->Add(this->Add1);
 			this->Group1->Controls->Add(this->Place5);
 			this->Group1->Controls->Add(this->Place4);
@@ -813,15 +782,15 @@ namespace AccountManager {
 			this->pictureBox6->TabIndex = 9;
 			this->pictureBox6->TabStop = false;
 			// 
-			// pictureBox2
+			// Add2
 			// 
-			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(359, 123);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(38, 37);
-			this->pictureBox2->TabIndex = 8;
-			this->pictureBox2->TabStop = false;
-			this->pictureBox2->Click += gcnew System::EventHandler(this, &MainForm::pictureBox2_Click);
+			this->Add2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Add2.Image")));
+			this->Add2->Location = System::Drawing::Point(359, 123);
+			this->Add2->Name = L"Add2";
+			this->Add2->Size = System::Drawing::Size(38, 37);
+			this->Add2->TabIndex = 8;
+			this->Add2->TabStop = false;
+			this->Add2->Click += gcnew System::EventHandler(this, &MainForm::pictureBox2_Click);
 			// 
 			// Add1
 			// 
@@ -1093,14 +1062,6 @@ namespace AccountManager {
 			this->ConAdd->Enabled = true;
 			this->ConAdd->Tick += gcnew System::EventHandler(this, &MainForm::ConAdd_Tick);
 			// 
-			// BlockAllTabs
-			// 
-			this->BlockAllTabs->Location = System::Drawing::Point(9999, 9999);
-			this->BlockAllTabs->Name = L"BlockAllTabs";
-			this->BlockAllTabs->Size = System::Drawing::Size(39, 483);
-			this->BlockAllTabs->TabIndex = 7;
-			this->BlockAllTabs->TabStop = false;
-			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1121,6 +1082,7 @@ namespace AccountManager {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MainForm";
 			this->Text = L"MainForm";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MainForm::MainForm_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->SizeChanged += gcnew System::EventHandler(this, &MainForm::MainForm_SizeChanged);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::MainForm_MouseDown);
@@ -1138,6 +1100,7 @@ namespace AccountManager {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TxtLog))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LetsLog))->EndInit();
 			this->tabPage3->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BlockAllTabs))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -1160,7 +1123,7 @@ namespace AccountManager {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox8))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Place5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Place4))->EndInit();
@@ -1178,7 +1141,6 @@ namespace AccountManager {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Clo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HorLin))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BlockAllTabs))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1188,11 +1150,280 @@ namespace AccountManager {
 		cli::array<String^>^ PaswdOf = gcnew cli::array<String^>(95);
 		bool isHovered = false;
 		bool DiscoverIsEnd = false;
-		String^ MainPassword = "";
+		String^ MainPassword;
 		bool LetsBack = false;
 		AddPassword^ PassAdd = gcnew AddPassword;
 		Start^ Begin = gcnew Start;
+		//Тут вообще трындец
 
+		int hwm(int num) {
+			int digits = 1 + log10(num);
+			return digits;
+		}
+
+		string ConvertToStdString(String^ managedString) {
+			// Получить длину строки String^
+			int length = managedString->Length;
+
+			// Создать массив char с дополнительным местом для завершающего нулевого символа
+			char* charArray = new char[length + 1];
+
+			// Конвертировать String^ в массив char
+			for (int i = 0; i < length; i++) {
+				charArray[i] = static_cast<char>(managedString[i]);
+			}
+
+			// Завершить массив нулевым символом, чтобы создать корректную строку C-style
+			charArray[length] = '\0';
+
+			// Создать std::string из массива char
+			std::string stdString(charArray);
+
+			// Освободить память, выделенную для массива char
+			delete[] charArray;
+
+			return stdString;
+		}
+
+		string crypt(string passw, int countofpass, cli::array<String^>^ Name) {
+			random_device rd;
+			mt19937 gen(rd());
+			uniform_int_distribution<> dis(0, 10000);
+			//int countofpass;
+			int seed = 0, num;
+			int key;
+			int tempseed = dis(gen); string mai = "", passcrypt = "", word[100];
+			srand(tempseed);
+			key = rand();
+			cout << "Введіть пароль: ";
+			//cin >> passw;
+			for (int i = 0; i < strlen(passw.c_str()); i++) {
+				while (true) {
+					srand(seed);
+					static const double fraction = 1.0 / (static_cast<double>(RAND_MAX) + 1.0);
+					num = static_cast<int>(rand() * fraction * (300 - (-300) + 1) + (-300));
+					if (num == (int)passw[i]) { passcrypt += to_string(hwm(seed - key)) + to_string(seed - key); break; }
+					seed = seed + key;
+				}
+				seed = 0;
+			}
+			mai += to_string(hwm(strlen(passw.c_str()))) + to_string(strlen(passw.c_str()));
+			mai += to_string(hwm(strlen(passcrypt.c_str()))) + to_string(strlen(passcrypt.c_str())) + passcrypt;
+			mai += to_string(hwm(tempseed)) + to_string(tempseed);
+			cout << "Введіть кількість паролей: ";
+			//cin >> countofpass;
+			mai += to_string(hwm(countofpass)) + to_string(countofpass);
+			string tempmai = "";
+			cout << "Введіть символи: ";
+			for (int k = 0; k < countofpass; k++) {
+				String^ nam = Name[k];
+				word[k] = marshal_as<string>(nam);
+				mai += to_string(hwm(strlen(word[k].c_str()))) + to_string(strlen(word[k].c_str()));
+				for (int i = 0; i < strlen(word[k].c_str()); i++) {
+					while (true) {
+						srand(seed);
+						static const double fraction = 1.0 / (static_cast<double>(RAND_MAX) + 1.0);
+						num = static_cast<int>(rand() * fraction * (300 - (-300) + 1) + (-300));
+						if (num == (int)word[k][i]) { tempmai += to_string(hwm(seed - key)) + to_string(seed - key); break; }
+						seed = seed + key;
+					}
+					seed = 0;
+				}
+				mai += to_string(hwm(strlen(tempmai.c_str()))) + to_string(strlen(tempmai.c_str())) + tempmai;
+				tempmai = "";
+			}
+			return mai;
+		}
+
+		int decpa2(int key) {
+			srand(key);
+			static const double fraction = 1.0 / (static_cast<double>(RAND_MAX) + 1.0);
+			int num = static_cast<int>(rand() * fraction * (300 - (-300) + 1) + (-300));
+			return num;
+		}
+		bool valid(string valpas, string cryptpass, string hsl, string sra) {
+			string strin = "";
+			string uncpass = "";
+			int how = 0;
+			vector<int> arr(cryptpass.size());
+			srand(stoi(sra));
+			int minus = rand();
+			for (int i = 0; i < cryptpass.size(); i++) {
+				arr[i] = cryptpass[i] - '0';
+			}
+
+			for (int i = 0; i < stoi(hsl); i++) {
+				for (int ite = 0; ite < arr[how]; ite++) {
+					strin += to_string(arr[how + ite + 1]);
+				}
+				int key = decpa2(stoi(strin) + minus);
+				uncpass += (char)key;
+				how += arr[how] + 1;
+				strin = "";
+			}
+			MainPassword = marshal_as<String^>(uncpass);
+			if (valpas == uncpass) return true;
+			else return false;
+		}
+		void decrypt(string file, cli::array<String^>^ Name) {
+			string strin;
+			ifstream ope;
+			ope.open(file);
+			string numDig;
+			ope >> numDig;
+			int how = 0;
+			int numDigits = numDig[0] - '0';
+			string howmsymb = numDig.substr(0, 1);
+			string hls = numDig.substr(1, stoi(howmsymb));
+			string howmpass = numDig.substr(stoi(howmsymb) + 1, 1);
+			string hlp = numDig.substr(stoi(howmsymb) + 2, stoi(howmpass));
+			string passw = numDig.substr(stoi(howmpass) + stoi(howmsymb) + 2, stoi(hlp));
+			string uti = numDig.substr(stoi(hlp) + stoi(howmpass) + 1 + stoi(howmsymb) + 1, 1);
+			string util = numDig.substr(stoi(hlp) + 2 + stoi(howmpass) + stoi(howmsymb) + 1, stoi(uti));
+			string hwmch = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 2 + stoi(howmsymb) + 1, 1);
+			string howmuch = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1, stoi(hwmch));
+			cout << "Введіть пароль: ";
+			string validate;
+			//cin >> validate;
+			validate = passw;
+			valid(validate, passw, hls, util);
+			if (true) {
+
+				vector<vector<int>> arr(stoi(howmuch), vector<int>(1000));
+				srand(stoi(util));
+				int minus = rand();
+				string res = "";
+				string startnum[100];
+				string starthowmch[100];
+				string notnum[100];
+				string howmch[100];
+				string num[100];
+				int space = 0;
+				for (int p = 0; p < stoi(howmuch); p++) {
+					starthowmch[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + 1 + space, 1);
+					howmch[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + 1 + 1 + space, stoi(starthowmch[p]));
+					startnum[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + 1 + 1 + stoi(starthowmch[p]) + space, 1);
+					notnum[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + 1 + 1 + stoi(starthowmch[p]) + 1 + space, stoi(startnum[p]));
+					num[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + 1 + 1 + stoi(starthowmch[p]) + 1 + stoi(startnum[p]) + space, stoi(notnum[p]));
+					for (int i = 0; i < num[p].size(); i++) {
+						arr[p][i] = num[p][i] - '0';
+						space++;
+					}
+					space += 2 + stoi(starthowmch[p]) + stoi(startnum[p]);
+					for (int i = 0; i < stoi(howmch[p]); i++) {//Для каждого свой размер
+						for (int ite = 0; ite < arr[p][how]; ite++) {
+							strin += to_string(arr[p][how + ite + 1]);
+						}
+						int key = decpa2(stoi(strin) + minus);
+						res += putchar(key);
+						how += arr[p][how] + 1;
+						strin = "";
+						
+					}
+					Name[p] = marshal_as<String^>(res);
+					res = "";
+					how = 0;
+					cout << endl;
+				}
+			}
+			else cout << "Невірний пароль";
+		}
+
+		//Тут сохраним или обновим конфиг
+		void SaveConfig() {
+			if (verify == 1) {
+				string password = ConvertToStdString(MainPassword);
+				
+				fstream nam("Names.acm", ios::out);
+				if (nam.is_open()) {
+					nam << crypt(password, NumOfAll, NameOf);
+				}
+				nam.close();
+				fstream email("Emails.acm", ios::out);
+				if (email.is_open()) {
+					email << crypt(password, NumOfAll, EmailOf);
+				}
+				email.close();
+				fstream passw("Passwords.acm", ios::out);
+				if (passw.is_open()) {
+					passw << crypt(password, NumOfAll, PaswdOf);
+				}
+				passw.close();
+			}
+		}
+
+		//откроем доступные элементы
+		void open() {
+			for (int i = 0; i < NumOfAll; i++) {
+				String^ emailLabelName = String::Format("Email{0}", i + 1);
+				String^ nameLabelName = String::Format("Name{0}", i + 1);
+				String^ passwordLabelName = String::Format("Password{0}", i + 1);
+				String^ PanName = String::Format("panel{0}", i + 1);
+				String^ CenName = String::Format("Censore{0}", i + 1);
+
+				Panel^ Pan = dynamic_cast<Panel^>(Group1->Controls->Find(PanName, true)[0]);
+				Panel^ Cen = dynamic_cast<Panel^>(Group1->Controls->Find(CenName, true)[0]);
+				Label^ emailLabel = dynamic_cast<Label^>(Pan->Controls->Find(emailLabelName, true)[0]);
+				Label^ nameLabel = dynamic_cast<Label^>(Cen->Controls->Find(nameLabelName, true)[0]);
+				Label^ passwordLabel = dynamic_cast<Label^>(Pan->Controls->Find(passwordLabelName, true)[0]);
+
+				if (emailLabel != nullptr)
+				{
+					if (EmailOf[i]->Length > 42) {
+						emailLabel->Text = EmailOf[i]->Substring(0, 39) + "...";
+					}
+					else emailLabel->Text = EmailOf[i];
+				}
+
+				if (nameLabel != nullptr)
+				{
+					nameLabel->Text = NameOf[i];
+				}
+
+				if (passwordLabel != nullptr)
+				{
+					passwordLabel->Text = PaswdOf[i];
+				}
+
+				if (Pan != nullptr) {
+					Pan->Show();
+				}
+
+				if (Cen != nullptr) {
+					Cen->Show();
+					Cen->BringToFront();
+				}
+			}
+		}
+
+		//Тут конфиг будет обновлять данные в программу
+		void ApplyConfig() {
+			if (verify == 1) {
+
+				decrypt("Names.acm", NameOf);
+
+				decrypt("Emails.acm", EmailOf);
+
+				decrypt("Passwords.acm", PaswdOf);
+				open();
+			}
+		}
+		//Выгружаем настройки из
+		void cfgfrom() {
+			fstream CfgUpd("Config.acm", ios::in);
+			CfgUpd >> verify;
+			CfgUpd >> NumOfAll;
+			CfgUpd.close();
+		}
+		//Загружаем настройки в
+		void cfgto() {
+			fstream cfg("Config.acm", ios::out);
+			if (cfg.is_open()) {
+				cfg << verify << endl;
+				cfg << NumOfAll << endl;
+			}
+			cfg.close();
+		}
 		void Update() {
 			String^ emailLabelName = String::Format("Email{0}", AddIndex + 1);
 			String^ nameLabelName = String::Format("Name{0}", AddIndex + 1);
@@ -1281,8 +1512,6 @@ namespace AccountManager {
 		Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\Agree.png");
 		Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\Gen.png");
 		// После этого всё в основном окне
-		panel1->Hide();
-		Censore1->Hide();
 		panel2->Hide();
 		Censore2->Hide();
 		Opacity = 0;
@@ -1344,6 +1573,8 @@ private: System::Void Clo_MouseLeave(System::Object^ sender, System::EventArgs^ 
 	Clo->Image = gcnew Bitmap("Resources\\TopPart\\CloseNonAct.png");
 }
 private: System::Void Clo_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	cfgto();
+	SaveConfig();
 	System::Environment::Exit(0);
 	Application::Exit();
 }
@@ -1383,6 +1614,17 @@ private: System::Void Agree_MouseClick(System::Object^ sender, System::Windows::
 	if (VerifyPassword()) {
 		tabControl1->SelectedIndex = 2;
 		verify = 1;
+		NumOfAll = 1;
+		Email1->Text = "Akayn.Team@gmail.com";
+		Password1->Text = SigPas->Text;
+		Name1->Text = "Це ваш перший пароль"; //Пофиксить эту хрень с ошибочным шифром
+		panel1->Show();
+		Censore1->Show();
+		MainPassword = SigPas->Text;
+		NameOf[0] = Name1->Text;
+		EmailOf[0] = Email1->Text;
+		PaswdOf[0] = Password1->Text;
+		cfgto();
 		SaveConfig();
 	}
 
@@ -1425,6 +1667,7 @@ private: System::Void AgreeLogIn_MouseClick(System::Object^ sender, System::Wind
 	AgreeLogIn->Image = gcnew Bitmap("Resources\\LogInPart\\Agree.png");
 	if (MainPassword == LogInBox->Text) {
 		tabControl1->SelectedIndex = 2;
+		
 	}
 	else {
 		LogInBox->Text = "Неправильний пароль"; HideTxt->Enabled = true; LogInBox->Enabled = false;
@@ -1453,26 +1696,7 @@ private: System::Void MainForm_MouseMove(System::Object^ sender, System::Windows
 }
 	   //Кабздец какой-то тут основное окно будет
 	   
-	   //Тут сохраним или обновим конфиг
-	   void SaveConfig() {
-		   if (verify==1) {
-			   fstream cfg("Config.acm", ios::out);
-			   if (cfg.is_open()) {
-				   cfg << 1 << endl;
-				   cfg << marshal_as<string>(SigPas->Text) << endl;
-				   cfg.close();
-			   }
-		}
-	   }
-	   //Тут конфиг будет обновлять данные в программу
-	   void ApplyConfig() {
-		   string MainPas;
-		   fstream CfgUpd("Config.acm", ios::in);
-		   CfgUpd >> verify;
-		   CfgUpd >> MainPas;
-		   MainPassword = marshal_as<String^>(MainPas);
-		   CfgUpd.close();
-		}   
+	      
 private: System::Void SigPas_Click(System::Object^ sender, System::EventArgs^ e) {
 	SigPas->Text = "";
 }
@@ -1595,8 +1819,9 @@ private: System::Void Clo_Click(System::Object^ sender, System::EventArgs^ e) {
 private: System::Void Discover_Tick(System::Object^ sender, System::EventArgs^ e) {
 	DiscoverIsEnd = Begin->end;
 	if (DiscoverIsEnd) {
-		ApplyConfig();
+		cfgfrom();
 		if (verify == 1) {
+			ApplyConfig();
 			tabControl1->SelectedIndex = 1;
 			Lgn->Enabled = true;
 		}
@@ -1632,7 +1857,10 @@ private: System::Void Add_Tick(System::Object^ sender, System::EventArgs^ e) {
 		NameOf[AddIndex] = PassAdd->name->Text;
 		EmailOf[AddIndex] = PassAdd->email->Text;
 		PaswdOf[AddIndex] = PassAdd->Password->Text;
+		NumOfAll++;
 		Update();
+		SaveConfig();
+		cfgto();
 	}
 	PassAdd->name->Text = "";
 	PassAdd->email->Text = "";
@@ -1659,6 +1887,10 @@ private: System::Void Censore1_Click(System::Object^ sender, System::EventArgs^ 
 
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
 	PlusForm(1);
+}
+private: System::Void MainForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+	cfgto();
+	SaveConfig();
 }
 };
 }
