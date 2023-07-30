@@ -284,6 +284,139 @@ private: System::Windows::Forms::PictureBox^ pictureBox46;
 private: System::Windows::Forms::PictureBox^ pictureBox47;
 private: System::Windows::Forms::PictureBox^ pictureBox48;
 private: System::Windows::Forms::PictureBox^ pictureBox11;
+private: System::Windows::Forms::Panel^ Censore15;
+private: System::Windows::Forms::Label^ Name15;
+
+private: System::Windows::Forms::Panel^ panel15;
+private: System::Windows::Forms::PictureBox^ pictureBox12;
+private: System::Windows::Forms::PictureBox^ Etc15;
+private: System::Windows::Forms::PictureBox^ CopyPassword15;
+private: System::Windows::Forms::PictureBox^ CopyEmail15;
+private: System::Windows::Forms::PictureBox^ pictureBox22;
+private: System::Windows::Forms::Label^ Password15;
+private: System::Windows::Forms::Label^ Email15;
+private: System::Windows::Forms::Panel^ Censore14;
+private: System::Windows::Forms::Label^ Name14;
+
+
+private: System::Windows::Forms::Panel^ panel14;
+private: System::Windows::Forms::PictureBox^ pictureBox25;
+private: System::Windows::Forms::PictureBox^ Etc14;
+private: System::Windows::Forms::PictureBox^ CopyPassword14;
+private: System::Windows::Forms::PictureBox^ CopyEmail14;
+private: System::Windows::Forms::PictureBox^ pictureBox31;
+private: System::Windows::Forms::Label^ Password14;
+private: System::Windows::Forms::Label^ Email14;
+private: System::Windows::Forms::Panel^ Censore13;
+private: System::Windows::Forms::Label^ Name13;
+private: System::Windows::Forms::Panel^ panel13;
+
+
+private: System::Windows::Forms::PictureBox^ pictureBox32;
+private: System::Windows::Forms::PictureBox^ Etc13;
+private: System::Windows::Forms::PictureBox^ CopyPassword13;
+private: System::Windows::Forms::PictureBox^ CopyEmail13;
+private: System::Windows::Forms::PictureBox^ pictureBox39;
+private: System::Windows::Forms::Label^ Password13;
+private: System::Windows::Forms::Label^ Email13;
+
+private: System::Windows::Forms::Panel^ Censore12;
+private: System::Windows::Forms::Label^ Name12;
+
+private: System::Windows::Forms::Panel^ panel12;
+private: System::Windows::Forms::PictureBox^ pictureBox40;
+private: System::Windows::Forms::PictureBox^ Etc12;
+private: System::Windows::Forms::PictureBox^ CopyPassword12;
+private: System::Windows::Forms::PictureBox^ CopyEmail12;
+private: System::Windows::Forms::PictureBox^ pictureBox49;
+private: System::Windows::Forms::Label^ Password12;
+private: System::Windows::Forms::Label^ Email12;
+private: System::Windows::Forms::Panel^ Censore11;
+private: System::Windows::Forms::Label^ Name11;
+
+private: System::Windows::Forms::Panel^ panel11;
+private: System::Windows::Forms::PictureBox^ pictureBox50;
+private: System::Windows::Forms::PictureBox^ Etc11;
+private: System::Windows::Forms::PictureBox^ CopyPassword11;
+private: System::Windows::Forms::PictureBox^ CopyEmail11;
+private: System::Windows::Forms::PictureBox^ pictureBox54;
+private: System::Windows::Forms::Label^ Password11;
+private: System::Windows::Forms::Label^ Email11;
+private: System::Windows::Forms::PictureBox^ Add15;
+
+private: System::Windows::Forms::PictureBox^ Add14;
+private: System::Windows::Forms::PictureBox^ Add13;
+private: System::Windows::Forms::PictureBox^ Add12;
+private: System::Windows::Forms::PictureBox^ Add11;
+private: System::Windows::Forms::PictureBox^ pictureBox60;
+private: System::Windows::Forms::PictureBox^ pictureBox61;
+private: System::Windows::Forms::PictureBox^ pictureBox62;
+private: System::Windows::Forms::PictureBox^ pictureBox63;
+private: System::Windows::Forms::PictureBox^ pictureBox64;
+private: System::Windows::Forms::Panel^ Censore20;
+private: System::Windows::Forms::Label^ Name20;
+private: System::Windows::Forms::Panel^ panel20;
+private: System::Windows::Forms::PictureBox^ pictureBox17;
+private: System::Windows::Forms::PictureBox^ Etc20;
+private: System::Windows::Forms::PictureBox^ CopyPassword20;
+private: System::Windows::Forms::PictureBox^ CopyEmail20;
+private: System::Windows::Forms::PictureBox^ pictureBox27;
+private: System::Windows::Forms::Label^ Password20;
+private: System::Windows::Forms::Label^ Email20;
+private: System::Windows::Forms::Panel^ Censore19;
+private: System::Windows::Forms::Label^ Name19;
+private: System::Windows::Forms::Panel^ panel19;
+private: System::Windows::Forms::PictureBox^ pictureBox30;
+private: System::Windows::Forms::PictureBox^ Etc19;
+private: System::Windows::Forms::PictureBox^ CopyPassword19;
+private: System::Windows::Forms::PictureBox^ CopyEmail19;
+private: System::Windows::Forms::PictureBox^ pictureBox41;
+private: System::Windows::Forms::Label^ Password19;
+private: System::Windows::Forms::Label^ Email19;
+private: System::Windows::Forms::Panel^ Censore18;
+private: System::Windows::Forms::Label^ Name18;
+private: System::Windows::Forms::Panel^ panel18;
+private: System::Windows::Forms::PictureBox^ pictureBox42;
+private: System::Windows::Forms::PictureBox^ Etc18;
+private: System::Windows::Forms::PictureBox^ CopyPassword18;
+private: System::Windows::Forms::PictureBox^ CopyEmail18;
+private: System::Windows::Forms::PictureBox^ pictureBox53;
+private: System::Windows::Forms::Label^ Password18;
+private: System::Windows::Forms::Label^ Email18;
+private: System::Windows::Forms::Panel^ Censore17;
+private: System::Windows::Forms::Label^ Name17;
+private: System::Windows::Forms::Panel^ panel17;
+private: System::Windows::Forms::PictureBox^ pictureBox55;
+private: System::Windows::Forms::PictureBox^ Etc17;
+private: System::Windows::Forms::PictureBox^ CopyPassword17;
+private: System::Windows::Forms::PictureBox^ CopyEmail17;
+private: System::Windows::Forms::PictureBox^ pictureBox59;
+private: System::Windows::Forms::Label^ Password17;
+private: System::Windows::Forms::Label^ Email17;
+private: System::Windows::Forms::Panel^ Censore16;
+private: System::Windows::Forms::Label^ Name16;
+private: System::Windows::Forms::Panel^ panel16;
+private: System::Windows::Forms::PictureBox^ pictureBox65;
+private: System::Windows::Forms::PictureBox^ Etc16;
+private: System::Windows::Forms::PictureBox^ CopyPassword16;
+private: System::Windows::Forms::PictureBox^ CopyEmail16;
+private: System::Windows::Forms::PictureBox^ pictureBox69;
+private: System::Windows::Forms::Label^ Password16;
+private: System::Windows::Forms::Label^ Email16;
+private: System::Windows::Forms::PictureBox^ Add20;
+
+
+private: System::Windows::Forms::PictureBox^ Add19;
+private: System::Windows::Forms::PictureBox^ Add18;
+private: System::Windows::Forms::PictureBox^ Add17;
+private: System::Windows::Forms::PictureBox^ Add16;
+
+private: System::Windows::Forms::PictureBox^ pictureBox75;
+private: System::Windows::Forms::PictureBox^ pictureBox76;
+private: System::Windows::Forms::PictureBox^ pictureBox77;
+private: System::Windows::Forms::PictureBox^ pictureBox100;
+
+private: System::Windows::Forms::PictureBox^ pictureBox79;
 
 	public:
 		Point dragStartPosition;
@@ -512,6 +645,66 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->pictureBox47 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox48 = (gcnew System::Windows::Forms::PictureBox());
 			this->Group3 = (gcnew System::Windows::Forms::TabPage());
+			this->Censore15 = (gcnew System::Windows::Forms::Panel());
+			this->Name15 = (gcnew System::Windows::Forms::Label());
+			this->panel15 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox12 = (gcnew System::Windows::Forms::PictureBox());
+			this->Etc15 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyPassword15 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyEmail15 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox22 = (gcnew System::Windows::Forms::PictureBox());
+			this->Password15 = (gcnew System::Windows::Forms::Label());
+			this->Email15 = (gcnew System::Windows::Forms::Label());
+			this->Censore14 = (gcnew System::Windows::Forms::Panel());
+			this->Name14 = (gcnew System::Windows::Forms::Label());
+			this->panel14 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox25 = (gcnew System::Windows::Forms::PictureBox());
+			this->Etc14 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyPassword14 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyEmail14 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox31 = (gcnew System::Windows::Forms::PictureBox());
+			this->Password14 = (gcnew System::Windows::Forms::Label());
+			this->Email14 = (gcnew System::Windows::Forms::Label());
+			this->Censore13 = (gcnew System::Windows::Forms::Panel());
+			this->Name13 = (gcnew System::Windows::Forms::Label());
+			this->panel13 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox32 = (gcnew System::Windows::Forms::PictureBox());
+			this->Etc13 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyPassword13 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyEmail13 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox39 = (gcnew System::Windows::Forms::PictureBox());
+			this->Password13 = (gcnew System::Windows::Forms::Label());
+			this->Email13 = (gcnew System::Windows::Forms::Label());
+			this->Censore12 = (gcnew System::Windows::Forms::Panel());
+			this->Name12 = (gcnew System::Windows::Forms::Label());
+			this->panel12 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox40 = (gcnew System::Windows::Forms::PictureBox());
+			this->Etc12 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyPassword12 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyEmail12 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox49 = (gcnew System::Windows::Forms::PictureBox());
+			this->Password12 = (gcnew System::Windows::Forms::Label());
+			this->Email12 = (gcnew System::Windows::Forms::Label());
+			this->Censore11 = (gcnew System::Windows::Forms::Panel());
+			this->Name11 = (gcnew System::Windows::Forms::Label());
+			this->panel11 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox50 = (gcnew System::Windows::Forms::PictureBox());
+			this->Etc11 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyPassword11 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyEmail11 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox54 = (gcnew System::Windows::Forms::PictureBox());
+			this->Password11 = (gcnew System::Windows::Forms::Label());
+			this->Email11 = (gcnew System::Windows::Forms::Label());
+			this->Add15 = (gcnew System::Windows::Forms::PictureBox());
+			this->Add14 = (gcnew System::Windows::Forms::PictureBox());
+			this->Add13 = (gcnew System::Windows::Forms::PictureBox());
+			this->Add12 = (gcnew System::Windows::Forms::PictureBox());
+			this->Add11 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox60 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox61 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox62 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox63 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox64 = (gcnew System::Windows::Forms::PictureBox());
 			this->Group4 = (gcnew System::Windows::Forms::TabPage());
 			this->Group5 = (gcnew System::Windows::Forms::TabPage());
 			this->Group6 = (gcnew System::Windows::Forms::TabPage());
@@ -531,6 +724,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->About = (gcnew System::Windows::Forms::PictureBox());
 			this->Settings = (gcnew System::Windows::Forms::PictureBox());
 			this->Search = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox11 = (gcnew System::Windows::Forms::PictureBox());
 			this->MainBkg = (gcnew System::Windows::Forms::PictureBox());
 			this->OpacityBkg = (gcnew System::Windows::Forms::PictureBox());
 			this->LefTo = (gcnew System::Windows::Forms::PictureBox());
@@ -556,7 +750,66 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->AddDat = (gcnew System::Windows::Forms::Timer(this->components));
 			this->ConAdd = (gcnew System::Windows::Forms::Timer(this->components));
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox11 = (gcnew System::Windows::Forms::PictureBox());
+			this->Censore20 = (gcnew System::Windows::Forms::Panel());
+			this->Name20 = (gcnew System::Windows::Forms::Label());
+			this->panel20 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox17 = (gcnew System::Windows::Forms::PictureBox());
+			this->Etc20 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyPassword20 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyEmail20 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox27 = (gcnew System::Windows::Forms::PictureBox());
+			this->Password20 = (gcnew System::Windows::Forms::Label());
+			this->Email20 = (gcnew System::Windows::Forms::Label());
+			this->Censore19 = (gcnew System::Windows::Forms::Panel());
+			this->Name19 = (gcnew System::Windows::Forms::Label());
+			this->panel19 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox30 = (gcnew System::Windows::Forms::PictureBox());
+			this->Etc19 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyPassword19 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyEmail19 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox41 = (gcnew System::Windows::Forms::PictureBox());
+			this->Password19 = (gcnew System::Windows::Forms::Label());
+			this->Email19 = (gcnew System::Windows::Forms::Label());
+			this->Censore18 = (gcnew System::Windows::Forms::Panel());
+			this->Name18 = (gcnew System::Windows::Forms::Label());
+			this->panel18 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox42 = (gcnew System::Windows::Forms::PictureBox());
+			this->Etc18 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyPassword18 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyEmail18 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox53 = (gcnew System::Windows::Forms::PictureBox());
+			this->Password18 = (gcnew System::Windows::Forms::Label());
+			this->Email18 = (gcnew System::Windows::Forms::Label());
+			this->Censore17 = (gcnew System::Windows::Forms::Panel());
+			this->Name17 = (gcnew System::Windows::Forms::Label());
+			this->panel17 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox55 = (gcnew System::Windows::Forms::PictureBox());
+			this->Etc17 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyPassword17 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyEmail17 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox59 = (gcnew System::Windows::Forms::PictureBox());
+			this->Password17 = (gcnew System::Windows::Forms::Label());
+			this->Email17 = (gcnew System::Windows::Forms::Label());
+			this->Censore16 = (gcnew System::Windows::Forms::Panel());
+			this->Name16 = (gcnew System::Windows::Forms::Label());
+			this->panel16 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox65 = (gcnew System::Windows::Forms::PictureBox());
+			this->Etc16 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyPassword16 = (gcnew System::Windows::Forms::PictureBox());
+			this->CopyEmail16 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox69 = (gcnew System::Windows::Forms::PictureBox());
+			this->Password16 = (gcnew System::Windows::Forms::Label());
+			this->Email16 = (gcnew System::Windows::Forms::Label());
+			this->Add20 = (gcnew System::Windows::Forms::PictureBox());
+			this->Add19 = (gcnew System::Windows::Forms::PictureBox());
+			this->Add18 = (gcnew System::Windows::Forms::PictureBox());
+			this->Add17 = (gcnew System::Windows::Forms::PictureBox());
+			this->Add16 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox75 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox76 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox77 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox100 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox79 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->BeginInit();
@@ -683,9 +936,57 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox46))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox47))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox48))->BeginInit();
+			this->Group3->SuspendLayout();
+			this->Censore15->SuspendLayout();
+			this->panel15->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox12))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc15))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword15))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail15))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox22))->BeginInit();
+			this->Censore14->SuspendLayout();
+			this->panel14->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox25))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc14))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword14))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail14))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox31))->BeginInit();
+			this->Censore13->SuspendLayout();
+			this->panel13->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox32))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc13))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword13))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail13))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox39))->BeginInit();
+			this->Censore12->SuspendLayout();
+			this->panel12->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox40))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc12))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword12))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail12))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox49))->BeginInit();
+			this->Censore11->SuspendLayout();
+			this->panel11->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox50))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc11))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword11))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail11))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox54))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add15))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add14))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add13))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add12))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add11))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox60))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox61))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox62))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox63))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox64))->BeginInit();
+			this->Group4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->About))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Settings))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Search))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MainBkg))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->OpacityBkg))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LefTo))->BeginInit();
@@ -694,7 +995,51 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Clo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HorLin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->BeginInit();
+			this->Censore20->SuspendLayout();
+			this->panel20->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox17))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc20))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword20))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail20))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox27))->BeginInit();
+			this->Censore19->SuspendLayout();
+			this->panel19->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox30))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc19))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword19))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail19))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox41))->BeginInit();
+			this->Censore18->SuspendLayout();
+			this->panel18->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox42))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc18))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword18))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail18))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox53))->BeginInit();
+			this->Censore17->SuspendLayout();
+			this->panel17->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox55))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc17))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword17))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail17))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox59))->BeginInit();
+			this->Censore16->SuspendLayout();
+			this->panel16->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox65))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc16))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword16))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail16))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox69))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add20))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add19))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add18))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add17))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add16))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox75))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox76))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox77))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox100))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox79))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -1794,7 +2139,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->Add2->TabIndex = 8;
 			this->Add2->TabStop = false;
 			this->Add2->Click += gcnew System::EventHandler(this, &MainForm::pictureBox2_Click);
-			this->Add2->MouseEnter += gcnew System::EventHandler(this, &MainForm::Etc_MouseEnter);
+			this->Add2->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
 			this->Add2->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
 			// 
 			// Add1
@@ -2361,7 +2706,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->Name6->Name = L"Name6";
 			this->Name6->Size = System::Drawing::Size(658, 53);
 			this->Name6->TabIndex = 0;
-			this->Name6->Text = L"Akayn Team";
+			this->Name6->Text = L"Akayn Team2";
 			this->Name6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->Name6->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
 			// 
@@ -2464,6 +2809,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->Add10->TabIndex = 31;
 			this->Add10->TabStop = false;
 			this->Add10->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add10->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnters);
+			this->Add10->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
 			// 
 			// Add9
 			// 
@@ -2474,6 +2821,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->Add9->TabIndex = 29;
 			this->Add9->TabStop = false;
 			this->Add9->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add9->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add9->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
 			// 
 			// Add8
 			// 
@@ -2484,6 +2833,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->Add8->TabIndex = 27;
 			this->Add8->TabStop = false;
 			this->Add8->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add8->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add8->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
 			// 
 			// Add7
 			// 
@@ -2494,6 +2845,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->Add7->TabIndex = 25;
 			this->Add7->TabStop = false;
 			this->Add7->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add7->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add7->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
 			// 
 			// Add6
 			// 
@@ -2504,6 +2857,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->Add6->TabIndex = 24;
 			this->Add6->TabStop = false;
 			this->Add6->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add6->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add6->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
 			// 
 			// pictureBox44
 			// 
@@ -2553,6 +2908,26 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			// Group3
 			// 
 			this->Group3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Group3.BackgroundImage")));
+			this->Group3->Controls->Add(this->Censore15);
+			this->Group3->Controls->Add(this->panel15);
+			this->Group3->Controls->Add(this->Censore14);
+			this->Group3->Controls->Add(this->panel14);
+			this->Group3->Controls->Add(this->Censore13);
+			this->Group3->Controls->Add(this->panel13);
+			this->Group3->Controls->Add(this->Censore12);
+			this->Group3->Controls->Add(this->panel12);
+			this->Group3->Controls->Add(this->Censore11);
+			this->Group3->Controls->Add(this->panel11);
+			this->Group3->Controls->Add(this->Add15);
+			this->Group3->Controls->Add(this->Add14);
+			this->Group3->Controls->Add(this->Add13);
+			this->Group3->Controls->Add(this->Add12);
+			this->Group3->Controls->Add(this->Add11);
+			this->Group3->Controls->Add(this->pictureBox60);
+			this->Group3->Controls->Add(this->pictureBox61);
+			this->Group3->Controls->Add(this->pictureBox62);
+			this->Group3->Controls->Add(this->pictureBox63);
+			this->Group3->Controls->Add(this->pictureBox64);
 			this->Group3->Location = System::Drawing::Point(4, 4);
 			this->Group3->Name = L"Group3";
 			this->Group3->Size = System::Drawing::Size(746, 460);
@@ -2560,8 +2935,704 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->Group3->Text = L"tabPage4";
 			this->Group3->UseVisualStyleBackColor = true;
 			// 
+			// Censore15
+			// 
+			this->Censore15->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Censore15.BackgroundImage")));
+			this->Censore15->Controls->Add(this->Name15);
+			this->Censore15->Location = System::Drawing::Point(18, 387);
+			this->Censore15->Name = L"Censore15";
+			this->Censore15->Size = System::Drawing::Size(719, 69);
+			this->Censore15->TabIndex = 56;
+			this->Censore15->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// Name15
+			// 
+			this->Name15->Font = (gcnew System::Drawing::Font(L"Arial Black", 24.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Name15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)));
+			this->Name15->Location = System::Drawing::Point(32, 8);
+			this->Name15->Name = L"Name15";
+			this->Name15->Size = System::Drawing::Size(658, 53);
+			this->Name15->TabIndex = 0;
+			this->Name15->Text = L"Akayn Team";
+			this->Name15->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Name15->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// panel15
+			// 
+			this->panel15->Controls->Add(this->pictureBox12);
+			this->panel15->Controls->Add(this->Etc15);
+			this->panel15->Controls->Add(this->CopyPassword15);
+			this->panel15->Controls->Add(this->CopyEmail15);
+			this->panel15->Controls->Add(this->pictureBox22);
+			this->panel15->Controls->Add(this->Password15);
+			this->panel15->Controls->Add(this->Email15);
+			this->panel15->Location = System::Drawing::Point(50, 392);
+			this->panel15->Name = L"panel15";
+			this->panel15->Size = System::Drawing::Size(658, 60);
+			this->panel15->TabIndex = 50;
+			// 
+			// pictureBox12
+			// 
+			this->pictureBox12->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox12.Image")));
+			this->pictureBox12->Location = System::Drawing::Point(11, 29);
+			this->pictureBox12->Name = L"pictureBox12";
+			this->pictureBox12->Size = System::Drawing::Size(390, 2);
+			this->pictureBox12->TabIndex = 5;
+			this->pictureBox12->TabStop = false;
+			// 
+			// Etc15
+			// 
+			this->Etc15->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Etc15.Image")));
+			this->Etc15->Location = System::Drawing::Point(603, 11);
+			this->Etc15->Name = L"Etc15";
+			this->Etc15->Size = System::Drawing::Size(41, 41);
+			this->Etc15->TabIndex = 5;
+			this->Etc15->TabStop = false;
+			this->Etc15->MouseEnter += gcnew System::EventHandler(this, &MainForm::Etc_MouseEnter);
+			this->Etc15->MouseLeave += gcnew System::EventHandler(this, &MainForm::Etc_MouseLeave);
+			// 
+			// CopyPassword15
+			// 
+			this->CopyPassword15->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyPassword15.Image")));
+			this->CopyPassword15->Location = System::Drawing::Point(545, 11);
+			this->CopyPassword15->Name = L"CopyPassword15";
+			this->CopyPassword15->Size = System::Drawing::Size(41, 41);
+			this->CopyPassword15->TabIndex = 4;
+			this->CopyPassword15->TabStop = false;
+			this->CopyPassword15->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseEnter);
+			this->CopyPassword15->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseLeave);
+			// 
+			// CopyEmail15
+			// 
+			this->CopyEmail15->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyEmail15.Image")));
+			this->CopyEmail15->Location = System::Drawing::Point(484, 11);
+			this->CopyEmail15->Name = L"CopyEmail15";
+			this->CopyEmail15->Size = System::Drawing::Size(41, 41);
+			this->CopyEmail15->TabIndex = 3;
+			this->CopyEmail15->TabStop = false;
+			this->CopyEmail15->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseEnter);
+			this->CopyEmail15->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseLeave);
+			// 
+			// pictureBox22
+			// 
+			this->pictureBox22->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox22.Image")));
+			this->pictureBox22->Location = System::Drawing::Point(437, 4);
+			this->pictureBox22->Name = L"pictureBox22";
+			this->pictureBox22->Size = System::Drawing::Size(2, 53);
+			this->pictureBox22->TabIndex = 2;
+			this->pictureBox22->TabStop = false;
+			// 
+			// Password15
+			// 
+			this->Password15->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Password15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Password15->Location = System::Drawing::Point(10, 34);
+			this->Password15->Name = L"Password15";
+			this->Password15->Size = System::Drawing::Size(403, 22);
+			this->Password15->TabIndex = 1;
+			this->Password15->Text = L"verygoodpassword";
+			this->Password15->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Email15
+			// 
+			this->Email15->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Email15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Email15->Location = System::Drawing::Point(10, 4);
+			this->Email15->Name = L"Email15";
+			this->Email15->Size = System::Drawing::Size(403, 22);
+			this->Email15->TabIndex = 0;
+			this->Email15->Text = L"Example";
+			this->Email15->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Censore14
+			// 
+			this->Censore14->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Censore14.BackgroundImage")));
+			this->Censore14->Controls->Add(this->Name14);
+			this->Censore14->Location = System::Drawing::Point(18, 293);
+			this->Censore14->Name = L"Censore14";
+			this->Censore14->Size = System::Drawing::Size(719, 69);
+			this->Censore14->TabIndex = 55;
+			this->Censore14->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// Name14
+			// 
+			this->Name14->Font = (gcnew System::Drawing::Font(L"Arial Black", 24.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Name14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)));
+			this->Name14->Location = System::Drawing::Point(32, 8);
+			this->Name14->Name = L"Name14";
+			this->Name14->Size = System::Drawing::Size(658, 53);
+			this->Name14->TabIndex = 0;
+			this->Name14->Text = L"Akayn Team";
+			this->Name14->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Name14->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// panel14
+			// 
+			this->panel14->Controls->Add(this->pictureBox25);
+			this->panel14->Controls->Add(this->Etc14);
+			this->panel14->Controls->Add(this->CopyPassword14);
+			this->panel14->Controls->Add(this->CopyEmail14);
+			this->panel14->Controls->Add(this->pictureBox31);
+			this->panel14->Controls->Add(this->Password14);
+			this->panel14->Controls->Add(this->Email14);
+			this->panel14->Location = System::Drawing::Point(50, 297);
+			this->panel14->Name = L"panel14";
+			this->panel14->Size = System::Drawing::Size(658, 60);
+			this->panel14->TabIndex = 48;
+			// 
+			// pictureBox25
+			// 
+			this->pictureBox25->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox25->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox25.Image")));
+			this->pictureBox25->Location = System::Drawing::Point(11, 29);
+			this->pictureBox25->Name = L"pictureBox25";
+			this->pictureBox25->Size = System::Drawing::Size(390, 2);
+			this->pictureBox25->TabIndex = 5;
+			this->pictureBox25->TabStop = false;
+			// 
+			// Etc14
+			// 
+			this->Etc14->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Etc14.Image")));
+			this->Etc14->Location = System::Drawing::Point(603, 11);
+			this->Etc14->Name = L"Etc14";
+			this->Etc14->Size = System::Drawing::Size(41, 41);
+			this->Etc14->TabIndex = 5;
+			this->Etc14->TabStop = false;
+			this->Etc14->MouseEnter += gcnew System::EventHandler(this, &MainForm::Etc_MouseEnter);
+			this->Etc14->MouseLeave += gcnew System::EventHandler(this, &MainForm::Etc_MouseLeave);
+			// 
+			// CopyPassword14
+			// 
+			this->CopyPassword14->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyPassword14.Image")));
+			this->CopyPassword14->Location = System::Drawing::Point(545, 11);
+			this->CopyPassword14->Name = L"CopyPassword14";
+			this->CopyPassword14->Size = System::Drawing::Size(41, 41);
+			this->CopyPassword14->TabIndex = 4;
+			this->CopyPassword14->TabStop = false;
+			this->CopyPassword14->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseEnter);
+			this->CopyPassword14->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseLeave);
+			// 
+			// CopyEmail14
+			// 
+			this->CopyEmail14->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyEmail14.Image")));
+			this->CopyEmail14->Location = System::Drawing::Point(484, 11);
+			this->CopyEmail14->Name = L"CopyEmail14";
+			this->CopyEmail14->Size = System::Drawing::Size(41, 41);
+			this->CopyEmail14->TabIndex = 3;
+			this->CopyEmail14->TabStop = false;
+			this->CopyEmail14->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseEnter);
+			this->CopyEmail14->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseLeave);
+			// 
+			// pictureBox31
+			// 
+			this->pictureBox31->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox31.Image")));
+			this->pictureBox31->Location = System::Drawing::Point(437, 4);
+			this->pictureBox31->Name = L"pictureBox31";
+			this->pictureBox31->Size = System::Drawing::Size(2, 53);
+			this->pictureBox31->TabIndex = 2;
+			this->pictureBox31->TabStop = false;
+			// 
+			// Password14
+			// 
+			this->Password14->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Password14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Password14->Location = System::Drawing::Point(10, 34);
+			this->Password14->Name = L"Password14";
+			this->Password14->Size = System::Drawing::Size(403, 22);
+			this->Password14->TabIndex = 1;
+			this->Password14->Text = L"verygoodpassword";
+			this->Password14->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Email14
+			// 
+			this->Email14->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Email14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Email14->Location = System::Drawing::Point(10, 4);
+			this->Email14->Name = L"Email14";
+			this->Email14->Size = System::Drawing::Size(403, 22);
+			this->Email14->TabIndex = 0;
+			this->Email14->Text = L"Example";
+			this->Email14->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Censore13
+			// 
+			this->Censore13->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Censore13.BackgroundImage")));
+			this->Censore13->Controls->Add(this->Name13);
+			this->Censore13->Location = System::Drawing::Point(18, 199);
+			this->Censore13->Name = L"Censore13";
+			this->Censore13->Size = System::Drawing::Size(719, 69);
+			this->Censore13->TabIndex = 54;
+			this->Censore13->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// Name13
+			// 
+			this->Name13->Font = (gcnew System::Drawing::Font(L"Arial Black", 24.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Name13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)));
+			this->Name13->Location = System::Drawing::Point(32, 8);
+			this->Name13->Name = L"Name13";
+			this->Name13->Size = System::Drawing::Size(658, 53);
+			this->Name13->TabIndex = 0;
+			this->Name13->Text = L"Akayn Team";
+			this->Name13->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Name13->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// panel13
+			// 
+			this->panel13->Controls->Add(this->pictureBox32);
+			this->panel13->Controls->Add(this->Etc13);
+			this->panel13->Controls->Add(this->CopyPassword13);
+			this->panel13->Controls->Add(this->CopyEmail13);
+			this->panel13->Controls->Add(this->pictureBox39);
+			this->panel13->Controls->Add(this->Password13);
+			this->panel13->Controls->Add(this->Email13);
+			this->panel13->Location = System::Drawing::Point(50, 203);
+			this->panel13->Name = L"panel13";
+			this->panel13->Size = System::Drawing::Size(658, 60);
+			this->panel13->TabIndex = 46;
+			// 
+			// pictureBox32
+			// 
+			this->pictureBox32->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox32->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox32.Image")));
+			this->pictureBox32->Location = System::Drawing::Point(11, 29);
+			this->pictureBox32->Name = L"pictureBox32";
+			this->pictureBox32->Size = System::Drawing::Size(390, 2);
+			this->pictureBox32->TabIndex = 5;
+			this->pictureBox32->TabStop = false;
+			// 
+			// Etc13
+			// 
+			this->Etc13->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Etc13.Image")));
+			this->Etc13->Location = System::Drawing::Point(603, 11);
+			this->Etc13->Name = L"Etc13";
+			this->Etc13->Size = System::Drawing::Size(41, 41);
+			this->Etc13->TabIndex = 5;
+			this->Etc13->TabStop = false;
+			this->Etc13->MouseEnter += gcnew System::EventHandler(this, &MainForm::Etc_MouseEnter);
+			this->Etc13->MouseLeave += gcnew System::EventHandler(this, &MainForm::Etc_MouseLeave);
+			// 
+			// CopyPassword13
+			// 
+			this->CopyPassword13->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyPassword13.Image")));
+			this->CopyPassword13->Location = System::Drawing::Point(545, 11);
+			this->CopyPassword13->Name = L"CopyPassword13";
+			this->CopyPassword13->Size = System::Drawing::Size(41, 41);
+			this->CopyPassword13->TabIndex = 4;
+			this->CopyPassword13->TabStop = false;
+			this->CopyPassword13->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseEnter);
+			this->CopyPassword13->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseLeave);
+			// 
+			// CopyEmail13
+			// 
+			this->CopyEmail13->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyEmail13.Image")));
+			this->CopyEmail13->Location = System::Drawing::Point(484, 11);
+			this->CopyEmail13->Name = L"CopyEmail13";
+			this->CopyEmail13->Size = System::Drawing::Size(41, 41);
+			this->CopyEmail13->TabIndex = 3;
+			this->CopyEmail13->TabStop = false;
+			this->CopyEmail13->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseEnter);
+			this->CopyEmail13->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseLeave);
+			// 
+			// pictureBox39
+			// 
+			this->pictureBox39->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox39.Image")));
+			this->pictureBox39->Location = System::Drawing::Point(437, 4);
+			this->pictureBox39->Name = L"pictureBox39";
+			this->pictureBox39->Size = System::Drawing::Size(2, 53);
+			this->pictureBox39->TabIndex = 2;
+			this->pictureBox39->TabStop = false;
+			// 
+			// Password13
+			// 
+			this->Password13->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Password13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Password13->Location = System::Drawing::Point(10, 34);
+			this->Password13->Name = L"Password13";
+			this->Password13->Size = System::Drawing::Size(403, 22);
+			this->Password13->TabIndex = 1;
+			this->Password13->Text = L"verygoodpassword";
+			this->Password13->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Email13
+			// 
+			this->Email13->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Email13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Email13->Location = System::Drawing::Point(10, 4);
+			this->Email13->Name = L"Email13";
+			this->Email13->Size = System::Drawing::Size(403, 22);
+			this->Email13->TabIndex = 0;
+			this->Email13->Text = L"Example";
+			this->Email13->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Censore12
+			// 
+			this->Censore12->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Censore12.BackgroundImage")));
+			this->Censore12->Controls->Add(this->Name12);
+			this->Censore12->Location = System::Drawing::Point(18, 105);
+			this->Censore12->Name = L"Censore12";
+			this->Censore12->Size = System::Drawing::Size(719, 69);
+			this->Censore12->TabIndex = 53;
+			this->Censore12->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// Name12
+			// 
+			this->Name12->Font = (gcnew System::Drawing::Font(L"Arial Black", 24.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Name12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)));
+			this->Name12->Location = System::Drawing::Point(32, 8);
+			this->Name12->Name = L"Name12";
+			this->Name12->Size = System::Drawing::Size(658, 53);
+			this->Name12->TabIndex = 0;
+			this->Name12->Text = L"Akayn Team";
+			this->Name12->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Name12->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// panel12
+			// 
+			this->panel12->Controls->Add(this->pictureBox40);
+			this->panel12->Controls->Add(this->Etc12);
+			this->panel12->Controls->Add(this->CopyPassword12);
+			this->panel12->Controls->Add(this->CopyEmail12);
+			this->panel12->Controls->Add(this->pictureBox49);
+			this->panel12->Controls->Add(this->Password12);
+			this->panel12->Controls->Add(this->Email12);
+			this->panel12->Location = System::Drawing::Point(50, 109);
+			this->panel12->Name = L"panel12";
+			this->panel12->Size = System::Drawing::Size(658, 60);
+			this->panel12->TabIndex = 43;
+			// 
+			// pictureBox40
+			// 
+			this->pictureBox40->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox40->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox40.Image")));
+			this->pictureBox40->Location = System::Drawing::Point(11, 29);
+			this->pictureBox40->Name = L"pictureBox40";
+			this->pictureBox40->Size = System::Drawing::Size(390, 2);
+			this->pictureBox40->TabIndex = 5;
+			this->pictureBox40->TabStop = false;
+			// 
+			// Etc12
+			// 
+			this->Etc12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Etc12.Image")));
+			this->Etc12->Location = System::Drawing::Point(603, 11);
+			this->Etc12->Name = L"Etc12";
+			this->Etc12->Size = System::Drawing::Size(41, 41);
+			this->Etc12->TabIndex = 5;
+			this->Etc12->TabStop = false;
+			this->Etc12->MouseEnter += gcnew System::EventHandler(this, &MainForm::Etc_MouseEnter);
+			this->Etc12->MouseLeave += gcnew System::EventHandler(this, &MainForm::Etc_MouseLeave);
+			// 
+			// CopyPassword12
+			// 
+			this->CopyPassword12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyPassword12.Image")));
+			this->CopyPassword12->Location = System::Drawing::Point(545, 11);
+			this->CopyPassword12->Name = L"CopyPassword12";
+			this->CopyPassword12->Size = System::Drawing::Size(41, 41);
+			this->CopyPassword12->TabIndex = 4;
+			this->CopyPassword12->TabStop = false;
+			this->CopyPassword12->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseEnter);
+			this->CopyPassword12->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseLeave);
+			// 
+			// CopyEmail12
+			// 
+			this->CopyEmail12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyEmail12.Image")));
+			this->CopyEmail12->Location = System::Drawing::Point(484, 11);
+			this->CopyEmail12->Name = L"CopyEmail12";
+			this->CopyEmail12->Size = System::Drawing::Size(41, 41);
+			this->CopyEmail12->TabIndex = 3;
+			this->CopyEmail12->TabStop = false;
+			this->CopyEmail12->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseEnter);
+			this->CopyEmail12->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseLeave);
+			// 
+			// pictureBox49
+			// 
+			this->pictureBox49->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox49.Image")));
+			this->pictureBox49->Location = System::Drawing::Point(437, 4);
+			this->pictureBox49->Name = L"pictureBox49";
+			this->pictureBox49->Size = System::Drawing::Size(2, 53);
+			this->pictureBox49->TabIndex = 2;
+			this->pictureBox49->TabStop = false;
+			// 
+			// Password12
+			// 
+			this->Password12->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Password12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Password12->Location = System::Drawing::Point(10, 34);
+			this->Password12->Name = L"Password12";
+			this->Password12->Size = System::Drawing::Size(403, 22);
+			this->Password12->TabIndex = 1;
+			this->Password12->Text = L"verygoodpassword";
+			this->Password12->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Email12
+			// 
+			this->Email12->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Email12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Email12->Location = System::Drawing::Point(10, 4);
+			this->Email12->Name = L"Email12";
+			this->Email12->Size = System::Drawing::Size(403, 22);
+			this->Email12->TabIndex = 0;
+			this->Email12->Text = L"Example";
+			this->Email12->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Censore11
+			// 
+			this->Censore11->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Censore11.BackgroundImage")));
+			this->Censore11->Controls->Add(this->Name11);
+			this->Censore11->Location = System::Drawing::Point(18, 11);
+			this->Censore11->Name = L"Censore11";
+			this->Censore11->Size = System::Drawing::Size(719, 69);
+			this->Censore11->TabIndex = 52;
+			this->Censore11->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// Name11
+			// 
+			this->Name11->Font = (gcnew System::Drawing::Font(L"Arial Black", 24.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Name11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)));
+			this->Name11->Location = System::Drawing::Point(32, 8);
+			this->Name11->Name = L"Name11";
+			this->Name11->Size = System::Drawing::Size(658, 53);
+			this->Name11->TabIndex = 0;
+			this->Name11->Text = L"Akayn Team3";
+			this->Name11->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Name11->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// panel11
+			// 
+			this->panel11->Controls->Add(this->pictureBox50);
+			this->panel11->Controls->Add(this->Etc11);
+			this->panel11->Controls->Add(this->CopyPassword11);
+			this->panel11->Controls->Add(this->CopyEmail11);
+			this->panel11->Controls->Add(this->pictureBox54);
+			this->panel11->Controls->Add(this->Password11);
+			this->panel11->Controls->Add(this->Email11);
+			this->panel11->Location = System::Drawing::Point(50, 15);
+			this->panel11->Name = L"panel11";
+			this->panel11->Size = System::Drawing::Size(658, 60);
+			this->panel11->TabIndex = 42;
+			// 
+			// pictureBox50
+			// 
+			this->pictureBox50->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox50->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox50.Image")));
+			this->pictureBox50->Location = System::Drawing::Point(11, 29);
+			this->pictureBox50->Name = L"pictureBox50";
+			this->pictureBox50->Size = System::Drawing::Size(390, 2);
+			this->pictureBox50->TabIndex = 5;
+			this->pictureBox50->TabStop = false;
+			// 
+			// Etc11
+			// 
+			this->Etc11->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Etc11.Image")));
+			this->Etc11->Location = System::Drawing::Point(603, 11);
+			this->Etc11->Name = L"Etc11";
+			this->Etc11->Size = System::Drawing::Size(41, 41);
+			this->Etc11->TabIndex = 5;
+			this->Etc11->TabStop = false;
+			this->Etc11->MouseEnter += gcnew System::EventHandler(this, &MainForm::Etc_MouseEnter);
+			this->Etc11->MouseLeave += gcnew System::EventHandler(this, &MainForm::Etc_MouseLeave);
+			// 
+			// CopyPassword11
+			// 
+			this->CopyPassword11->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyPassword11.Image")));
+			this->CopyPassword11->Location = System::Drawing::Point(545, 11);
+			this->CopyPassword11->Name = L"CopyPassword11";
+			this->CopyPassword11->Size = System::Drawing::Size(41, 41);
+			this->CopyPassword11->TabIndex = 4;
+			this->CopyPassword11->TabStop = false;
+			this->CopyPassword11->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseEnter);
+			this->CopyPassword11->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseLeave);
+			// 
+			// CopyEmail11
+			// 
+			this->CopyEmail11->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyEmail11.Image")));
+			this->CopyEmail11->Location = System::Drawing::Point(484, 11);
+			this->CopyEmail11->Name = L"CopyEmail11";
+			this->CopyEmail11->Size = System::Drawing::Size(41, 41);
+			this->CopyEmail11->TabIndex = 3;
+			this->CopyEmail11->TabStop = false;
+			this->CopyEmail11->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseEnter);
+			this->CopyEmail11->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseLeave);
+			// 
+			// pictureBox54
+			// 
+			this->pictureBox54->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox54.Image")));
+			this->pictureBox54->Location = System::Drawing::Point(437, 4);
+			this->pictureBox54->Name = L"pictureBox54";
+			this->pictureBox54->Size = System::Drawing::Size(2, 53);
+			this->pictureBox54->TabIndex = 2;
+			this->pictureBox54->TabStop = false;
+			// 
+			// Password11
+			// 
+			this->Password11->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Password11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Password11->Location = System::Drawing::Point(10, 34);
+			this->Password11->Name = L"Password11";
+			this->Password11->Size = System::Drawing::Size(403, 22);
+			this->Password11->TabIndex = 1;
+			this->Password11->Text = L"verygoodpassword";
+			this->Password11->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Email11
+			// 
+			this->Email11->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Email11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Email11->Location = System::Drawing::Point(10, 4);
+			this->Email11->Name = L"Email11";
+			this->Email11->Size = System::Drawing::Size(403, 22);
+			this->Email11->TabIndex = 0;
+			this->Email11->Text = L"Example";
+			this->Email11->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Add15
+			// 
+			this->Add15->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Add15.Image")));
+			this->Add15->Location = System::Drawing::Point(359, 403);
+			this->Add15->Name = L"Add15";
+			this->Add15->Size = System::Drawing::Size(38, 37);
+			this->Add15->TabIndex = 51;
+			this->Add15->TabStop = false;
+			this->Add15->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add15->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add15->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
+			// 
+			// Add14
+			// 
+			this->Add14->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Add14.Image")));
+			this->Add14->Location = System::Drawing::Point(359, 309);
+			this->Add14->Name = L"Add14";
+			this->Add14->Size = System::Drawing::Size(38, 37);
+			this->Add14->TabIndex = 49;
+			this->Add14->TabStop = false;
+			this->Add14->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add14->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add14->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
+			// 
+			// Add13
+			// 
+			this->Add13->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Add13.Image")));
+			this->Add13->Location = System::Drawing::Point(359, 215);
+			this->Add13->Name = L"Add13";
+			this->Add13->Size = System::Drawing::Size(38, 37);
+			this->Add13->TabIndex = 47;
+			this->Add13->TabStop = false;
+			this->Add13->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add13->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add13->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
+			// 
+			// Add12
+			// 
+			this->Add12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Add12.Image")));
+			this->Add12->Location = System::Drawing::Point(359, 122);
+			this->Add12->Name = L"Add12";
+			this->Add12->Size = System::Drawing::Size(38, 37);
+			this->Add12->TabIndex = 45;
+			this->Add12->TabStop = false;
+			this->Add12->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add12->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add12->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
+			// 
+			// Add11
+			// 
+			this->Add11->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Add11.Image")));
+			this->Add11->Location = System::Drawing::Point(359, 27);
+			this->Add11->Name = L"Add11";
+			this->Add11->Size = System::Drawing::Size(38, 37);
+			this->Add11->TabIndex = 44;
+			this->Add11->TabStop = false;
+			this->Add11->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add11->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add11->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
+			// 
+			// pictureBox60
+			// 
+			this->pictureBox60->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox60.Image")));
+			this->pictureBox60->Location = System::Drawing::Point(18, 387);
+			this->pictureBox60->Name = L"pictureBox60";
+			this->pictureBox60->Size = System::Drawing::Size(719, 69);
+			this->pictureBox60->TabIndex = 41;
+			this->pictureBox60->TabStop = false;
+			// 
+			// pictureBox61
+			// 
+			this->pictureBox61->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox61.Image")));
+			this->pictureBox61->Location = System::Drawing::Point(18, 293);
+			this->pictureBox61->Name = L"pictureBox61";
+			this->pictureBox61->Size = System::Drawing::Size(719, 69);
+			this->pictureBox61->TabIndex = 40;
+			this->pictureBox61->TabStop = false;
+			// 
+			// pictureBox62
+			// 
+			this->pictureBox62->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox62.Image")));
+			this->pictureBox62->Location = System::Drawing::Point(18, 199);
+			this->pictureBox62->Name = L"pictureBox62";
+			this->pictureBox62->Size = System::Drawing::Size(719, 69);
+			this->pictureBox62->TabIndex = 39;
+			this->pictureBox62->TabStop = false;
+			// 
+			// pictureBox63
+			// 
+			this->pictureBox63->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox63.Image")));
+			this->pictureBox63->Location = System::Drawing::Point(18, 11);
+			this->pictureBox63->Name = L"pictureBox63";
+			this->pictureBox63->Size = System::Drawing::Size(719, 69);
+			this->pictureBox63->TabIndex = 38;
+			this->pictureBox63->TabStop = false;
+			// 
+			// pictureBox64
+			// 
+			this->pictureBox64->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox64.Image")));
+			this->pictureBox64->Location = System::Drawing::Point(18, 105);
+			this->pictureBox64->Name = L"pictureBox64";
+			this->pictureBox64->Size = System::Drawing::Size(719, 69);
+			this->pictureBox64->TabIndex = 37;
+			this->pictureBox64->TabStop = false;
+			// 
 			// Group4
 			// 
+			this->Group4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Group4.BackgroundImage")));
+			this->Group4->Controls->Add(this->Censore20);
+			this->Group4->Controls->Add(this->panel20);
+			this->Group4->Controls->Add(this->Censore19);
+			this->Group4->Controls->Add(this->panel19);
+			this->Group4->Controls->Add(this->Censore18);
+			this->Group4->Controls->Add(this->panel18);
+			this->Group4->Controls->Add(this->Censore17);
+			this->Group4->Controls->Add(this->panel17);
+			this->Group4->Controls->Add(this->Censore16);
+			this->Group4->Controls->Add(this->panel16);
+			this->Group4->Controls->Add(this->Add20);
+			this->Group4->Controls->Add(this->Add19);
+			this->Group4->Controls->Add(this->Add18);
+			this->Group4->Controls->Add(this->Add17);
+			this->Group4->Controls->Add(this->Add16);
+			this->Group4->Controls->Add(this->pictureBox75);
+			this->Group4->Controls->Add(this->pictureBox76);
+			this->Group4->Controls->Add(this->pictureBox77);
+			this->Group4->Controls->Add(this->pictureBox100);
+			this->Group4->Controls->Add(this->pictureBox79);
 			this->Group4->Location = System::Drawing::Point(4, 4);
 			this->Group4->Name = L"Group4";
 			this->Group4->Padding = System::Windows::Forms::Padding(3);
@@ -2755,6 +3826,14 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->Search->MouseEnter += gcnew System::EventHandler(this, &MainForm::Search_MouseEnter);
 			this->Search->MouseLeave += gcnew System::EventHandler(this, &MainForm::Search_MouseLeave);
 			// 
+			// pictureBox11
+			// 
+			this->pictureBox11->Location = System::Drawing::Point(285, 486);
+			this->pictureBox11->Name = L"pictureBox11";
+			this->pictureBox11->Size = System::Drawing::Size(113, 26);
+			this->pictureBox11->TabIndex = 27;
+			this->pictureBox11->TabStop = false;
+			// 
 			// MainBkg
 			// 
 			this->MainBkg->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"MainBkg.Image")));
@@ -2933,13 +4012,660 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			this->label1->TabIndex = 5;
 			this->label1->Text = L"487, 496, 507";
 			// 
-			// pictureBox11
+			// Censore20
 			// 
-			this->pictureBox11->Location = System::Drawing::Point(285, 486);
-			this->pictureBox11->Name = L"pictureBox11";
-			this->pictureBox11->Size = System::Drawing::Size(113, 26);
-			this->pictureBox11->TabIndex = 27;
-			this->pictureBox11->TabStop = false;
+			this->Censore20->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Censore20.BackgroundImage")));
+			this->Censore20->Controls->Add(this->Name20);
+			this->Censore20->Location = System::Drawing::Point(17, 387);
+			this->Censore20->Name = L"Censore20";
+			this->Censore20->Size = System::Drawing::Size(720, 69);
+			this->Censore20->TabIndex = 76;
+			this->Censore20->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// Name20
+			// 
+			this->Name20->Font = (gcnew System::Drawing::Font(L"Arial Black", 24.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Name20->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)));
+			this->Name20->Location = System::Drawing::Point(32, 8);
+			this->Name20->Name = L"Name20";
+			this->Name20->Size = System::Drawing::Size(658, 53);
+			this->Name20->TabIndex = 0;
+			this->Name20->Text = L"Akayn Team";
+			this->Name20->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Name20->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// panel20
+			// 
+			this->panel20->Controls->Add(this->pictureBox17);
+			this->panel20->Controls->Add(this->Etc20);
+			this->panel20->Controls->Add(this->CopyPassword20);
+			this->panel20->Controls->Add(this->CopyEmail20);
+			this->panel20->Controls->Add(this->pictureBox27);
+			this->panel20->Controls->Add(this->Password20);
+			this->panel20->Controls->Add(this->Email20);
+			this->panel20->Location = System::Drawing::Point(50, 392);
+			this->panel20->Name = L"panel20";
+			this->panel20->Size = System::Drawing::Size(658, 60);
+			this->panel20->TabIndex = 70;
+			// 
+			// pictureBox17
+			// 
+			this->pictureBox17->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox17->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox17.Image")));
+			this->pictureBox17->Location = System::Drawing::Point(11, 29);
+			this->pictureBox17->Name = L"pictureBox17";
+			this->pictureBox17->Size = System::Drawing::Size(390, 2);
+			this->pictureBox17->TabIndex = 5;
+			this->pictureBox17->TabStop = false;
+			// 
+			// Etc20
+			// 
+			this->Etc20->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Etc20.Image")));
+			this->Etc20->Location = System::Drawing::Point(603, 11);
+			this->Etc20->Name = L"Etc20";
+			this->Etc20->Size = System::Drawing::Size(41, 41);
+			this->Etc20->TabIndex = 5;
+			this->Etc20->TabStop = false;
+			// 
+			// CopyPassword20
+			// 
+			this->CopyPassword20->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyPassword20.Image")));
+			this->CopyPassword20->Location = System::Drawing::Point(545, 11);
+			this->CopyPassword20->Name = L"CopyPassword20";
+			this->CopyPassword20->Size = System::Drawing::Size(41, 41);
+			this->CopyPassword20->TabIndex = 4;
+			this->CopyPassword20->TabStop = false;
+			// 
+			// CopyEmail20
+			// 
+			this->CopyEmail20->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyEmail20.Image")));
+			this->CopyEmail20->Location = System::Drawing::Point(484, 11);
+			this->CopyEmail20->Name = L"CopyEmail20";
+			this->CopyEmail20->Size = System::Drawing::Size(41, 41);
+			this->CopyEmail20->TabIndex = 3;
+			this->CopyEmail20->TabStop = false;
+			this->CopyEmail20->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseEnter);
+			this->CopyEmail20->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseLeave);
+			// 
+			// pictureBox27
+			// 
+			this->pictureBox27->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox27.Image")));
+			this->pictureBox27->Location = System::Drawing::Point(437, 4);
+			this->pictureBox27->Name = L"pictureBox27";
+			this->pictureBox27->Size = System::Drawing::Size(2, 53);
+			this->pictureBox27->TabIndex = 2;
+			this->pictureBox27->TabStop = false;
+			// 
+			// Password20
+			// 
+			this->Password20->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Password20->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Password20->Location = System::Drawing::Point(10, 34);
+			this->Password20->Name = L"Password20";
+			this->Password20->Size = System::Drawing::Size(403, 22);
+			this->Password20->TabIndex = 1;
+			this->Password20->Text = L"verygoodpassword";
+			this->Password20->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Email20
+			// 
+			this->Email20->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Email20->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Email20->Location = System::Drawing::Point(10, 4);
+			this->Email20->Name = L"Email20";
+			this->Email20->Size = System::Drawing::Size(403, 22);
+			this->Email20->TabIndex = 0;
+			this->Email20->Text = L"Example";
+			this->Email20->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Censore19
+			// 
+			this->Censore19->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Censore19.BackgroundImage")));
+			this->Censore19->Controls->Add(this->Name19);
+			this->Censore19->Location = System::Drawing::Point(18, 293);
+			this->Censore19->Name = L"Censore19";
+			this->Censore19->Size = System::Drawing::Size(719, 69);
+			this->Censore19->TabIndex = 75;
+			this->Censore19->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// Name19
+			// 
+			this->Name19->Font = (gcnew System::Drawing::Font(L"Arial Black", 24.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Name19->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)));
+			this->Name19->Location = System::Drawing::Point(32, 8);
+			this->Name19->Name = L"Name19";
+			this->Name19->Size = System::Drawing::Size(658, 53);
+			this->Name19->TabIndex = 0;
+			this->Name19->Text = L"Akayn Team";
+			this->Name19->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Name19->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// panel19
+			// 
+			this->panel19->Controls->Add(this->pictureBox30);
+			this->panel19->Controls->Add(this->Etc19);
+			this->panel19->Controls->Add(this->CopyPassword19);
+			this->panel19->Controls->Add(this->CopyEmail19);
+			this->panel19->Controls->Add(this->pictureBox41);
+			this->panel19->Controls->Add(this->Password19);
+			this->panel19->Controls->Add(this->Email19);
+			this->panel19->Location = System::Drawing::Point(50, 297);
+			this->panel19->Name = L"panel19";
+			this->panel19->Size = System::Drawing::Size(658, 60);
+			this->panel19->TabIndex = 68;
+			// 
+			// pictureBox30
+			// 
+			this->pictureBox30->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox30->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox30.Image")));
+			this->pictureBox30->Location = System::Drawing::Point(11, 29);
+			this->pictureBox30->Name = L"pictureBox30";
+			this->pictureBox30->Size = System::Drawing::Size(390, 2);
+			this->pictureBox30->TabIndex = 5;
+			this->pictureBox30->TabStop = false;
+			// 
+			// Etc19
+			// 
+			this->Etc19->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Etc19.Image")));
+			this->Etc19->Location = System::Drawing::Point(603, 11);
+			this->Etc19->Name = L"Etc19";
+			this->Etc19->Size = System::Drawing::Size(41, 41);
+			this->Etc19->TabIndex = 5;
+			this->Etc19->TabStop = false;
+			// 
+			// CopyPassword19
+			// 
+			this->CopyPassword19->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyPassword19.Image")));
+			this->CopyPassword19->Location = System::Drawing::Point(545, 11);
+			this->CopyPassword19->Name = L"CopyPassword19";
+			this->CopyPassword19->Size = System::Drawing::Size(41, 41);
+			this->CopyPassword19->TabIndex = 4;
+			this->CopyPassword19->TabStop = false;
+			// 
+			// CopyEmail19
+			// 
+			this->CopyEmail19->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyEmail19.Image")));
+			this->CopyEmail19->Location = System::Drawing::Point(484, 11);
+			this->CopyEmail19->Name = L"CopyEmail19";
+			this->CopyEmail19->Size = System::Drawing::Size(41, 41);
+			this->CopyEmail19->TabIndex = 3;
+			this->CopyEmail19->TabStop = false;
+			this->CopyEmail19->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseEnter);
+			this->CopyEmail19->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseLeave);
+			// 
+			// pictureBox41
+			// 
+			this->pictureBox41->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox41.Image")));
+			this->pictureBox41->Location = System::Drawing::Point(437, 4);
+			this->pictureBox41->Name = L"pictureBox41";
+			this->pictureBox41->Size = System::Drawing::Size(2, 53);
+			this->pictureBox41->TabIndex = 2;
+			this->pictureBox41->TabStop = false;
+			// 
+			// Password19
+			// 
+			this->Password19->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Password19->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Password19->Location = System::Drawing::Point(10, 34);
+			this->Password19->Name = L"Password19";
+			this->Password19->Size = System::Drawing::Size(403, 22);
+			this->Password19->TabIndex = 1;
+			this->Password19->Text = L"verygoodpassword";
+			this->Password19->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Email19
+			// 
+			this->Email19->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Email19->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Email19->Location = System::Drawing::Point(10, 4);
+			this->Email19->Name = L"Email19";
+			this->Email19->Size = System::Drawing::Size(403, 22);
+			this->Email19->TabIndex = 0;
+			this->Email19->Text = L"Example";
+			this->Email19->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Censore18
+			// 
+			this->Censore18->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Censore18.BackgroundImage")));
+			this->Censore18->Controls->Add(this->Name18);
+			this->Censore18->Location = System::Drawing::Point(18, 199);
+			this->Censore18->Name = L"Censore18";
+			this->Censore18->Size = System::Drawing::Size(719, 69);
+			this->Censore18->TabIndex = 74;
+			this->Censore18->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// Name18
+			// 
+			this->Name18->Font = (gcnew System::Drawing::Font(L"Arial Black", 24.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Name18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)));
+			this->Name18->Location = System::Drawing::Point(32, 8);
+			this->Name18->Name = L"Name18";
+			this->Name18->Size = System::Drawing::Size(658, 53);
+			this->Name18->TabIndex = 0;
+			this->Name18->Text = L"Akayn Team";
+			this->Name18->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Name18->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// panel18
+			// 
+			this->panel18->Controls->Add(this->pictureBox42);
+			this->panel18->Controls->Add(this->Etc18);
+			this->panel18->Controls->Add(this->CopyPassword18);
+			this->panel18->Controls->Add(this->CopyEmail18);
+			this->panel18->Controls->Add(this->pictureBox53);
+			this->panel18->Controls->Add(this->Password18);
+			this->panel18->Controls->Add(this->Email18);
+			this->panel18->Location = System::Drawing::Point(50, 203);
+			this->panel18->Name = L"panel18";
+			this->panel18->Size = System::Drawing::Size(658, 60);
+			this->panel18->TabIndex = 66;
+			// 
+			// pictureBox42
+			// 
+			this->pictureBox42->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox42->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox42.Image")));
+			this->pictureBox42->Location = System::Drawing::Point(11, 29);
+			this->pictureBox42->Name = L"pictureBox42";
+			this->pictureBox42->Size = System::Drawing::Size(390, 2);
+			this->pictureBox42->TabIndex = 5;
+			this->pictureBox42->TabStop = false;
+			// 
+			// Etc18
+			// 
+			this->Etc18->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Etc18.Image")));
+			this->Etc18->Location = System::Drawing::Point(603, 11);
+			this->Etc18->Name = L"Etc18";
+			this->Etc18->Size = System::Drawing::Size(41, 41);
+			this->Etc18->TabIndex = 5;
+			this->Etc18->TabStop = false;
+			// 
+			// CopyPassword18
+			// 
+			this->CopyPassword18->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyPassword18.Image")));
+			this->CopyPassword18->Location = System::Drawing::Point(545, 11);
+			this->CopyPassword18->Name = L"CopyPassword18";
+			this->CopyPassword18->Size = System::Drawing::Size(41, 41);
+			this->CopyPassword18->TabIndex = 4;
+			this->CopyPassword18->TabStop = false;
+			// 
+			// CopyEmail18
+			// 
+			this->CopyEmail18->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyEmail18.Image")));
+			this->CopyEmail18->Location = System::Drawing::Point(484, 11);
+			this->CopyEmail18->Name = L"CopyEmail18";
+			this->CopyEmail18->Size = System::Drawing::Size(41, 41);
+			this->CopyEmail18->TabIndex = 3;
+			this->CopyEmail18->TabStop = false;
+			this->CopyEmail18->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseEnter);
+			this->CopyEmail18->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseLeave);
+			// 
+			// pictureBox53
+			// 
+			this->pictureBox53->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox53.Image")));
+			this->pictureBox53->Location = System::Drawing::Point(437, 4);
+			this->pictureBox53->Name = L"pictureBox53";
+			this->pictureBox53->Size = System::Drawing::Size(2, 53);
+			this->pictureBox53->TabIndex = 2;
+			this->pictureBox53->TabStop = false;
+			// 
+			// Password18
+			// 
+			this->Password18->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Password18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Password18->Location = System::Drawing::Point(10, 34);
+			this->Password18->Name = L"Password18";
+			this->Password18->Size = System::Drawing::Size(403, 22);
+			this->Password18->TabIndex = 1;
+			this->Password18->Text = L"verygoodpassword";
+			this->Password18->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Email18
+			// 
+			this->Email18->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Email18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Email18->Location = System::Drawing::Point(10, 4);
+			this->Email18->Name = L"Email18";
+			this->Email18->Size = System::Drawing::Size(403, 22);
+			this->Email18->TabIndex = 0;
+			this->Email18->Text = L"Example";
+			this->Email18->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Censore17
+			// 
+			this->Censore17->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Censore17.BackgroundImage")));
+			this->Censore17->Controls->Add(this->Name17);
+			this->Censore17->Location = System::Drawing::Point(18, 105);
+			this->Censore17->Name = L"Censore17";
+			this->Censore17->Size = System::Drawing::Size(719, 69);
+			this->Censore17->TabIndex = 73;
+			this->Censore17->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// Name17
+			// 
+			this->Name17->Font = (gcnew System::Drawing::Font(L"Arial Black", 24.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Name17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)));
+			this->Name17->Location = System::Drawing::Point(32, 8);
+			this->Name17->Name = L"Name17";
+			this->Name17->Size = System::Drawing::Size(658, 53);
+			this->Name17->TabIndex = 0;
+			this->Name17->Text = L"Akayn Team";
+			this->Name17->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Name17->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// panel17
+			// 
+			this->panel17->Controls->Add(this->pictureBox55);
+			this->panel17->Controls->Add(this->Etc17);
+			this->panel17->Controls->Add(this->CopyPassword17);
+			this->panel17->Controls->Add(this->CopyEmail17);
+			this->panel17->Controls->Add(this->pictureBox59);
+			this->panel17->Controls->Add(this->Password17);
+			this->panel17->Controls->Add(this->Email17);
+			this->panel17->Location = System::Drawing::Point(50, 109);
+			this->panel17->Name = L"panel17";
+			this->panel17->Size = System::Drawing::Size(658, 60);
+			this->panel17->TabIndex = 63;
+			// 
+			// pictureBox55
+			// 
+			this->pictureBox55->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox55->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox55.Image")));
+			this->pictureBox55->Location = System::Drawing::Point(11, 29);
+			this->pictureBox55->Name = L"pictureBox55";
+			this->pictureBox55->Size = System::Drawing::Size(390, 2);
+			this->pictureBox55->TabIndex = 5;
+			this->pictureBox55->TabStop = false;
+			// 
+			// Etc17
+			// 
+			this->Etc17->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Etc17.Image")));
+			this->Etc17->Location = System::Drawing::Point(603, 11);
+			this->Etc17->Name = L"Etc17";
+			this->Etc17->Size = System::Drawing::Size(41, 41);
+			this->Etc17->TabIndex = 5;
+			this->Etc17->TabStop = false;
+			// 
+			// CopyPassword17
+			// 
+			this->CopyPassword17->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyPassword17.Image")));
+			this->CopyPassword17->Location = System::Drawing::Point(545, 11);
+			this->CopyPassword17->Name = L"CopyPassword17";
+			this->CopyPassword17->Size = System::Drawing::Size(41, 41);
+			this->CopyPassword17->TabIndex = 4;
+			this->CopyPassword17->TabStop = false;
+			// 
+			// CopyEmail17
+			// 
+			this->CopyEmail17->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyEmail17.Image")));
+			this->CopyEmail17->Location = System::Drawing::Point(484, 11);
+			this->CopyEmail17->Name = L"CopyEmail17";
+			this->CopyEmail17->Size = System::Drawing::Size(41, 41);
+			this->CopyEmail17->TabIndex = 3;
+			this->CopyEmail17->TabStop = false;
+			this->CopyEmail17->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseEnter);
+			this->CopyEmail17->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseLeave);
+			// 
+			// pictureBox59
+			// 
+			this->pictureBox59->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox59.Image")));
+			this->pictureBox59->Location = System::Drawing::Point(437, 4);
+			this->pictureBox59->Name = L"pictureBox59";
+			this->pictureBox59->Size = System::Drawing::Size(2, 53);
+			this->pictureBox59->TabIndex = 2;
+			this->pictureBox59->TabStop = false;
+			// 
+			// Password17
+			// 
+			this->Password17->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Password17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Password17->Location = System::Drawing::Point(10, 34);
+			this->Password17->Name = L"Password17";
+			this->Password17->Size = System::Drawing::Size(403, 22);
+			this->Password17->TabIndex = 1;
+			this->Password17->Text = L"verygoodpassword";
+			this->Password17->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Email17
+			// 
+			this->Email17->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Email17->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Email17->Location = System::Drawing::Point(10, 4);
+			this->Email17->Name = L"Email17";
+			this->Email17->Size = System::Drawing::Size(403, 22);
+			this->Email17->TabIndex = 0;
+			this->Email17->Text = L"Example";
+			this->Email17->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Censore16
+			// 
+			this->Censore16->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Censore16.BackgroundImage")));
+			this->Censore16->Controls->Add(this->Name16);
+			this->Censore16->Location = System::Drawing::Point(17, 11);
+			this->Censore16->Name = L"Censore16";
+			this->Censore16->Size = System::Drawing::Size(720, 69);
+			this->Censore16->TabIndex = 72;
+			this->Censore16->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// Name16
+			// 
+			this->Name16->Font = (gcnew System::Drawing::Font(L"Arial Black", 24.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Name16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(74)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
+				static_cast<System::Int32>(static_cast<System::Byte>(84)));
+			this->Name16->Location = System::Drawing::Point(32, 8);
+			this->Name16->Name = L"Name16";
+			this->Name16->Size = System::Drawing::Size(658, 53);
+			this->Name16->TabIndex = 0;
+			this->Name16->Text = L"Akayn Team4";
+			this->Name16->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Name16->Click += gcnew System::EventHandler(this, &MainForm::Censore1_Click);
+			// 
+			// panel16
+			// 
+			this->panel16->Controls->Add(this->pictureBox65);
+			this->panel16->Controls->Add(this->Etc16);
+			this->panel16->Controls->Add(this->CopyPassword16);
+			this->panel16->Controls->Add(this->CopyEmail16);
+			this->panel16->Controls->Add(this->pictureBox69);
+			this->panel16->Controls->Add(this->Password16);
+			this->panel16->Controls->Add(this->Email16);
+			this->panel16->Location = System::Drawing::Point(50, 15);
+			this->panel16->Name = L"panel16";
+			this->panel16->Size = System::Drawing::Size(658, 60);
+			this->panel16->TabIndex = 62;
+			// 
+			// pictureBox65
+			// 
+			this->pictureBox65->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox65->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox65.Image")));
+			this->pictureBox65->Location = System::Drawing::Point(11, 29);
+			this->pictureBox65->Name = L"pictureBox65";
+			this->pictureBox65->Size = System::Drawing::Size(390, 2);
+			this->pictureBox65->TabIndex = 5;
+			this->pictureBox65->TabStop = false;
+			// 
+			// Etc16
+			// 
+			this->Etc16->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Etc16.Image")));
+			this->Etc16->Location = System::Drawing::Point(603, 11);
+			this->Etc16->Name = L"Etc16";
+			this->Etc16->Size = System::Drawing::Size(41, 41);
+			this->Etc16->TabIndex = 5;
+			this->Etc16->TabStop = false;
+			// 
+			// CopyPassword16
+			// 
+			this->CopyPassword16->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyPassword16.Image")));
+			this->CopyPassword16->Location = System::Drawing::Point(545, 11);
+			this->CopyPassword16->Name = L"CopyPassword16";
+			this->CopyPassword16->Size = System::Drawing::Size(41, 41);
+			this->CopyPassword16->TabIndex = 4;
+			this->CopyPassword16->TabStop = false;
+			// 
+			// CopyEmail16
+			// 
+			this->CopyEmail16->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyEmail16.Image")));
+			this->CopyEmail16->Location = System::Drawing::Point(484, 11);
+			this->CopyEmail16->Name = L"CopyEmail16";
+			this->CopyEmail16->Size = System::Drawing::Size(41, 41);
+			this->CopyEmail16->TabIndex = 3;
+			this->CopyEmail16->TabStop = false;
+			this->CopyEmail16->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseEnter);
+			this->CopyEmail16->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseLeave);
+			// 
+			// pictureBox69
+			// 
+			this->pictureBox69->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox69.Image")));
+			this->pictureBox69->Location = System::Drawing::Point(437, 4);
+			this->pictureBox69->Name = L"pictureBox69";
+			this->pictureBox69->Size = System::Drawing::Size(2, 53);
+			this->pictureBox69->TabIndex = 2;
+			this->pictureBox69->TabStop = false;
+			// 
+			// Password16
+			// 
+			this->Password16->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Password16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Password16->Location = System::Drawing::Point(10, 34);
+			this->Password16->Name = L"Password16";
+			this->Password16->Size = System::Drawing::Size(403, 22);
+			this->Password16->TabIndex = 1;
+			this->Password16->Text = L"verygoodpassword";
+			this->Password16->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Email16
+			// 
+			this->Email16->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
+			this->Email16->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(104)), static_cast<System::Int32>(static_cast<System::Byte>(105)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->Email16->Location = System::Drawing::Point(10, 4);
+			this->Email16->Name = L"Email16";
+			this->Email16->Size = System::Drawing::Size(403, 22);
+			this->Email16->TabIndex = 0;
+			this->Email16->Text = L"Example";
+			this->Email16->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// Add20
+			// 
+			this->Add20->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Add20.Image")));
+			this->Add20->Location = System::Drawing::Point(359, 403);
+			this->Add20->Name = L"Add20";
+			this->Add20->Size = System::Drawing::Size(38, 37);
+			this->Add20->TabIndex = 71;
+			this->Add20->TabStop = false;
+			this->Add20->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add20->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add20->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
+			// 
+			// Add19
+			// 
+			this->Add19->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Add19.Image")));
+			this->Add19->Location = System::Drawing::Point(359, 309);
+			this->Add19->Name = L"Add19";
+			this->Add19->Size = System::Drawing::Size(38, 37);
+			this->Add19->TabIndex = 69;
+			this->Add19->TabStop = false;
+			this->Add19->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add19->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add19->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
+			// 
+			// Add18
+			// 
+			this->Add18->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Add18.Image")));
+			this->Add18->Location = System::Drawing::Point(359, 215);
+			this->Add18->Name = L"Add18";
+			this->Add18->Size = System::Drawing::Size(38, 37);
+			this->Add18->TabIndex = 67;
+			this->Add18->TabStop = false;
+			this->Add18->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add18->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add18->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
+			// 
+			// Add17
+			// 
+			this->Add17->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Add17.Image")));
+			this->Add17->Location = System::Drawing::Point(359, 122);
+			this->Add17->Name = L"Add17";
+			this->Add17->Size = System::Drawing::Size(38, 37);
+			this->Add17->TabIndex = 65;
+			this->Add17->TabStop = false;
+			this->Add17->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add17->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add17->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
+			// 
+			// Add16
+			// 
+			this->Add16->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Add16.Image")));
+			this->Add16->Location = System::Drawing::Point(359, 27);
+			this->Add16->Name = L"Add16";
+			this->Add16->Size = System::Drawing::Size(38, 37);
+			this->Add16->TabIndex = 64;
+			this->Add16->TabStop = false;
+			this->Add16->Click += gcnew System::EventHandler(this, &MainForm::Add7_Click);
+			this->Add16->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->Add16->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
+			// 
+			// pictureBox75
+			// 
+			this->pictureBox75->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox75.Image")));
+			this->pictureBox75->Location = System::Drawing::Point(18, 387);
+			this->pictureBox75->Name = L"pictureBox75";
+			this->pictureBox75->Size = System::Drawing::Size(719, 69);
+			this->pictureBox75->TabIndex = 61;
+			this->pictureBox75->TabStop = false;
+			// 
+			// pictureBox76
+			// 
+			this->pictureBox76->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox76.Image")));
+			this->pictureBox76->Location = System::Drawing::Point(18, 293);
+			this->pictureBox76->Name = L"pictureBox76";
+			this->pictureBox76->Size = System::Drawing::Size(719, 69);
+			this->pictureBox76->TabIndex = 60;
+			this->pictureBox76->TabStop = false;
+			// 
+			// pictureBox77
+			// 
+			this->pictureBox77->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox77.Image")));
+			this->pictureBox77->Location = System::Drawing::Point(18, 199);
+			this->pictureBox77->Name = L"pictureBox77";
+			this->pictureBox77->Size = System::Drawing::Size(719, 69);
+			this->pictureBox77->TabIndex = 59;
+			this->pictureBox77->TabStop = false;
+			// 
+			// pictureBox100
+			// 
+			this->pictureBox100->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox100.Image")));
+			this->pictureBox100->Location = System::Drawing::Point(18, 11);
+			this->pictureBox100->Name = L"pictureBox100";
+			this->pictureBox100->Size = System::Drawing::Size(719, 69);
+			this->pictureBox100->TabIndex = 58;
+			this->pictureBox100->TabStop = false;
+			// 
+			// pictureBox79
+			// 
+			this->pictureBox79->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox79.Image")));
+			this->pictureBox79->Location = System::Drawing::Point(18, 105);
+			this->pictureBox79->Name = L"pictureBox79";
+			this->pictureBox79->Size = System::Drawing::Size(719, 69);
+			this->pictureBox79->TabIndex = 57;
+			this->pictureBox79->TabStop = false;
 			// 
 			// MainForm
 			// 
@@ -3096,9 +4822,57 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox46))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox47))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox48))->EndInit();
+			this->Group3->ResumeLayout(false);
+			this->Censore15->ResumeLayout(false);
+			this->panel15->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox12))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc15))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword15))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail15))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox22))->EndInit();
+			this->Censore14->ResumeLayout(false);
+			this->panel14->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox25))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc14))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword14))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail14))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox31))->EndInit();
+			this->Censore13->ResumeLayout(false);
+			this->panel13->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox32))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc13))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword13))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail13))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox39))->EndInit();
+			this->Censore12->ResumeLayout(false);
+			this->panel12->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox40))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc12))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword12))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail12))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox49))->EndInit();
+			this->Censore11->ResumeLayout(false);
+			this->panel11->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox50))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc11))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword11))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail11))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox54))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add15))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add14))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add13))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add12))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add11))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox60))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox61))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox62))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox63))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox64))->EndInit();
+			this->Group4->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->About))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Settings))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Search))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MainBkg))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->OpacityBkg))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LefTo))->EndInit();
@@ -3107,7 +4881,51 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Clo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HorLin))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->EndInit();
+			this->Censore20->ResumeLayout(false);
+			this->panel20->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox17))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc20))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword20))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail20))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox27))->EndInit();
+			this->Censore19->ResumeLayout(false);
+			this->panel19->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox30))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc19))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword19))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail19))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox41))->EndInit();
+			this->Censore18->ResumeLayout(false);
+			this->panel18->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox42))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc18))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword18))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail18))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox53))->EndInit();
+			this->Censore17->ResumeLayout(false);
+			this->panel17->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox55))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc17))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword17))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail17))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox59))->EndInit();
+			this->Censore16->ResumeLayout(false);
+			this->panel16->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox65))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc16))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword16))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail16))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox69))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add20))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add19))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add18))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add17))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add16))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox75))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox76))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox77))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox100))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox79))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -3153,7 +4971,113 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			return stdString;
 		}
 
-		string crypt(string passw, int countofpass, cli::array<String^>^ Name) {
+		
+
+		int decpa2(int key) {
+			srand(key);
+			static const double fraction = 1.0 / (static_cast<double>(RAND_MAX) + 1.0);
+			int num = static_cast<int>(rand() * fraction * (300 - (-300) + 1) + (-300));
+			return num;
+		}
+		bool valid(string valpas, string cryptpass, string hsl, string sra) {
+			string strin = "";
+			string uncpass = "";
+			int how = 0;
+			vector<int> arr(cryptpass.size());
+			srand(stoi(sra));
+			int minus = rand();
+			for (int i = 0; i < cryptpass.size(); i++) {
+				arr[i] = cryptpass[i] - '0';
+			}
+
+			for (int i = 0; i < stoi(hsl); i++) {
+				for (int ite = 0; ite < arr[how]; ite++) {
+					strin += to_string(arr[how + ite + 1]);
+				}
+				try {
+					int key = decpa2(stoi(strin) + minus); //Тут тоже поправить ту же ошибку
+					uncpass += (char)key;
+					how += arr[how] + 1;
+					strin = "";
+				}
+				catch (System::Runtime::InteropServices::SEHException^ ex) {
+					return false;
+				}
+			}
+			MainPassword = marshal_as<String^>(uncpass);
+			return true;
+		}
+		bool decrypt(string file, cli::array<String^>^ Name) {
+			string strin;
+			fstream ope(file, ios::in);
+			string numDig;
+			ope >> numDig;
+			int how = 0;
+			int numDigits = numDig[0] - '0';
+			string howmsymb = numDig.substr(0, 1);
+			string hls = numDig.substr(1, stoi(howmsymb));
+			string howmpass = numDig.substr(stoi(howmsymb) + 1, 1);
+			string hlp = numDig.substr(stoi(howmsymb) + 2, stoi(howmpass));
+			string passw = numDig.substr(stoi(howmpass) + stoi(howmsymb) + 2, stoi(hlp));
+			string uti = numDig.substr(stoi(hlp) + stoi(howmpass) + 1 + stoi(howmsymb) + 1, 1);
+			string util = numDig.substr(stoi(hlp) + 2 + stoi(howmpass) + stoi(howmsymb) + 1, stoi(uti));
+			string hwmch = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 2 + stoi(howmsymb) + 1, 1);
+			string howmuch = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1, stoi(hwmch));
+			cout << "Введіть пароль: ";
+			string validate;
+			//cin >> validate;
+			validate = passw;
+			if (!valid(validate, passw, hls, util)) {
+				return false;
+			};
+			if (true) {
+
+				vector<vector<int>> arr(stoi(howmuch), vector<int>(1000));
+				srand(stoi(util));
+				int minus = rand();
+				string res = "";
+				string startnum[100];
+				string starthowmch[100];
+				string notnum[100];
+				string howmch[100];
+				string num[100];
+				int space = 0;
+				for (int p = 0; p < stoi(howmuch); p++) {
+					starthowmch[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + stoi(hwmch) + 1 + space, 1);
+					howmch[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + stoi(hwmch) + 1 + space, stoi(starthowmch[p]));
+					startnum[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + stoi(hwmch) + 1 + stoi(starthowmch[p]) + space, 1);
+					notnum[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + stoi(hwmch) + 1 + stoi(starthowmch[p]) + 1 + space, stoi(startnum[p]));
+					num[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + stoi(hwmch) + 1 + stoi(starthowmch[p]) + 1 + stoi(startnum[p]) + space, stoi(notnum[p]));
+					for (int i = 0; i < num[p].size(); i++) {
+						arr[p][i] = num[p][i] - '0';
+						space++;
+					}
+					space += 2 + stoi(starthowmch[p]) + stoi(startnum[p]);
+					for (int i = 0; i < stoi(howmch[p]); i++) {//Для каждого свой размер
+						for (int ite = 0; ite < arr[p][how]; ite++) {
+							strin += to_string(arr[p][how + ite + 1]);
+						}
+						try {
+							int key = decpa2(stoi(strin) + minus); //Тут ошибка чёт
+							res += putchar(key);
+							how += arr[p][how] + 1;
+							strin = "";
+						}
+						catch (System::Runtime::InteropServices::SEHException^ ex) {
+							return false;
+						}
+					}
+					Name[p] = marshal_as<String^>(res);
+					res = "";
+					how = 0;
+					cout << endl;
+				}
+				return true;
+			}
+			else cout << "Невірний пароль";
+		}
+
+		void crypt(string passw, int countofpass, cli::array<String^>^ Name, string Nam) {
 			random_device rd;
 			mt19937 gen(rd());
 			uniform_int_distribution<> dis(0, 10000);
@@ -3200,122 +5124,23 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 				mai += to_string(hwm(strlen(tempmai.c_str()))) + to_string(strlen(tempmai.c_str())) + tempmai;
 				tempmai = "";
 			}
-			return mai;
-		}
-
-		int decpa2(int key) {
-			srand(key);
-			static const double fraction = 1.0 / (static_cast<double>(RAND_MAX) + 1.0);
-			int num = static_cast<int>(rand() * fraction * (300 - (-300) + 1) + (-300));
-			return num;
-		}
-		bool valid(string valpas, string cryptpass, string hsl, string sra) {
-			string strin = "";
-			string uncpass = "";
-			int how = 0;
-			vector<int> arr(cryptpass.size());
-			srand(stoi(sra));
-			int minus = rand();
-			for (int i = 0; i < cryptpass.size(); i++) {
-				arr[i] = cryptpass[i] - '0';
+			fstream nam(Nam, ios::out);
+			if (nam.is_open()) {
+				nam << mai;
 			}
-
-			for (int i = 0; i < stoi(hsl); i++) {
-				for (int ite = 0; ite < arr[how]; ite++) {
-					strin += to_string(arr[how + ite + 1]);
-				}
-				int key = decpa2(stoi(strin) + minus);
-				uncpass += (char)key;
-				how += arr[how] + 1;
-				strin = "";
+			nam.close();
+			if (!decrypt(Nam, Name)) {
+				crypt(passw, countofpass, Name, Nam);
 			}
-			MainPassword = marshal_as<String^>(uncpass);
-			if (valpas == uncpass) return true;
-			else return false;
-		}
-		void decrypt(string file, cli::array<String^>^ Name) {
-			string strin;
-			fstream ope(file, ios::in);
-			string numDig;
-			ope >> numDig;
-			int how = 0;
-			int numDigits = numDig[0] - '0';
-			string howmsymb = numDig.substr(0, 1);
-			string hls = numDig.substr(1, stoi(howmsymb));
-			string howmpass = numDig.substr(stoi(howmsymb) + 1, 1);
-			string hlp = numDig.substr(stoi(howmsymb) + 2, stoi(howmpass));
-			string passw = numDig.substr(stoi(howmpass) + stoi(howmsymb) + 2, stoi(hlp));
-			string uti = numDig.substr(stoi(hlp) + stoi(howmpass) + 1 + stoi(howmsymb) + 1, 1);
-			string util = numDig.substr(stoi(hlp) + 2 + stoi(howmpass) + stoi(howmsymb) + 1, stoi(uti));
-			string hwmch = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 2 + stoi(howmsymb) + 1, 1);
-			string howmuch = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1, stoi(hwmch));
-			cout << "Введіть пароль: ";
-			string validate;
-			//cin >> validate;
-			validate = passw;
-			valid(validate, passw, hls, util);
-			if (true) {
-
-				vector<vector<int>> arr(stoi(howmuch), vector<int>(1000));
-				srand(stoi(util));
-				int minus = rand();
-				string res = "";
-				string startnum[100];
-				string starthowmch[100];
-				string notnum[100];
-				string howmch[100];
-				string num[100];
-				int space = 0;
-				for (int p = 0; p < stoi(howmuch); p++) {
-					starthowmch[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + stoi(hwmch) + 1 + space, 1);
-					howmch[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + stoi(hwmch) + 1 + space, stoi(starthowmch[p]));
-					startnum[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + stoi(hwmch) + 1 + stoi(starthowmch[p]) + space, 1);
-					notnum[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + stoi(hwmch) + 1 + stoi(starthowmch[p]) + 1 + space, stoi(startnum[p]));
-					num[p] = numDig.substr(stoi(hlp) + stoi(uti) + stoi(howmpass) + 3 + stoi(howmsymb) + 1 + stoi(hwmch) + 1 + stoi(starthowmch[p]) + 1 + stoi(startnum[p]) + space, stoi(notnum[p]));
-					for (int i = 0; i < num[p].size(); i++) {
-						arr[p][i] = num[p][i] - '0';
-						space++;
-					}
-					space += 2 + stoi(starthowmch[p]) + stoi(startnum[p]);
-					for (int i = 0; i < stoi(howmch[p]); i++) {//Для каждого свой размер
-						for (int ite = 0; ite < arr[p][how]; ite++) {
-							strin += to_string(arr[p][how + ite + 1]);
-						}
-						int key = decpa2(stoi(strin) + minus);
-						res += putchar(key);
-						how += arr[p][how] + 1;
-						strin = "";
-						
-					}
-					Name[p] = marshal_as<String^>(res);
-					res = "";
-					how = 0;
-					cout << endl;
-				}
-			}
-			else cout << "Невірний пароль";
 		}
 
 		//Тут сохраним или обновим конфиг
 		void SaveConfig() {
 			if (verify == 1) {
 				string password = ConvertToStdString(MainPassword);
-				
-				fstream nam("Names.acm", ios::out);
-				if (nam.is_open()) {
-					nam << crypt(password, NumOfAll, NameOf);
-				}
-				nam.close();
-				fstream email("Emails.acm", ios::out);
-				if (email.is_open()) {
-					email << crypt(password, NumOfAll, EmailOf);
-				}
-				email.close();
-				fstream passw("Passwords.acm", ios::out);
-				if (passw.is_open()) {
-					passw << crypt(password, NumOfAll, PaswdOf);
-				}
-				passw.close();
+				crypt(password, NumOfAll, NameOf, "Names.acm");
+				crypt(password, NumOfAll, EmailOf, "Emails.acm");
+				crypt(password, NumOfAll, PaswdOf, "Passwords.acm");
 			}
 		}
 
@@ -3622,89 +5447,91 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			const char* password = passw.c_str();
 			return marshal_as<String^>(password);
 		}
-		//Весь фарш там 
+		//Весь фарш там
+		
+		//Скроем незаполненные ячейки
 		int HideEl() {
 			try {
-				for (int i = NumOfAll; i < 95; i++) {
-					String^ PanName = String::Format("panel{0}", i + 1);
-					String^ CenName = String::Format("Censore{0}", i + 1);
+				for (int i = NumOfAll+1; i < 95; i++) {
+					String^ PanName = String::Format("panel{0}", i);
+					String^ CenName = String::Format("Censore{0}", i);
 
 					Panel^ Pan = nullptr;
 					Panel^ Cen = nullptr;
 
-					if (i <= 4) {
+					if (i <= 5) {
 						Pan = dynamic_cast<Panel^>(Group1->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group1->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 9) {
+					else if (i <= 10) {
 						Pan = dynamic_cast<Panel^>(Group2->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group2->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 14) {
+					else if (i <= 15) {
 						Pan = dynamic_cast<Panel^>(Group3->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group3->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 19) {
+					else if (i <= 20) {
 						Pan = dynamic_cast<Panel^>(Group4->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group4->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 24) {
+					else if (i <= 25) {
 						Pan = dynamic_cast<Panel^>(Group5->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group5->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 29) {
+					else if (i <= 30) {
 						Pan = dynamic_cast<Panel^>(Group6->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group6->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 34) {
+					else if (i <= 35) {
 						Pan = dynamic_cast<Panel^>(Group7->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group7->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 39) {
+					else if (i <= 40) {
 						Pan = dynamic_cast<Panel^>(Group8->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group8->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 44) {
+					else if (i <= 45) {
 						Pan = dynamic_cast<Panel^>(Group9->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group9->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 49) {
+					else if (i <= 50) {
 						Pan = dynamic_cast<Panel^>(Group10->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group10->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 54) {
+					else if (i <= 55) {
 						Pan = dynamic_cast<Panel^>(Group11->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group11->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 59) {
+					else if (i <= 60) {
 						Pan = dynamic_cast<Panel^>(Group12->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group12->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 64) {
+					else if (i <= 65) {
 						Pan = dynamic_cast<Panel^>(Group13->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group13->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 69) {
+					else if (i <= 70) {
 						Pan = dynamic_cast<Panel^>(Group14->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group14->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 74) {
+					else if (i <= 75) {
 						Pan = dynamic_cast<Panel^>(Group15->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group15->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 79) {
+					else if (i <= 80) {
 						Pan = dynamic_cast<Panel^>(Group16->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group16->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 84) {
+					else if (i <= 85) {
 						Pan = dynamic_cast<Panel^>(Group17->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group17->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 89) {
+					else if (i <= 90) {
 						Pan = dynamic_cast<Panel^>(Group18->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group18->Controls->Find(CenName, true)[0]);
 					}
-					else if (i <= 94) {
+					else if (i <= 95) {
 						Pan = dynamic_cast<Panel^>(Group19->Controls->Find(PanName, true)[0]);
 						Cen = dynamic_cast<Panel^>(Group19->Controls->Find(CenName, true)[0]);
 					}
@@ -3719,7 +5546,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 				}
 				return 0;
 			}
-			catch (IndexOutOfRangeException^) {
+			catch (IndexOutOfRangeException^ ex) {
 				return 1;
 			}
 		}
@@ -3734,20 +5561,20 @@ private: System::Windows::Forms::PictureBox^ pictureBox11;
 			for (int i = 0; i < CFP(); i++) {
 				String^ PanName = String::Format("Page{0}", i + 2);
 				PictureBox^ Pan = dynamic_cast<PictureBox^>(this->Controls->Find(PanName, true)[0]);
-				if (Pan != nullptr) {
+				if (Pan != nullptr && i != ActualPage - 1) {
 					Pan->Location = System::Drawing::Point(Pan->Location.X, 496);
 					Pan->Enabled = true;
 				}
 			}
 		}
-
+		int ActualPage = 0;
 		//Спрячем все страницы
 		void HideAllPages() {
 			for (int i = 0; i < 19; i++) {
 				if (i <= CountOfPages) {
 					String^ PanName = String::Format("Page{0}", i + 1);
 					PictureBox^ Pan = dynamic_cast<PictureBox^>(this->Controls->Find(PanName, true)[0]);
-					if (Pan != nullptr) {
+					if (Pan != nullptr && i != ActualPage) {
 						Pan->Location = System::Drawing::Point(Pan->Location.X, 496);
 					}
 				}
@@ -3922,14 +5749,11 @@ private: System::Void AgreeLogIn_MouseClick(System::Object^ sender, System::Wind
 	AgreeLogIn->Image = gcnew Bitmap("Resources\\LogInPart\\Agree.png");
 	if (MainPassword == LogInBox->Text) {
 		tabControl1->SelectedIndex = 2;
-		
 	}
 	else {
 		LogInBox->Text = "Неправильний пароль"; HideTxt->Enabled = true; LogInBox->Enabled = false;
 	}
 	//Тут я сча сделаю перенос окна
-	
-
 }
 private: System::Void MainForm_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		isDragging = false;
@@ -4226,13 +6050,17 @@ private: System::Void Add5_MouseLeave(System::Object^ sender, System::EventArgs^
 	PictureBox^ clickedButton = safe_cast<PictureBox^>(sender);
 	clickedButton->Image = gcnew Bitmap("Resources\\MainPart\\Add.png");
 }
+	   
 private: System::Void Page1_Click(System::Object^ sender, System::EventArgs^ e) {
 	PictureBox^ clickedButton = safe_cast<PictureBox^>(sender);
-	HideAllPages();
-	clickedButton->Location = System::Drawing::Point(clickedButton->Location.X, 487);
 	PictureBox^ clickedLabel = dynamic_cast<PictureBox^>(sender);
 	int num = stoi(marshal_as<string>(clickedLabel->Name->Substring(4)));
+	ActualPage = num - 1;
+	HideAllPages();
+	clickedButton->Location = System::Drawing::Point(clickedButton->Location.X, 487);
+	
 	Pages->SelectedIndex = num-1;
+	
 }
 private: System::Void Add6_Click(System::Object^ sender, System::EventArgs^ e) {
 	PlusForm(5);
@@ -4241,6 +6069,8 @@ private: System::Void Add7_Click(System::Object^ sender, System::EventArgs^ e) {
 	PictureBox^ clickedLabel = dynamic_cast<PictureBox^>(sender);
 	int num = stoi(marshal_as<string>(clickedLabel->Name->Substring(3)));
 	PlusForm(num-1);
+}
+private: System::Void Add5_MouseEnters(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
