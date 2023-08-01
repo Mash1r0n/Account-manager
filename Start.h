@@ -185,7 +185,8 @@ namespace AccountManager {
         {
             this->timer1->Enabled = true;
             SetRegion();
-
+            BringToFront();
+            Focus();
         }
         void SetRegion()
         {
