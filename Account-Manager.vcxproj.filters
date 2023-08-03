@@ -30,6 +30,9 @@
     <ClCompile Include="OurFunc.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="Etcent.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Start.h">
@@ -45,6 +48,9 @@
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
     <ClInclude Include="AddPassword.h">
+      <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
+    <ClInclude Include="Etcent.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
   </ItemGroup>

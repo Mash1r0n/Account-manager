@@ -17,6 +17,7 @@
 #include <vcclr.h>
 #include <cstring>
 #include "AddPassword.h"
+#include "Etcent.h"
 #pragma warning(disable:4996)
 static int massiveofseed[999];
 static bool bns[50] = { false, false, false, false, false, false, false };
@@ -82,7 +83,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox9;
 
 
 
-private: System::Windows::Forms::PictureBox^ Add;
+
 private: System::Windows::Forms::Panel^ All;
 
 
@@ -98,6 +99,11 @@ private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::PictureBox^ AddNewFor;
 
 	private: System::Windows::Forms::PictureBox^ CopyPassword;
+	private: System::Windows::Forms::PictureBox^ ProcessOfDrag;
+	private: System::Windows::Forms::Timer^ RepetProcess;
+	private: System::Windows::Forms::PictureBox^ ShowCensore;
+	private: System::Windows::Forms::PictureBox^ Vline;
+
 
 
 
@@ -193,17 +199,19 @@ private: System::Windows::Forms::Label^ label2;
 			this->TxtLog = (gcnew System::Windows::Forms::PictureBox());
 			this->LetsLog = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->Vline = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->ShowCensore = (gcnew System::Windows::Forms::PictureBox());
 			this->Del = (gcnew System::Windows::Forms::PictureBox());
 			this->Etc = (gcnew System::Windows::Forms::PictureBox());
 			this->AddNewFor = (gcnew System::Windows::Forms::PictureBox());
 			this->CopyPassword = (gcnew System::Windows::Forms::PictureBox());
 			this->CopyEmail = (gcnew System::Windows::Forms::PictureBox());
-			this->Add = (gcnew System::Windows::Forms::PictureBox());
 			this->About = (gcnew System::Windows::Forms::PictureBox());
 			this->Settings = (gcnew System::Windows::Forms::PictureBox());
 			this->Search = (gcnew System::Windows::Forms::PictureBox());
 			this->All = (gcnew System::Windows::Forms::Panel());
+			this->ProcessOfDrag = (gcnew System::Windows::Forms::PictureBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
@@ -233,6 +241,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->Bck = (gcnew System::Windows::Forms::Timer(this->components));
 			this->AddDat = (gcnew System::Windows::Forms::Timer(this->components));
 			this->ConAdd = (gcnew System::Windows::Forms::Timer(this->components));
+			this->RepetProcess = (gcnew System::Windows::Forms::Timer(this->components));
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->BeginInit();
@@ -243,16 +252,19 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TxtLog))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LetsLog))->BeginInit();
 			this->tabPage3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Vline))->BeginInit();
 			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ShowCensore))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Del))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AddNewFor))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->About))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Settings))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Search))->BeginInit();
+			this->All->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ProcessOfDrag))->BeginInit();
 			this->panel3->SuspendLayout();
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
@@ -402,8 +414,8 @@ private: System::Windows::Forms::Label^ label2;
 			// tabPage3
 			// 
 			this->tabPage3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tabPage3.BackgroundImage")));
+			this->tabPage3->Controls->Add(this->Vline);
 			this->tabPage3->Controls->Add(this->panel2);
-			this->tabPage3->Controls->Add(this->Add);
 			this->tabPage3->Controls->Add(this->About);
 			this->tabPage3->Controls->Add(this->Settings);
 			this->tabPage3->Controls->Add(this->Search);
@@ -419,75 +431,104 @@ private: System::Windows::Forms::Label^ label2;
 			this->tabPage3->Text = L"tabPage3";
 			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
+			// Vline
+			// 
+			this->Vline->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Vline.Image")));
+			this->Vline->Location = System::Drawing::Point(227, 19);
+			this->Vline->Name = L"Vline";
+			this->Vline->Size = System::Drawing::Size(2, 467);
+			this->Vline->TabIndex = 36;
+			this->Vline->TabStop = false;
+			// 
 			// panel2
 			// 
+			this->panel2->Controls->Add(this->ShowCensore);
 			this->panel2->Controls->Add(this->Del);
 			this->panel2->Controls->Add(this->Etc);
 			this->panel2->Controls->Add(this->AddNewFor);
 			this->panel2->Controls->Add(this->CopyPassword);
 			this->panel2->Controls->Add(this->CopyEmail);
-			this->panel2->Location = System::Drawing::Point(986, 27);
+			this->panel2->Location = System::Drawing::Point(986, 12);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(108, 485);
+			this->panel2->Size = System::Drawing::Size(108, 500);
 			this->panel2->TabIndex = 33;
+			// 
+			// ShowCensore
+			// 
+			this->ShowCensore->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ShowCensore.Image")));
+			this->ShowCensore->Location = System::Drawing::Point(10, 259);
+			this->ShowCensore->Name = L"ShowCensore";
+			this->ShowCensore->Size = System::Drawing::Size(41, 41);
+			this->ShowCensore->TabIndex = 1;
+			this->ShowCensore->TabStop = false;
+			this->ShowCensore->QueryContinueDrag += gcnew System::Windows::Forms::QueryContinueDragEventHandler(this, &MainForm::ShowCensore_QueryContinueDrag);
+			this->ShowCensore->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::ShowCensore_MouseDown);
+			this->ShowCensore->MouseEnter += gcnew System::EventHandler(this, &MainForm::ShowCensore_MouseEnter);
+			this->ShowCensore->MouseLeave += gcnew System::EventHandler(this, &MainForm::ShowCensore_MouseLeave);
 			// 
 			// Del
 			// 
 			this->Del->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Del.Image")));
-			this->Del->Location = System::Drawing::Point(12, 406);
+			this->Del->Location = System::Drawing::Point(10, 429);
 			this->Del->Name = L"Del";
 			this->Del->Size = System::Drawing::Size(41, 41);
 			this->Del->TabIndex = 40;
 			this->Del->TabStop = false;
+			this->Del->QueryContinueDrag += gcnew System::Windows::Forms::QueryContinueDragEventHandler(this, &MainForm::Del_QueryContinueDrag);
+			this->Del->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::Del_MouseDown);
+			this->Del->MouseEnter += gcnew System::EventHandler(this, &MainForm::Del_MouseEnter);
+			this->Del->MouseLeave += gcnew System::EventHandler(this, &MainForm::Del_MouseLeave);
 			// 
 			// Etc
 			// 
 			this->Etc->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Etc.Image")));
-			this->Etc->Location = System::Drawing::Point(12, 306);
+			this->Etc->Location = System::Drawing::Point(10, 344);
 			this->Etc->Name = L"Etc";
 			this->Etc->Size = System::Drawing::Size(41, 41);
 			this->Etc->TabIndex = 39;
 			this->Etc->TabStop = false;
+			this->Etc->QueryContinueDrag += gcnew System::Windows::Forms::QueryContinueDragEventHandler(this, &MainForm::Etc_QueryContinueDrag);
+			this->Etc->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::Etc_MouseDown);
+			this->Etc->MouseEnter += gcnew System::EventHandler(this, &MainForm::Etc_MouseEnter);
+			this->Etc->MouseLeave += gcnew System::EventHandler(this, &MainForm::Etc_MouseLeave);
 			// 
 			// AddNewFor
 			// 
 			this->AddNewFor->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AddNewFor.Image")));
-			this->AddNewFor->Location = System::Drawing::Point(12, 206);
+			this->AddNewFor->Location = System::Drawing::Point(10, 174);
 			this->AddNewFor->Name = L"AddNewFor";
 			this->AddNewFor->Size = System::Drawing::Size(41, 41);
 			this->AddNewFor->TabIndex = 38;
 			this->AddNewFor->TabStop = false;
 			this->AddNewFor->Click += gcnew System::EventHandler(this, &MainForm::AddFormNow_Click);
+			this->AddNewFor->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
+			this->AddNewFor->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
 			// 
 			// CopyPassword
 			// 
 			this->CopyPassword->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyPassword.Image")));
-			this->CopyPassword->Location = System::Drawing::Point(12, 106);
+			this->CopyPassword->Location = System::Drawing::Point(10, 89);
 			this->CopyPassword->Name = L"CopyPassword";
 			this->CopyPassword->Size = System::Drawing::Size(41, 41);
 			this->CopyPassword->TabIndex = 37;
 			this->CopyPassword->TabStop = false;
+			this->CopyPassword->QueryContinueDrag += gcnew System::Windows::Forms::QueryContinueDragEventHandler(this, &MainForm::CopyPassword_QueryContinueDrag);
 			this->CopyPassword->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::CopyPassword_MouseDown);
+			this->CopyPassword->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseEnter);
+			this->CopyPassword->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseLeave);
 			// 
 			// CopyEmail
 			// 
 			this->CopyEmail->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyEmail.Image")));
-			this->CopyEmail->Location = System::Drawing::Point(12, 6);
+			this->CopyEmail->Location = System::Drawing::Point(10, 4);
 			this->CopyEmail->Name = L"CopyEmail";
 			this->CopyEmail->Size = System::Drawing::Size(41, 41);
 			this->CopyEmail->TabIndex = 36;
 			this->CopyEmail->TabStop = false;
+			this->CopyEmail->QueryContinueDrag += gcnew System::Windows::Forms::QueryContinueDragEventHandler(this, &MainForm::CopyEmail_QueryContinueDrag);
 			this->CopyEmail->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::CopyEmail_MouseDown);
-			// 
-			// Add
-			// 
-			this->Add->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
-				static_cast<System::Int32>(static_cast<System::Byte>(39)));
-			this->Add->Location = System::Drawing::Point(235, 6);
-			this->Add->Name = L"Add";
-			this->Add->Size = System::Drawing::Size(44, 496);
-			this->Add->TabIndex = 3;
-			this->Add->TabStop = false;
+			this->CopyEmail->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseEnter);
+			this->CopyEmail->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseLeave);
 			// 
 			// About
 			// 
@@ -531,10 +572,22 @@ private: System::Windows::Forms::Label^ label2;
 			this->All->AutoScroll = true;
 			this->All->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
 				static_cast<System::Int32>(static_cast<System::Byte>(39)));
-			this->All->Location = System::Drawing::Point(287, 27);
+			this->All->Controls->Add(this->ProcessOfDrag);
+			this->All->Location = System::Drawing::Point(266, 12);
 			this->All->Name = L"All";
-			this->All->Size = System::Drawing::Size(753, 475);
+			this->All->Size = System::Drawing::Size(774, 490);
 			this->All->TabIndex = 32;
+			// 
+			// ProcessOfDrag
+			// 
+			this->ProcessOfDrag->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ProcessOfDrag.BackgroundImage")));
+			this->ProcessOfDrag->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ProcessOfDrag->Location = System::Drawing::Point(3, 0);
+			this->ProcessOfDrag->Name = L"ProcessOfDrag";
+			this->ProcessOfDrag->Size = System::Drawing::Size(10, 10);
+			this->ProcessOfDrag->TabIndex = 0;
+			this->ProcessOfDrag->TabStop = false;
+			this->ProcessOfDrag->Visible = false;
 			// 
 			// panel3
 			// 
@@ -766,6 +819,11 @@ private: System::Windows::Forms::Label^ label2;
 			this->ConAdd->Enabled = true;
 			this->ConAdd->Tick += gcnew System::EventHandler(this, &MainForm::ConAdd_Tick);
 			// 
+			// RepetProcess
+			// 
+			this->RepetProcess->Interval = 300;
+			this->RepetProcess->Tick += gcnew System::EventHandler(this, &MainForm::RepetProcess_Tick);
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -805,16 +863,19 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TxtLog))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LetsLog))->EndInit();
 			this->tabPage3->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Vline))->EndInit();
 			this->panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ShowCensore))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Del))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AddNewFor))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Add))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->About))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Settings))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Search))->EndInit();
+			this->All->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ProcessOfDrag))->EndInit();
 			this->panel3->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
@@ -838,6 +899,7 @@ private: System::Windows::Forms::Label^ label2;
 		bool LetsBack = false;
 		AddPassword^ PassAdd = gcnew AddPassword;
 		Start^ Begin = gcnew Start;
+		Etcent^ etc = gcnew Etcent;
 		//Тут вообще трындец
 		private: System::Void CheckLabelOverflow(Label^ label) {
 			// Создаем объект Graphics для текущего элемента
@@ -1087,6 +1149,7 @@ private: System::Windows::Forms::Label^ label2;
 				Places[i]->AllowDrop = true;
 				Places[i]->DragEnter += gcnew System::Windows::Forms::DragEventHandler(this, &MainForm::All_DragEnter);
 				Places[i]->DragDrop += gcnew System::Windows::Forms::DragEventHandler(this, &MainForm::All_DragDrop);
+				Places[i]->DragLeave += gcnew System::EventHandler(this, &MainForm::All_DragLeave);
 
 				Emails[i] = gcnew Label();
 				Emails[i]->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
@@ -1158,8 +1221,10 @@ private: System::Windows::Forms::Label^ label2;
 			Places[i]->Location = System::Drawing::Point(0, 0 + coef + All->AutoScrollPosition.Y);
 			Places[i]->Name = "Place" + i;
 			Places[i]->Size = System::Drawing::Size(698, 55);
+			Places[i]->AllowDrop = true;
 			Places[i]->DragEnter += gcnew System::Windows::Forms::DragEventHandler(this, &MainForm::All_DragEnter);
 			Places[i]->DragDrop += gcnew System::Windows::Forms::DragEventHandler(this, &MainForm::All_DragDrop);
+			Places[i]->DragLeave += gcnew System::EventHandler(this, &MainForm::All_DragLeave);
 
 			Emails[i] = gcnew Label();
 			Emails[i]->Font = (gcnew System::Drawing::Font(L"Arial Black", 11, System::Drawing::FontStyle::Bold));
@@ -1346,41 +1411,186 @@ private: System::Windows::Forms::Label^ label2;
 			   path->CloseFigure();
 
 			   this->Region = gcnew Drawing::Region(path);
-		   }	 
+		   }	
 
-	private: System::Void All_DragEnter(System::Object^ sender, System::Windows::Forms::DragEventArgs^ e) {
-		if (e->Data->GetDataPresent(CopyEmail->GetType()) || e->Data->GetDataPresent(CopyPassword->GetType()))
+	bool EmailIsDragging = false;
+	bool PasswordIsDragging = false;
+	bool EtcIsDragging = false;
+	bool CensoreIsDragging = false;
+	bool DeleteIsDragging = false;
+
+	template<typename T>
+	void DeleteElementSystem(cli::array<T>^ arr, int indexToDelete)
+	{
+		for (int i = indexToDelete; i < arr->Length - 1; i++)
 		{
-			e->Effect = DragDropEffects::Move;
+			arr[i] = arr[i + 1];
 		}
 	}
 
-	private: System::Void All_DragDrop(System::Object^ sender, System::Windows::Forms::DragEventArgs^ e) {
+	void UpdateAfterDelete() {
+		for (int i = 0; i < NumOfAll; i++)
+		{
+			Places[i]->Location = System::Drawing::Point(0, 0 + coef + All->AutoScrollPosition.Y);
+			Places[i]->Name = "Place" + i;
 
+			Emails[i]->Name = "Email" + i;
+			Emails[i]->Text = EmailOf[i];
+
+			Passwords[i]->Name = "Password" + i;
+			Passwords[i]->Text = PaswdOf[i];
+
+			Separates[i]->Name = "Separate" + i;
+
+			Censores[i]->Location = System::Drawing::Point(0, 0 + coef + All->AutoScrollPosition.Y);
+			Censores[i]->Name = "Censore" + i;
+
+			Names[i]->Name = "Name" + i;
+			Names[i]->Text = NameOf[i];
+
+			//Индексі тут могут соотсветсвовать индексам из массива данных
+
+			coef += 70;
+		}
+	}
+
+	void FormDeleteSystem(int ind) {
+		All->Controls->Remove(Places[ind]);
+		All->Controls->Remove(Censores[ind]);
+		DeleteElementSystem(Names, ind);
+		DeleteElementSystem(Emails, ind);
+		DeleteElementSystem(Passwords, ind);
+		DeleteElementSystem(Places, ind);
+		DeleteElementSystem(Censores, ind);
+		DeleteElementSystem(Separates, ind);
+		DeleteElementSystem(NameOf, ind);
+		DeleteElementSystem(EmailOf, ind);
+		DeleteElementSystem(PaswdOf, ind);
+		NumOfAll--;
+		cfgto();
+		SaveConfig();
+		coef = 0;
+		UpdateAfterDelete();
+	}
+
+	void PlusForm(int ind) {
+		AddIndex = ind;
+		PassAdd->StartPosition = FormStartPosition::CenterParent;
+		Opacity = 0.3;
+		PassAdd->ShowDialog(this);
+		AddDat->Enabled = true;
+	}
+private: System::Void Add_Tick(System::Object^ sender, System::EventArgs^ e) {
+	Opacity = 1;
+	if (PassAdd->ConfirmAdd) {
+		NameOf[AddIndex] = PassAdd->name->Text;
+		EmailOf[AddIndex] = PassAdd->email->Text;
+		PaswdOf[AddIndex] = PassAdd->Password->Text;
+		Update(AddIndex);
+		SaveConfig();
+		cfgto();
+		NumOfAll++;
+	}
+	PassAdd->name->Text = "";
+	PassAdd->email->Text = "";
+	PassAdd->Password->Text = "";
+	AddDat->Enabled = false;
+}
+
+	private: System::Void All_DragLeave(System::Object^ sender, System::EventArgs^ e) {
+		ProcessOfDrag->Hide();
+	}
+
+	private: System::Void All_DragEnter(System::Object^ sender, System::Windows::Forms::DragEventArgs^ e) {
+		Panel^ Pan = safe_cast<Panel^>(sender);
+		if (e->Data->GetDataPresent(CopyEmail->GetType()) || e->Data->GetDataPresent(CopyPassword->GetType()) || e->Data->GetDataPresent(Etc->GetType()) || e->Data->GetDataPresent(ShowCensore->GetType()) || e->Data->GetDataPresent(Del->GetType()))
+		{
+			e->Effect = DragDropEffects::Move;
+			ProcessOfDrag->Location = System::Drawing::Point(Pan->Location.X+10, Pan->Location.Y + 10);
+			ProcessOfDrag->Show();
+		}
+	}
+	void UpdateElData(int ind) {
+		Names[ind]->Text = NameOf[ind];
+		Emails[ind]->Text = EmailOf[ind];
+		Passwords[ind]->Text = PaswdOf[ind];
+	}
+	void CallEtcForm(int ind) {
+		etc->NowIndex = ind;
+		etc->CurrentName->Text = NameOf[ind];
+		etc->CurrentEmail->Text = EmailOf[ind];
+		etc->CurrentPassword->Text = PaswdOf[ind];
+		etc->StartPosition = FormStartPosition::CenterParent;
+		Opacity = 0.3;
+		etc->ShowDialog(this);
+		//После
+		Opacity = 1;
+		if (etc->NowIndex != -1) {
+			NameOf[ind] = etc->CurrentName->Text;
+			EmailOf[ind] = etc->CurrentEmail->Text;
+			PaswdOf[ind] = etc->CurrentPassword->Text;
+			UpdateElData(ind);
+			SaveConfig();
+			cfgto();
+		}
+		etc->CurrentName->Text = "";
+		etc->CurrentEmail->Text = "";
+		etc->CurrentPassword->Text = "";
+		etc->NowIndex = -1;
+	}
+	private: System::Void All_DragDrop(System::Object^ sender, System::Windows::Forms::DragEventArgs^ e) {
+		ProcessOfDrag->BackgroundImage = gcnew Bitmap("Resources\\MainPart\\Complete.png");
 		if (e->Data->GetDataPresent(CopyEmail->GetType()) && e->Data->GetData(CopyEmail->GetType()) == CopyEmail)
 		{
 			Panel^ clickedPanel = safe_cast<Panel^>(sender);
 			Clipboard::SetText(Emails[stoi(marshal_as<string>(clickedPanel->Name->Substring(5)))]->Text);
+			
 		}
 		else if (e->Data->GetDataPresent(CopyPassword->GetType()) && e->Data->GetData(CopyPassword->GetType()) == CopyPassword)
 		{
 			Panel^ clickedPanel = safe_cast<Panel^>(sender);
 			Clipboard::SetText(Passwords[stoi(marshal_as<string>(clickedPanel->Name->Substring(5)))]->Text);
 		}
+		else if (e->Data->GetDataPresent(Etc->GetType()) && e->Data->GetData(CopyPassword->GetType()) == Etc)
+		{
+			ProcessOfDrag->Hide();
+			Panel^ clickedPanel = safe_cast<Panel^>(sender);
+			CallEtcForm(stoi(marshal_as<string>(clickedPanel->Name->Substring(5))));
+		}
+		else if (e->Data->GetDataPresent(ShowCensore->GetType()) && e->Data->GetData(ShowCensore->GetType()) == ShowCensore)
+		{
+			ProcessOfDrag->Hide();
+			Panel^ clickedPanel = safe_cast<Panel^>(sender);
+			Censores[stoi(marshal_as<string>(clickedPanel->Name->Substring(5)))]->Show();
+		}
+		else if (e->Data->GetDataPresent(Del->GetType()) && e->Data->GetData(Del->GetType()) == Del)
+		{
+			ProcessOfDrag->Hide();
+			Panel^ clickedPanel = safe_cast<Panel^>(sender);
+			FormDeleteSystem(stoi(marshal_as<string>(clickedPanel->Name->Substring(5))));
+		}
+		RepetProcess->Enabled = true;
 	}
-
+	
 	private: System::Void CopyEmail_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		if (e->Button == System::Windows::Forms::MouseButtons::Left)
 		{
-			CopyEmail->DoDragDrop(CopyEmail, DragDropEffects::Move);
+			EmailIsDragging = true;
+		CopyEmail->Image = gcnew Bitmap("Resources\\MainPart\\CopyEmailComplete.png");
+		CopyEmail->DoDragDrop(CopyEmail, DragDropEffects::Move);
 		}
+
 	}
+
 	private: System::Void CopyPassword_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		if (e->Button == System::Windows::Forms::MouseButtons::Left)
 		{
-			CopyPassword->DoDragDrop(CopyPassword, DragDropEffects::Move);
+		PasswordIsDragging = true;
+		CopyPassword->Image = gcnew Bitmap("Resources\\MainPart\\CopyPasswordComplete.png");
+		CopyPassword->DoDragDrop(CopyPassword, DragDropEffects::Move);
 		}
 	}
+
 	private: System::Void ClickedName_Click(System::Object^ sender, System::EventArgs^ e) {
 		Label^ clickedName = safe_cast<Label^>(sender);
 		Censores[stoi(marshal_as<string>(clickedName->Name->Substring(4)))]->Hide();
@@ -1642,24 +1852,30 @@ private: System::Void CopyEmail_MouseEnter(System::Object^ sender, System::Event
 	clickedButton->Image = gcnew Bitmap("Resources\\MainPart\\CopyEmailEnter.png");
 }
 private: System::Void CopyEmail_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	PictureBox^ clickedButton = safe_cast<PictureBox^>(sender);
-	clickedButton->Image = gcnew Bitmap("Resources\\MainPart\\CopyEmail.png");
+	if (!EmailIsDragging) {
+		PictureBox^ clickedButton = safe_cast<PictureBox^>(sender);
+		clickedButton->Image = gcnew Bitmap("Resources\\MainPart\\CopyEmail.png");
+	}
 }
 private: System::Void CopyPassword_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	PictureBox^ clickedButton = safe_cast<PictureBox^>(sender);
 	clickedButton->Image = gcnew Bitmap("Resources\\MainPart\\CopyPasswordEnter.png");
 }
 private: System::Void CopyPassword_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	PictureBox^ clickedButton = safe_cast<PictureBox^>(sender);
-	clickedButton->Image = gcnew Bitmap("Resources\\MainPart\\CopyPassword.png");
+	if (!PasswordIsDragging) {
+		PictureBox^ clickedButton = safe_cast<PictureBox^>(sender);
+		clickedButton->Image = gcnew Bitmap("Resources\\MainPart\\CopyPassword.png");
+	}
 }
 private: System::Void Etc_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	PictureBox^ clickedButton = safe_cast<PictureBox^>(sender);
 	clickedButton->Image = gcnew Bitmap("Resources\\MainPart\\EtcEnter.png");
 }
 private: System::Void Etc_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	PictureBox^ clickedButton = safe_cast<PictureBox^>(sender);
-	clickedButton->Image = gcnew Bitmap("Resources\\MainPart\\Etc.png");
+	if (!EtcIsDragging) {
+		PictureBox^ clickedButton = safe_cast<PictureBox^>(sender);
+		clickedButton->Image = gcnew Bitmap("Resources\\MainPart\\Etc.png");
+	}
 }
 private: System::Void Clo_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1686,29 +1902,7 @@ private: System::Void Bck_Tick(System::Object^ sender, System::EventArgs^ e) {
 	}
 	
 }
-	void PlusForm(int ind) {
-		AddIndex = ind;
-		PassAdd->StartPosition = FormStartPosition::CenterParent;
-		Opacity = 0.3;
-		PassAdd->ShowDialog(this);
-		AddDat->Enabled = true;
-	}
-private: System::Void Add_Tick(System::Object^ sender, System::EventArgs^ e) {
-	Opacity = 1;
-	if (PassAdd->ConfirmAdd) {
-		NameOf[AddIndex] = PassAdd->name->Text;
-		EmailOf[AddIndex] = PassAdd->email->Text;
-		PaswdOf[AddIndex] = PassAdd->Password->Text;
-		Update(AddIndex);
-		SaveConfig();
-		cfgto();
-		NumOfAll++;
-	}
-	PassAdd->name->Text = "";
-	PassAdd->email->Text = "";
-	PassAdd->Password->Text = "";
-	AddDat->Enabled = false;
-}
+
 private: System::Void ConAdd_Tick(System::Object^ sender, System::EventArgs^ e) {
 	
 }
@@ -1749,9 +1943,102 @@ private: System::Void Add6_Click(System::Object^ sender, System::EventArgs^ e) {
 private: System::Void AddFormNow_Click(System::Object^ sender, System::EventArgs^ e) {
 	PlusForm(NumOfAll);
 }
+private: System::Void RepetProcess_Tick(System::Object^ sender, System::EventArgs^ e) {
+	ProcessOfDrag->BackgroundImage = gcnew Bitmap("Resources\\MainPart\\Process.png");
+	ProcessOfDrag->Hide();
+	RepetProcess->Enabled = false;
+}
+private: System::Void CopyEmail_QueryContinueDrag(System::Object^ sender, System::Windows::Forms::QueryContinueDragEventArgs^ e) {
+	if (e->Action == DragAction::Drop) {
+		CopyEmail->Image = gcnew Bitmap("Resources\\MainPart\\CopyEmail.png");
+		EmailIsDragging = false;
+	}
+	else if (e->Action == DragAction::Cancel) {
+		CopyEmail->Image = gcnew Bitmap("Resources\\MainPart\\CopyEmail.png");
+		EmailIsDragging = false;
+	}
+}
+private: System::Void CopyPassword_QueryContinueDrag(System::Object^ sender, System::Windows::Forms::QueryContinueDragEventArgs^ e) {
+	if (e->Action == DragAction::Drop) {
+		CopyPassword->Image = gcnew Bitmap("Resources\\MainPart\\CopyPassword.png");
+		PasswordIsDragging = false;
+	}
+	else if (e->Action == DragAction::Cancel) {
+		CopyPassword->Image = gcnew Bitmap("Resources\\MainPart\\CopyPassword.png");
+		PasswordIsDragging = false;
+	}
+}
+private: System::Void Etc_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	if (e->Button == System::Windows::Forms::MouseButtons::Left)
+	{
+		EtcIsDragging = true;
+		Etc->Image = gcnew Bitmap("Resources\\MainPart\\EtcComplete.png");
+		Etc->DoDragDrop(Etc, DragDropEffects::Move);
+	}
+}
+private: System::Void Etc_QueryContinueDrag(System::Object^ sender, System::Windows::Forms::QueryContinueDragEventArgs^ e) {
 
-
-
+	if (e->Action == DragAction::Drop) {
+		Etc->Image = gcnew Bitmap("Resources\\MainPart\\Etc.png");
+		EtcIsDragging = false;
+	}
+	else if (e->Action == DragAction::Cancel) {
+		Etc->Image = gcnew Bitmap("Resources\\MainPart\\Etc.png");
+		EtcIsDragging = false;
+	}
+}
+private: System::Void ShowCensore_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	ShowCensore->Image = gcnew Bitmap("Resources\\MainPart\\AgainCensoreEnter.png");
+}
+private: System::Void ShowCensore_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	if (!CensoreIsDragging) {
+		ShowCensore->Image = gcnew Bitmap("Resources\\MainPart\\AgainCensore.png");
+	}
+}
+private: System::Void ShowCensore_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	if (e->Button == System::Windows::Forms::MouseButtons::Left)
+	{
+		CensoreIsDragging = true;
+		ShowCensore->Image = gcnew Bitmap("Resources\\MainPart\\AgainCensoreComplete.png");
+		ShowCensore->DoDragDrop(ShowCensore, DragDropEffects::Move);
+	}
+}
+private: System::Void ShowCensore_QueryContinueDrag(System::Object^ sender, System::Windows::Forms::QueryContinueDragEventArgs^ e) {
+	if (e->Action == DragAction::Drop) {
+		ShowCensore->Image = gcnew Bitmap("Resources\\MainPart\\AgainCensore.png");
+		CensoreIsDragging = false;
+	}
+	else if (e->Action == DragAction::Cancel) {
+		ShowCensore->Image = gcnew Bitmap("Resources\\MainPart\\AgainCensore.png");
+		CensoreIsDragging = false;
+	}
+}
+private: System::Void Del_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Del->Image = gcnew Bitmap("Resources\\MainPart\\DeleteEnter.png");
+}
+private: System::Void Del_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	if (!DeleteIsDragging) {
+		Del->Image = gcnew Bitmap("Resources\\MainPart\\Delete.png");
+	}
+}
+private: System::Void Del_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	if (e->Button == System::Windows::Forms::MouseButtons::Left)
+	{
+		DeleteIsDragging = true;
+		Del->Image = gcnew Bitmap("Resources\\MainPart\\DeleteComplete.png");
+		Del->DoDragDrop(Del, DragDropEffects::Move);
+	}
+}
+private: System::Void Del_QueryContinueDrag(System::Object^ sender, System::Windows::Forms::QueryContinueDragEventArgs^ e) {
+	if (e->Action == DragAction::Drop) {
+		Del->Image = gcnew Bitmap("Resources\\MainPart\\Delete.png");
+		DeleteIsDragging = false;
+	}
+	else if (e->Action == DragAction::Cancel) {
+		Del->Image = gcnew Bitmap("Resources\\MainPart\\Delete.png");
+		DeleteIsDragging = false;
+	}
+}
 };
 }
 
