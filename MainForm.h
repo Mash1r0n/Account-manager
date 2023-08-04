@@ -1566,6 +1566,7 @@ private: System::Windows::Forms::Label^ label2;
 	bool EtcIsDragging = false;
 	bool CensoreIsDragging = false;
 	bool DeleteIsDragging = false;
+	bool SearchIsActivated = false;
 
 	template<typename T>
 	void DeleteElementSystem(cli::array<T>^ arr, int indexToDelete)
@@ -2192,7 +2193,7 @@ private: System::Void Del_QueryContinueDrag(System::Object^ sender, System::Wind
 		DeleteIsDragging = false;
 	}
 }
-	bool SearchIsActivated = false;
+	
 
 	void TurnOnSearch() {
 		
@@ -2222,6 +2223,10 @@ private: System::Void Srh_Click(System::Object^ sender, System::EventArgs^ e) {
 		SearchBar->Visible = true;
 		SearchRequest->Focus();
 		Srh->Image = gcnew Bitmap("Resources\\MainPart\\SearchComplete.png");
+		Del->Image = gcnew Bitmap("Resources\\MainPart\\BlockedDelete.png");
+		Del->Enabled = false;
+		AddNewFor->Image = gcnew Bitmap("Resources\\MainPart\\BlockedAdd.png");
+		AddNewFor->Enabled = false;
 	}
 	else {
 		//Отключить режим
@@ -2232,6 +2237,10 @@ private: System::Void Srh_Click(System::Object^ sender, System::EventArgs^ e) {
 		SearchBar->Visible = false;
 		SearchRequest->Text = "";
 		Srh->Image = gcnew Bitmap("Resources\\MainPart\\SearchEnter.png");
+		Del->Image = gcnew Bitmap("Resources\\MainPart\\Delete.png");
+		Del->Enabled = true;
+		AddNewFor->Image = gcnew Bitmap("Resources\\MainPart\\Add.png");
+		AddNewFor->Enabled = true;
 		ReturnAfterRequest();
 		SearchRequest->Enabled = false;
 		SearchRequest->Enabled = true;
@@ -2322,4 +2331,4 @@ private: System::Void ClearRepeat_Tick(System::Object^ sender, System::EventArgs
 }
 };
 }
-
+//Нужно отшлифовать некоторые фичи. Надо добавить валидацию главного пароля, разобраться с окном регистрации, добавить при шифровании проверку на правильность данных, подтверждение при удалении
