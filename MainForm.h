@@ -103,6 +103,22 @@ private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Timer^ RepetProcess;
 	private: System::Windows::Forms::PictureBox^ ShowCensore;
 	private: System::Windows::Forms::PictureBox^ Vline;
+	private: System::Windows::Forms::PictureBox^ Srh;
+	private: System::Windows::Forms::Panel^ SearchBar;
+	private: System::Windows::Forms::TextBox^ SearchRequest;
+	private: System::Windows::Forms::PictureBox^ SearchReq;
+
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::PictureBox^ ClearSearchBar;
+	private: System::Windows::Forms::Timer^ RepeatSearchReq;
+	private: System::Windows::Forms::Timer^ ClearRepeat;
+	private: System::Windows::Forms::PictureBox^ Nothing;
+
+
+
+
+
 
 
 
@@ -199,8 +215,15 @@ private: System::Windows::Forms::Label^ label2;
 			this->TxtLog = (gcnew System::Windows::Forms::PictureBox());
 			this->LetsLog = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->SearchBar = (gcnew System::Windows::Forms::Panel());
+			this->ClearSearchBar = (gcnew System::Windows::Forms::PictureBox());
+			this->SearchReq = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->SearchRequest = (gcnew System::Windows::Forms::TextBox());
 			this->Vline = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->Srh = (gcnew System::Windows::Forms::PictureBox());
 			this->ShowCensore = (gcnew System::Windows::Forms::PictureBox());
 			this->Del = (gcnew System::Windows::Forms::PictureBox());
 			this->Etc = (gcnew System::Windows::Forms::PictureBox());
@@ -242,6 +265,9 @@ private: System::Windows::Forms::Label^ label2;
 			this->AddDat = (gcnew System::Windows::Forms::Timer(this->components));
 			this->ConAdd = (gcnew System::Windows::Forms::Timer(this->components));
 			this->RepetProcess = (gcnew System::Windows::Forms::Timer(this->components));
+			this->RepeatSearchReq = (gcnew System::Windows::Forms::Timer(this->components));
+			this->ClearRepeat = (gcnew System::Windows::Forms::Timer(this->components));
+			this->Nothing = (gcnew System::Windows::Forms::PictureBox());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->BeginInit();
@@ -252,8 +278,14 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TxtLog))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LetsLog))->BeginInit();
 			this->tabPage3->SuspendLayout();
+			this->SearchBar->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ClearSearchBar))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->SearchReq))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Vline))->BeginInit();
 			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Srh))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ShowCensore))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Del))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc))->BeginInit();
@@ -275,6 +307,7 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Clo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HorLin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Nothing))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -414,6 +447,7 @@ private: System::Windows::Forms::Label^ label2;
 			// tabPage3
 			// 
 			this->tabPage3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tabPage3.BackgroundImage")));
+			this->tabPage3->Controls->Add(this->SearchBar);
 			this->tabPage3->Controls->Add(this->Vline);
 			this->tabPage3->Controls->Add(this->panel2);
 			this->tabPage3->Controls->Add(this->About);
@@ -431,6 +465,75 @@ private: System::Windows::Forms::Label^ label2;
 			this->tabPage3->Text = L"tabPage3";
 			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
+			// SearchBar
+			// 
+			this->SearchBar->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SearchBar.BackgroundImage")));
+			this->SearchBar->Controls->Add(this->ClearSearchBar);
+			this->SearchBar->Controls->Add(this->SearchReq);
+			this->SearchBar->Controls->Add(this->pictureBox3);
+			this->SearchBar->Controls->Add(this->pictureBox2);
+			this->SearchBar->Controls->Add(this->SearchRequest);
+			this->SearchBar->Location = System::Drawing::Point(335, 0);
+			this->SearchBar->Name = L"SearchBar";
+			this->SearchBar->Size = System::Drawing::Size(578, 24);
+			this->SearchBar->TabIndex = 1;
+			this->SearchBar->Visible = false;
+			// 
+			// ClearSearchBar
+			// 
+			this->ClearSearchBar->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ClearSearchBar.BackgroundImage")));
+			this->ClearSearchBar->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->ClearSearchBar->Location = System::Drawing::Point(541, 3);
+			this->ClearSearchBar->Name = L"ClearSearchBar";
+			this->ClearSearchBar->Size = System::Drawing::Size(28, 18);
+			this->ClearSearchBar->TabIndex = 3;
+			this->ClearSearchBar->TabStop = false;
+			this->ClearSearchBar->Click += gcnew System::EventHandler(this, &MainForm::ClearSearchBar_Click);
+			// 
+			// SearchReq
+			// 
+			this->SearchReq->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SearchReq.BackgroundImage")));
+			this->SearchReq->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->SearchReq->Location = System::Drawing::Point(3, 0);
+			this->SearchReq->Name = L"SearchReq";
+			this->SearchReq->Size = System::Drawing::Size(40, 24);
+			this->SearchReq->TabIndex = 1;
+			this->SearchReq->TabStop = false;
+			this->SearchReq->Click += gcnew System::EventHandler(this, &MainForm::SearchReq_Click);
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(534, 5);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(1, 15);
+			this->pictureBox3->TabIndex = 2;
+			this->pictureBox3->TabStop = false;
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(43, 4);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(1, 15);
+			this->pictureBox2->TabIndex = 1;
+			this->pictureBox2->TabStop = false;
+			// 
+			// SearchRequest
+			// 
+			this->SearchRequest->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
+				static_cast<System::Int32>(static_cast<System::Byte>(39)));
+			this->SearchRequest->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->SearchRequest->Font = (gcnew System::Drawing::Font(L"Arial Black", 8.25F, System::Drawing::FontStyle::Bold));
+			this->SearchRequest->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->SearchRequest->Location = System::Drawing::Point(50, 4);
+			this->SearchRequest->MaxLength = 25;
+			this->SearchRequest->Name = L"SearchRequest";
+			this->SearchRequest->Size = System::Drawing::Size(478, 16);
+			this->SearchRequest->TabIndex = 0;
+			this->SearchRequest->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainForm::SearchRequest_KeyPress);
+			// 
 			// Vline
 			// 
 			this->Vline->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Vline.Image")));
@@ -442,6 +545,7 @@ private: System::Windows::Forms::Label^ label2;
 			// 
 			// panel2
 			// 
+			this->panel2->Controls->Add(this->Srh);
 			this->panel2->Controls->Add(this->ShowCensore);
 			this->panel2->Controls->Add(this->Del);
 			this->panel2->Controls->Add(this->Etc);
@@ -453,10 +557,23 @@ private: System::Windows::Forms::Label^ label2;
 			this->panel2->Size = System::Drawing::Size(108, 500);
 			this->panel2->TabIndex = 33;
 			// 
+			// Srh
+			// 
+			this->Srh->BackColor = System::Drawing::Color::Transparent;
+			this->Srh->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Srh.Image")));
+			this->Srh->Location = System::Drawing::Point(8, 147);
+			this->Srh->Name = L"Srh";
+			this->Srh->Size = System::Drawing::Size(41, 41);
+			this->Srh->TabIndex = 1;
+			this->Srh->TabStop = false;
+			this->Srh->Click += gcnew System::EventHandler(this, &MainForm::Srh_Click);
+			this->Srh->MouseEnter += gcnew System::EventHandler(this, &MainForm::Srh_MouseEnter);
+			this->Srh->MouseLeave += gcnew System::EventHandler(this, &MainForm::Srh_MouseLeave);
+			// 
 			// ShowCensore
 			// 
 			this->ShowCensore->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ShowCensore.Image")));
-			this->ShowCensore->Location = System::Drawing::Point(10, 259);
+			this->ShowCensore->Location = System::Drawing::Point(8, 287);
 			this->ShowCensore->Name = L"ShowCensore";
 			this->ShowCensore->Size = System::Drawing::Size(41, 41);
 			this->ShowCensore->TabIndex = 1;
@@ -469,7 +586,7 @@ private: System::Windows::Forms::Label^ label2;
 			// Del
 			// 
 			this->Del->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Del.Image")));
-			this->Del->Location = System::Drawing::Point(10, 429);
+			this->Del->Location = System::Drawing::Point(8, 427);
 			this->Del->Name = L"Del";
 			this->Del->Size = System::Drawing::Size(41, 41);
 			this->Del->TabIndex = 40;
@@ -482,7 +599,7 @@ private: System::Windows::Forms::Label^ label2;
 			// Etc
 			// 
 			this->Etc->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Etc.Image")));
-			this->Etc->Location = System::Drawing::Point(10, 344);
+			this->Etc->Location = System::Drawing::Point(8, 357);
 			this->Etc->Name = L"Etc";
 			this->Etc->Size = System::Drawing::Size(41, 41);
 			this->Etc->TabIndex = 39;
@@ -495,7 +612,7 @@ private: System::Windows::Forms::Label^ label2;
 			// AddNewFor
 			// 
 			this->AddNewFor->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AddNewFor.Image")));
-			this->AddNewFor->Location = System::Drawing::Point(10, 174);
+			this->AddNewFor->Location = System::Drawing::Point(8, 217);
 			this->AddNewFor->Name = L"AddNewFor";
 			this->AddNewFor->Size = System::Drawing::Size(41, 41);
 			this->AddNewFor->TabIndex = 38;
@@ -507,7 +624,7 @@ private: System::Windows::Forms::Label^ label2;
 			// CopyPassword
 			// 
 			this->CopyPassword->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyPassword.Image")));
-			this->CopyPassword->Location = System::Drawing::Point(10, 89);
+			this->CopyPassword->Location = System::Drawing::Point(8, 77);
 			this->CopyPassword->Name = L"CopyPassword";
 			this->CopyPassword->Size = System::Drawing::Size(41, 41);
 			this->CopyPassword->TabIndex = 37;
@@ -520,7 +637,7 @@ private: System::Windows::Forms::Label^ label2;
 			// CopyEmail
 			// 
 			this->CopyEmail->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CopyEmail.Image")));
-			this->CopyEmail->Location = System::Drawing::Point(10, 4);
+			this->CopyEmail->Location = System::Drawing::Point(8, 7);
 			this->CopyEmail->Name = L"CopyEmail";
 			this->CopyEmail->Size = System::Drawing::Size(41, 41);
 			this->CopyEmail->TabIndex = 36;
@@ -572,10 +689,11 @@ private: System::Windows::Forms::Label^ label2;
 			this->All->AutoScroll = true;
 			this->All->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
 				static_cast<System::Int32>(static_cast<System::Byte>(39)));
+			this->All->Controls->Add(this->Nothing);
 			this->All->Controls->Add(this->ProcessOfDrag);
-			this->All->Location = System::Drawing::Point(266, 12);
+			this->All->Location = System::Drawing::Point(266, 30);
 			this->All->Name = L"All";
-			this->All->Size = System::Drawing::Size(774, 490);
+			this->All->Size = System::Drawing::Size(774, 479);
 			this->All->TabIndex = 32;
 			// 
 			// ProcessOfDrag
@@ -736,7 +854,7 @@ private: System::Windows::Forms::Label^ label2;
 				static_cast<System::Int32>(static_cast<System::Byte>(39)));
 			this->pictureBox1->Location = System::Drawing::Point(0, 26);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(1057, 18);
+			this->pictureBox1->Size = System::Drawing::Size(1057, 12);
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -824,6 +942,26 @@ private: System::Windows::Forms::Label^ label2;
 			this->RepetProcess->Interval = 300;
 			this->RepetProcess->Tick += gcnew System::EventHandler(this, &MainForm::RepetProcess_Tick);
 			// 
+			// RepeatSearchReq
+			// 
+			this->RepeatSearchReq->Interval = 300;
+			this->RepeatSearchReq->Tick += gcnew System::EventHandler(this, &MainForm::RepeatSearchReq_Tick);
+			// 
+			// ClearRepeat
+			// 
+			this->ClearRepeat->Interval = 300;
+			this->ClearRepeat->Tick += gcnew System::EventHandler(this, &MainForm::ClearRepeat_Tick);
+			// 
+			// Nothing
+			// 
+			this->Nothing->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Nothing.Image")));
+			this->Nothing->Location = System::Drawing::Point(263, 199);
+			this->Nothing->Name = L"Nothing";
+			this->Nothing->Size = System::Drawing::Size(223, 63);
+			this->Nothing->TabIndex = 1;
+			this->Nothing->TabStop = false;
+			this->Nothing->Visible = false;
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -863,8 +1001,15 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->TxtLog))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LetsLog))->EndInit();
 			this->tabPage3->ResumeLayout(false);
+			this->SearchBar->ResumeLayout(false);
+			this->SearchBar->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ClearSearchBar))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->SearchReq))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Vline))->EndInit();
 			this->panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Srh))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ShowCensore))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Del))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Etc))->EndInit();
@@ -886,6 +1031,7 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Clo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HorLin))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Nothing))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -1363,6 +1509,8 @@ private: System::Windows::Forms::Label^ label2;
 		//Спрячем все страницы
 	Bitmap^ LefTop = gcnew Bitmap("Resources\\TopPart\\LeftTop.png");
 	private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		All->Location = System::Drawing::Point(266, 19);
+		All->Size = System::Drawing::Size(774, 475);
 		this->ClientSize = System::Drawing::Size(1050, 550);
 		SetRegion();
 		this->LefTo->Image = LefTop;
@@ -1567,7 +1715,12 @@ private: System::Void Add_Tick(System::Object^ sender, System::EventArgs^ e) {
 		{
 			ProcessOfDrag->Hide();
 			Panel^ clickedPanel = safe_cast<Panel^>(sender);
-			FormDeleteSystem(stoi(marshal_as<string>(clickedPanel->Name->Substring(5))));
+			if (stoi(marshal_as<string>(clickedPanel->Name->Substring(5))) != 0) {
+				FormDeleteSystem(stoi(marshal_as<string>(clickedPanel->Name->Substring(5))));
+			}
+			else {
+				//Что, если удаляемыый элемент равен 0
+			}
 		}
 		RepetProcess->Enabled = true;
 	}
@@ -2038,6 +2191,134 @@ private: System::Void Del_QueryContinueDrag(System::Object^ sender, System::Wind
 		Del->Image = gcnew Bitmap("Resources\\MainPart\\Delete.png");
 		DeleteIsDragging = false;
 	}
+}
+	bool SearchIsActivated = false;
+
+	void TurnOnSearch() {
+		
+	}
+
+	void TurnOffSearch() {
+
+	}
+
+	void ReturnAfterRequest() {
+		coef = 0;
+		for (int i = 0; i < NumOfAll; i++) {
+			Places[i]->Location = System::Drawing::Point(0, 0 + coef + All->AutoScrollPosition.Y);
+			Censores[i]->Location = System::Drawing::Point(0, 0 + coef + All->AutoScrollPosition.Y);
+			Places[i]->Show();
+			Censores[i]->Show();
+			coef += 70;
+		}
+	}
+	
+private: System::Void Srh_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!SearchIsActivated) {
+		//Включить режим
+		SearchIsActivated = true;
+		All->Location = System::Drawing::Point(266, 30);
+		All->Size = System::Drawing::Size(774, 479);
+		SearchBar->Visible = true;
+		SearchRequest->Focus();
+		Srh->Image = gcnew Bitmap("Resources\\MainPart\\SearchComplete.png");
+	}
+	else {
+		//Отключить режим
+		Nothing->Visible = false;
+		SearchIsActivated = false;
+		All->Location = System::Drawing::Point(266, 19);
+		All->Size = System::Drawing::Size(774, 475);
+		SearchBar->Visible = false;
+		SearchRequest->Text = "";
+		Srh->Image = gcnew Bitmap("Resources\\MainPart\\SearchEnter.png");
+		ReturnAfterRequest();
+		SearchRequest->Enabled = false;
+		SearchRequest->Enabled = true;
+	}
+}
+private: System::Void ClearSearchBar_Click(System::Object^ sender, System::EventArgs^ e) {
+	SearchRequest->Text = "";
+	ClearSearchBar->BackgroundImage = gcnew Bitmap("Resources\\MainPart\\ClearPressed.png");
+	ClearRepeat->Enabled = true;
+}
+
+	void FindByRequest() {
+		coef = 0;
+		Nothing->Visible = false;
+		for (int i = 0; i < NumOfAll; i++) {
+			if (SearchRequest->Text == NameOf[i]->Substring(0, SearchRequest->Text->Length)) {
+				Places[i]->Location = System::Drawing::Point(0, 0 + coef + All->AutoScrollPosition.Y);
+				Censores[i]->Location = System::Drawing::Point(0, 0 + coef + All->AutoScrollPosition.Y);
+				Places[i]->Show();
+				Censores[i]->Show();
+				coef += 70;
+			}
+		}
+		if (coef == 0) {
+			Nothing->Visible = true;
+		}
+	}
+	
+private: System::Void SearchReq_Click(System::Object^ sender, System::EventArgs^ e) {
+	for (int i = 0; i < NumOfAll; i++) {
+		Places[i]->Hide();
+		Censores[i]->Hide();
+	}
+
+	if (SearchRequest->Text != "") {
+		FindByRequest();
+	}
+
+	else {
+		ReturnAfterRequest();
+	}
+	SearchReq->BackgroundImage = gcnew Bitmap("Resources\\MainPart\\SearchPressed.png");
+	RepeatSearchReq->Enabled = true;
+}
+private: System::Void Srh_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	if (!SearchIsActivated) {
+		Srh->Image = gcnew Bitmap("Resources\\MainPart\\SearchEnter.png");
+	}
+	else {
+		Srh->Image = gcnew Bitmap("Resources\\MainPart\\SearchComplete.png");
+	}
+}
+
+private: System::Void Srh_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	if (!SearchIsActivated) {
+		Srh->Image = gcnew Bitmap("Resources\\MainPart\\Search.png");
+	}
+	else {
+		Srh->Image = gcnew Bitmap("Resources\\MainPart\\SearchCompleteLeave.png");
+	}
+}
+private: System::Void SearchRequest_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	if (e->KeyChar == '\r') {
+
+		for (int i = 0; i < NumOfAll; i++) {
+			Places[i]->Hide();
+			Censores[i]->Hide();
+		}
+
+		if (SearchRequest->Text != "") {
+			FindByRequest();
+		}
+
+		else {
+			ReturnAfterRequest();
+		}
+
+		e->Handled = true;
+	}
+}
+private: System::Void RepeatSearchReq_Tick(System::Object^ sender, System::EventArgs^ e) {
+	SearchReq->BackgroundImage = gcnew Bitmap("Resources\\MainPart\\SearchIcon.png");
+	RepeatSearchReq->Enabled = false;
+}
+private: System::Void ClearRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
+	ClearSearchBar->BackgroundImage = gcnew Bitmap("Resources\\MainPart\\Clear.png");
+	ClearRepeat->Enabled = false;
 }
 };
 }

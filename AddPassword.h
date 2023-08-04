@@ -319,6 +319,9 @@ namespace AccountManager {
 		}
 		else Agree[2] = true;
 		if (Agree[0] && Agree[1] && Agree[2]) {
+			Agree[0] = false;
+			Agree[1] = false;
+			Agree[2] = false;
 			Hide();
 		}
 	}
