@@ -20,6 +20,7 @@
 #include "Etcent.h"
 #include "Notify.h"
 #include "Confirm.h"
+#include <cctype>
 #pragma warning(disable:4996)
 static int massiveofseed[999];
 static bool bns[50] = { false, false, false, false, false, false, false };
@@ -356,8 +357,8 @@ private: System::Windows::Forms::Label^ label2;
 			this->SigPas->Name = L"SigPas";
 			this->SigPas->Size = System::Drawing::Size(338, 23);
 			this->SigPas->TabIndex = 3;
-			this->SigPas->Text = L"Введіть пароль від 8 до 25 символів";
 			this->SigPas->Click += gcnew System::EventHandler(this, &MainForm::SigPas_Click);
+			this->SigPas->MouseEnter += gcnew System::EventHandler(this, &MainForm::SigPas_MouseEnter);
 			// 
 			// Gen
 			// 
@@ -1525,12 +1526,16 @@ private: System::Windows::Forms::Label^ label2;
 		//Данные в программу
 		void ApplyConfig() {
 			if (verify == 1) {
+				try {
+					decrypt("Names.acm", NameOf, false);
 
-				decrypt("Names.acm", NameOf, false);
+					decrypt("Emails.acm", EmailOf, false);
 
-				decrypt("Emails.acm", EmailOf, false);
-
-				decrypt("Passwords.acm", PaswdOf, false);
+					decrypt("Passwords.acm", PaswdOf, false);
+				}
+				catch (System::Runtime::InteropServices::SEHException^) {
+					CallErrorForm("Відсутні деякі файли з даними.", 3);
+				}
 
 				if (!(Mpass[0] == Mpass[1] && Mpass[0] == Mpass[2] && Mpass[1] == Mpass[2])) {
 					//Что произойдёт, если пароли не совпадают
@@ -1937,12 +1942,23 @@ private: System::Void StartAnimation_Tick(System::Object^ sender, System::EventA
 }
 
 //Проверяем пароль на действительность
-	   bool VerifyPassword() {
-		   if (SigPas->Text->Length > 8 && SigPas->Text->Length <= 25) {
-			   return true;
-		   }
-		   return false;
+	bool VerifyPassword() {
+		if (SigPas->Text->Length > 8 && SigPas->Text->Length <= 25) {
+			return true;
+		}
+		return false;
 }
+
+	bool isLatinOrDigit(String^ str) {
+		for (int i = 0; i < str->Length; i++) {
+			wchar_t c = str[i];
+			if (!iswalnum(c) || !iswascii(c)) {
+				return false;
+			}
+		}
+		return true;
+	}
+
 private: System::Void Agree_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\AgreeEnter.png");
 }
@@ -1951,23 +1967,29 @@ private: System::Void Agree_MouseLeave(System::Object^ sender, System::EventArgs
 }
 private: System::Void Agree_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\Agree.png");
-	if (VerifyPassword()) {
-		tabControl1->SelectedIndex = 2;
-		verify = 1;
-		NumOfAll = 1;
-		EmailOf[0] = "Akayn.Team@gmail.com";
-		PaswdOf[0] = SigPas->Text;
-		NameOf[0] = "Це ваш перший пароль";
-		panel1->Show();
-		MainPassword = SigPas->Text;
-		SaveConfig();
-		open();
-		Names[0]->Text = NameOf[0];
-		Emails[0]->Text = EmailOf[0];
-		Passwords[0]->Text = PaswdOf[0];
-		
+	if (isLatinOrDigit(SigPas->Text)) {
+		if (VerifyPassword()) {
+			tabControl1->SelectedIndex = 2;
+			verify = 1;
+			NumOfAll = 1;
+			EmailOf[0] = "Akayn.Team@gmail.com";
+			PaswdOf[0] = SigPas->Text;
+			NameOf[0] = "Це ваш перший пароль";
+			panel1->Show();
+			MainPassword = SigPas->Text;
+			SaveConfig();
+			open();
+			Names[0]->Text = NameOf[0];
+			Emails[0]->Text = EmailOf[0];
+			Passwords[0]->Text = PaswdOf[0];
+		}
+		else {
+			SigPas->Text = "Від 8 до 25 символів";
+		}
 	}
-
+	else {
+		SigPas->Text = "Тільки латиниця та цифри";
+	}
 }
 	   
 private: System::Void Gen_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
@@ -2036,7 +2058,7 @@ private: System::Void MainForm_MouseMove(System::Object^ sender, System::Windows
 	   
 	      
 private: System::Void SigPas_Click(System::Object^ sender, System::EventArgs^ e) {
-	SigPas->Text = "";
+	
 }
 private: System::Void ToLow_Click(System::Object^ sender, System::EventArgs^ e) {
 	WindowState = FormWindowState::Minimized;
@@ -2467,6 +2489,10 @@ private: System::Void ClearRepeat_Tick(System::Object^ sender, System::EventArgs
 	ClearSearchBar->BackgroundImage = gcnew Bitmap("Resources\\MainPart\\Clear.png");
 	ClearRepeat->Enabled = false;
 }
+private: System::Void SigPas_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	SigPas->Text = "";
+}
 };
 }
-//Нужно отшлифовать некоторые фичи. разобраться с окном регистрации
+//Добавить переход на вкладку бездействия если не использовать программу более 5 минут
+//Добавить вкладки инструкции и О нас
