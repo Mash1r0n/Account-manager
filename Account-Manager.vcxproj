@@ -119,8 +119,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddPassword.cpp" />
+    <ClCompile Include="Confirm.cpp" />
     <ClCompile Include="Etcent.cpp" />
     <ClCompile Include="MainForm.cpp" />
+    <ClCompile Include="Notify.cpp" />
     <ClCompile Include="OpacityBkg.cpp" />
     <ClCompile Include="OurFunc.cpp" />
     <ClCompile Include="Start.cpp" />
@@ -129,10 +131,16 @@
     <ClInclude Include="AddPassword.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Confirm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Etcent.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MainForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Notify.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="OpacityBkg.h">
@@ -147,11 +155,17 @@
     <EmbeddedResource Include="AddPassword.resx">
       <DependentUpon>AddPassword.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Confirm.resx">
+      <DependentUpon>Confirm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Etcent.resx">
       <DependentUpon>Etcent.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notify.resx">
+      <DependentUpon>Notify.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpacityBkg.resx">
       <DependentUpon>OpacityBkg.h</DependentUpon>

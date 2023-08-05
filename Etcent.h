@@ -306,6 +306,7 @@ namespace AccountManager {
 			this->Controls->Add(this->pictureBox2);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Etcent";
 			this->Text = L"Etcent";
 			this->Load += gcnew System::EventHandler(this, &Etcent::Etcent_Load);

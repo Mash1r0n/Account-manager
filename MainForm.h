@@ -18,6 +18,8 @@
 #include <cstring>
 #include "AddPassword.h"
 #include "Etcent.h"
+#include "Notify.h"
+#include "Confirm.h"
 #pragma warning(disable:4996)
 static int massiveofseed[999];
 static bool bns[50] = { false, false, false, false, false, false, false };
@@ -114,6 +116,7 @@ private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Timer^ RepeatSearchReq;
 	private: System::Windows::Forms::Timer^ ClearRepeat;
 	private: System::Windows::Forms::PictureBox^ Nothing;
+	private: System::Windows::Forms::TabPage^ tabPage4;
 
 
 
@@ -234,6 +237,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->Settings = (gcnew System::Windows::Forms::PictureBox());
 			this->Search = (gcnew System::Windows::Forms::PictureBox());
 			this->All = (gcnew System::Windows::Forms::Panel());
+			this->Nothing = (gcnew System::Windows::Forms::PictureBox());
 			this->ProcessOfDrag = (gcnew System::Windows::Forms::PictureBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -267,7 +271,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->RepetProcess = (gcnew System::Windows::Forms::Timer(this->components));
 			this->RepeatSearchReq = (gcnew System::Windows::Forms::Timer(this->components));
 			this->ClearRepeat = (gcnew System::Windows::Forms::Timer(this->components));
-			this->Nothing = (gcnew System::Windows::Forms::PictureBox());
+			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->BeginInit();
@@ -296,6 +300,7 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Settings))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Search))->BeginInit();
 			this->All->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Nothing))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ProcessOfDrag))->BeginInit();
 			this->panel3->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -307,7 +312,6 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Clo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HorLin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Nothing))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -316,6 +320,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage3);
+			this->tabControl1->Controls->Add(this->tabPage4);
 			this->tabControl1->Location = System::Drawing::Point(-4, 34);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->Padding = System::Drawing::Point(0, 0);
@@ -696,6 +701,16 @@ private: System::Windows::Forms::Label^ label2;
 			this->All->Size = System::Drawing::Size(774, 479);
 			this->All->TabIndex = 32;
 			// 
+			// Nothing
+			// 
+			this->Nothing->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Nothing.Image")));
+			this->Nothing->Location = System::Drawing::Point(263, 199);
+			this->Nothing->Name = L"Nothing";
+			this->Nothing->Size = System::Drawing::Size(223, 63);
+			this->Nothing->TabIndex = 1;
+			this->Nothing->TabStop = false;
+			this->Nothing->Visible = false;
+			// 
 			// ProcessOfDrag
 			// 
 			this->ProcessOfDrag->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ProcessOfDrag.BackgroundImage")));
@@ -952,15 +967,16 @@ private: System::Windows::Forms::Label^ label2;
 			this->ClearRepeat->Interval = 300;
 			this->ClearRepeat->Tick += gcnew System::EventHandler(this, &MainForm::ClearRepeat_Tick);
 			// 
-			// Nothing
+			// tabPage4
 			// 
-			this->Nothing->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Nothing.Image")));
-			this->Nothing->Location = System::Drawing::Point(263, 199);
-			this->Nothing->Name = L"Nothing";
-			this->Nothing->Size = System::Drawing::Size(223, 63);
-			this->Nothing->TabIndex = 1;
-			this->Nothing->TabStop = false;
-			this->Nothing->Visible = false;
+			this->tabPage4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
+				static_cast<System::Int32>(static_cast<System::Byte>(39)));
+			this->tabPage4->Location = System::Drawing::Point(4, 4);
+			this->tabPage4->Name = L"tabPage4";
+			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage4->Size = System::Drawing::Size(1053, 518);
+			this->tabPage4->TabIndex = 3;
+			this->tabPage4->Text = L"tabPage4";
 			// 
 			// MainForm
 			// 
@@ -1020,6 +1036,7 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Settings))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Search))->EndInit();
 			this->All->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Nothing))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ProcessOfDrag))->EndInit();
 			this->panel3->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
@@ -1031,14 +1048,16 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Clo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HorLin))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Nothing))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-		cli::array<String^>^ NameOf = gcnew cli::array<String^>(95);
-		cli::array<String^>^ EmailOf = gcnew cli::array<String^>(95);
-		cli::array<String^>^ PaswdOf = gcnew cli::array<String^>(95);
+		cli::array<String^>^ NameOf = gcnew cli::array<String^>(100);
+		cli::array<String^>^ EmailOf = gcnew cli::array<String^>(100);
+		cli::array<String^>^ PaswdOf = gcnew cli::array<String^>(100);
+		cli::array<String^>^ Mpass = gcnew cli::array<String^>(3);
+		int MpassInd = 0;
+
 		bool isHovered = false;
 		bool DiscoverIsEnd = false;
 		String^ MainPassword;
@@ -1046,6 +1065,9 @@ private: System::Windows::Forms::Label^ label2;
 		AddPassword^ PassAdd = gcnew AddPassword;
 		Start^ Begin = gcnew Start;
 		Etcent^ etc = gcnew Etcent;
+		Notify^ Notif = gcnew Notify;
+		Confirm^ Con = gcnew Confirm;
+
 		//Тут вообще трындец
 		private: System::Void CheckLabelOverflow(Label^ label) {
 			// Создаем объект Graphics для текущего элемента
@@ -1136,7 +1158,8 @@ private: System::Windows::Forms::Label^ label2;
 					return false;
 				}
 			}
-			MainPassword = marshal_as<String^>(uncpass);
+			Mpass[MpassInd] = marshal_as<String^>(uncpass);
+			MpassInd++;
 			return true;
 		}
 		bool decrypt(string file, cli::array<String^>^ Name) {
@@ -1262,6 +1285,7 @@ private: System::Windows::Forms::Label^ label2;
 			}
 			nam.close();
 			if (!decrypt(Nam, Name)) {
+				MpassInd = 0;
 				crypt(passw, countofpass, Name, Nam);
 			}
 		}
@@ -1273,6 +1297,7 @@ private: System::Windows::Forms::Label^ label2;
 				crypt(password, NumOfAll, NameOf, "Names.acm");
 				crypt(password, NumOfAll, EmailOf, "Emails.acm");
 				crypt(password, NumOfAll, PaswdOf, "Passwords.acm");
+				MpassInd = 0;
 			}
 		}
 		cli::array<Label^>^ Emails = gcnew cli::array<Label^>(100);
@@ -1435,6 +1460,25 @@ private: System::Windows::Forms::Label^ label2;
 
 		}
 		//Тут конфиг будет обновлять данные в программу
+		bool ByError = false;
+
+		void CallNotifForm(String^ Text) {
+			Notif->StartPosition = FormStartPosition::CenterParent;
+			Notif->NotifyText->Text = Text;
+			Opacity = 0.3;
+			Notif->ShowDialog(this);
+			Opacity = 1;
+		}
+
+		void CallErrorForm(String^ Text, int code) {
+			Begin->Close();
+			tabControl1->SelectedIndex = 3;
+			CallNotifForm(Text +  " Код помилки: " + code);
+			ByError = true;
+			System::Environment::Exit(0);
+			Application::Exit();
+		}
+
 		void ApplyConfig() {
 			if (verify == 1) {
 
@@ -1444,6 +1488,14 @@ private: System::Windows::Forms::Label^ label2;
 
 				decrypt("Passwords.acm", PaswdOf);
 
+				if (!(Mpass[0] == Mpass[1] && Mpass[0] == Mpass[2] && Mpass[1] == Mpass[2])) {
+					//Что произойдёт, если пароли не совпадают
+					CallErrorForm("Файли даних відрізняються. Можливо, вони були пошкоджені або відредаговані.", 1);
+				}
+				else {
+					MainPassword = Mpass[0];
+				}
+				MpassInd = 0;
 			}
 		}
 		//Выгружаем настройки из
@@ -1616,9 +1668,9 @@ private: System::Windows::Forms::Label^ label2;
 		DeleteElementSystem(EmailOf, ind);
 		DeleteElementSystem(PaswdOf, ind);
 		NumOfAll--;
+		coef = 0;
 		cfgto();
 		SaveConfig();
-		coef = 0;
 		UpdateAfterDelete();
 	}
 
@@ -1629,6 +1681,27 @@ private: System::Windows::Forms::Label^ label2;
 		PassAdd->ShowDialog(this);
 		AddDat->Enabled = true;
 	}
+
+	bool CallConfirm() {
+		Con->StartPosition = FormStartPosition::CenterParent;
+		Opacity = 0.3;
+		Con->GetPassword = MainPassword;
+		Con->ShowDialog(this);
+		Opacity = 1;
+		if (Con->Status) {
+			return true;
+		}
+		return false;
+	}
+
+
+
+
+
+
+
+
+
 private: System::Void Add_Tick(System::Object^ sender, System::EventArgs^ e) {
 	Opacity = 1;
 	if (PassAdd->ConfirmAdd) {
@@ -1687,6 +1760,7 @@ private: System::Void Add_Tick(System::Object^ sender, System::EventArgs^ e) {
 		etc->CurrentPassword->Text = "";
 		etc->NowIndex = -1;
 	}
+
 	private: System::Void All_DragDrop(System::Object^ sender, System::Windows::Forms::DragEventArgs^ e) {
 		ProcessOfDrag->BackgroundImage = gcnew Bitmap("Resources\\MainPart\\Complete.png");
 		if (e->Data->GetDataPresent(CopyEmail->GetType()) && e->Data->GetData(CopyEmail->GetType()) == CopyEmail)
@@ -1704,7 +1778,9 @@ private: System::Void Add_Tick(System::Object^ sender, System::EventArgs^ e) {
 		{
 			ProcessOfDrag->Hide();
 			Panel^ clickedPanel = safe_cast<Panel^>(sender);
-			CallEtcForm(stoi(marshal_as<string>(clickedPanel->Name->Substring(5))));
+			if (CallConfirm()) {
+				CallEtcForm(stoi(marshal_as<string>(clickedPanel->Name->Substring(5))));
+			}
 		}
 		else if (e->Data->GetDataPresent(ShowCensore->GetType()) && e->Data->GetData(ShowCensore->GetType()) == ShowCensore)
 		{
@@ -1717,10 +1793,13 @@ private: System::Void Add_Tick(System::Object^ sender, System::EventArgs^ e) {
 			ProcessOfDrag->Hide();
 			Panel^ clickedPanel = safe_cast<Panel^>(sender);
 			if (stoi(marshal_as<string>(clickedPanel->Name->Substring(5))) != 0) {
-				FormDeleteSystem(stoi(marshal_as<string>(clickedPanel->Name->Substring(5))));
+				if (CallConfirm()) {
+					FormDeleteSystem(stoi(marshal_as<string>(clickedPanel->Name->Substring(5))));
+				}
 			}
 			else {
 				//Что, если удаляемыый элемент равен 0
+				CallNotifForm("Перша комірка видаленню не підлягає");
 			}
 		}
 		RepetProcess->Enabled = true;
@@ -1785,8 +1864,10 @@ private: System::Void Clo_MouseLeave(System::Object^ sender, System::EventArgs^ 
 	Clo->Image = gcnew Bitmap("Resources\\TopPart\\CloseNonAct.png");
 }
 private: System::Void Clo_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	cfgto();
-	SaveConfig();
+	if (!ByError) {
+		cfgto();
+		SaveConfig();
+	}
 	System::Environment::Exit(0);
 	Application::Exit();
 }
@@ -2095,7 +2176,13 @@ private: System::Void Add6_Click(System::Object^ sender, System::EventArgs^ e) {
 	PlusForm(5);
 }
 private: System::Void AddFormNow_Click(System::Object^ sender, System::EventArgs^ e) {
-	PlusForm(NumOfAll);
+	if (NumOfAll < 100) {
+		PlusForm(NumOfAll);
+	}
+	else {
+		//Если ячеек больше 100
+		CallNotifForm("Максимальная кількість комірок: 100");
+	}
 }
 private: System::Void RepetProcess_Tick(System::Object^ sender, System::EventArgs^ e) {
 	ProcessOfDrag->BackgroundImage = gcnew Bitmap("Resources\\MainPart\\Process.png");
@@ -2217,6 +2304,9 @@ private: System::Void Del_QueryContinueDrag(System::Object^ sender, System::Wind
 private: System::Void Srh_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (!SearchIsActivated) {
 		//Включить режим
+		for (int i = 0; i < NumOfAll; i++) {
+			Censores[i]->Show();
+		}
 		SearchIsActivated = true;
 		All->Location = System::Drawing::Point(266, 30);
 		All->Size = System::Drawing::Size(774, 479);
@@ -2280,6 +2370,7 @@ private: System::Void SearchReq_Click(System::Object^ sender, System::EventArgs^
 	}
 
 	else {
+		Nothing->Visible = false;
 		ReturnAfterRequest();
 	}
 	SearchReq->BackgroundImage = gcnew Bitmap("Resources\\MainPart\\SearchPressed.png");
@@ -2315,6 +2406,7 @@ private: System::Void SearchRequest_KeyPress(System::Object^ sender, System::Win
 		}
 
 		else {
+			Nothing->Visible = false;
 			ReturnAfterRequest();
 		}
 
@@ -2331,4 +2423,4 @@ private: System::Void ClearRepeat_Tick(System::Object^ sender, System::EventArgs
 }
 };
 }
-//Нужно отшлифовать некоторые фичи. Надо добавить валидацию главного пароля, разобраться с окном регистрации, добавить при шифровании проверку на правильность данных, подтверждение при удалении
+//Нужно отшлифовать некоторые фичи. разобраться с окном регистрации, добавить при шифровании проверку на правильность данных
