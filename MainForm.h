@@ -245,6 +245,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
 			this->Pas1 = (gcnew System::Windows::Forms::Label());
 			this->Ema1 = (gcnew System::Windows::Forms::Label());
+			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
 			this->OpacityBkg = (gcnew System::Windows::Forms::PictureBox());
 			this->LefTo = (gcnew System::Windows::Forms::PictureBox());
 			this->ToLow = (gcnew System::Windows::Forms::PictureBox());
@@ -271,7 +272,6 @@ private: System::Windows::Forms::Label^ label2;
 			this->RepetProcess = (gcnew System::Windows::Forms::Timer(this->components));
 			this->RepeatSearchReq = (gcnew System::Windows::Forms::Timer(this->components));
 			this->ClearRepeat = (gcnew System::Windows::Forms::Timer(this->components));
-			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->BeginInit();
@@ -550,6 +550,8 @@ private: System::Windows::Forms::Label^ label2;
 			// 
 			// panel2
 			// 
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
+				static_cast<System::Int32>(static_cast<System::Byte>(39)));
 			this->panel2->Controls->Add(this->Srh);
 			this->panel2->Controls->Add(this->ShowCensore);
 			this->panel2->Controls->Add(this->Del);
@@ -792,6 +794,17 @@ private: System::Windows::Forms::Label^ label2;
 			this->Ema1->Text = L"Вмещается 33 из 50";
 			this->Ema1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// tabPage4
+			// 
+			this->tabPage4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
+				static_cast<System::Int32>(static_cast<System::Byte>(39)));
+			this->tabPage4->Location = System::Drawing::Point(4, 4);
+			this->tabPage4->Name = L"tabPage4";
+			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage4->Size = System::Drawing::Size(1053, 518);
+			this->tabPage4->TabIndex = 3;
+			this->tabPage4->Text = L"tabPage4";
+			// 
 			// OpacityBkg
 			// 
 			this->OpacityBkg->BackColor = System::Drawing::SystemColors::AppWorkspace;
@@ -967,22 +980,12 @@ private: System::Windows::Forms::Label^ label2;
 			this->ClearRepeat->Interval = 300;
 			this->ClearRepeat->Tick += gcnew System::EventHandler(this, &MainForm::ClearRepeat_Tick);
 			// 
-			// tabPage4
-			// 
-			this->tabPage4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
-				static_cast<System::Int32>(static_cast<System::Byte>(39)));
-			this->tabPage4->Location = System::Drawing::Point(4, 4);
-			this->tabPage4->Name = L"tabPage4";
-			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage4->Size = System::Drawing::Size(1053, 518);
-			this->tabPage4->TabIndex = 3;
-			this->tabPage4->Text = L"tabPage4";
-			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::HotTrack;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
+				static_cast<System::Int32>(static_cast<System::Byte>(39)));
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1090, 590);
@@ -1055,6 +1058,11 @@ private: System::Windows::Forms::Label^ label2;
 		cli::array<String^>^ NameOf = gcnew cli::array<String^>(100);
 		cli::array<String^>^ EmailOf = gcnew cli::array<String^>(100);
 		cli::array<String^>^ PaswdOf = gcnew cli::array<String^>(100);
+
+		cli::array<String^>^ NameOfTemp = gcnew cli::array<String^>(100);
+		cli::array<String^>^ EmailOfTemp = gcnew cli::array<String^>(100);
+		cli::array<String^>^ PaswdOfTemp = gcnew cli::array<String^>(100);
+
 		cli::array<String^>^ Mpass = gcnew cli::array<String^>(3);
 		int MpassInd = 0;
 
@@ -1162,7 +1170,8 @@ private: System::Windows::Forms::Label^ label2;
 			MpassInd++;
 			return true;
 		}
-		bool decrypt(string file, cli::array<String^>^ Name) {
+
+		bool decrypt(string file, cli::array<String^>^ Name, bool check) {
 			string strin;
 			fstream ope(file, ios::in);
 			string numDig;
@@ -1222,7 +1231,20 @@ private: System::Windows::Forms::Label^ label2;
 							return false;
 						}
 					}
-					Name[p] = marshal_as<String^>(res);
+					if (!check) {
+						Name[p] = marshal_as<String^>(res);
+					}
+					else {
+						if (Name == NameOf) {
+							NameOfTemp[p] = marshal_as<String^>(res);
+						}
+						else if (Name == EmailOf) {
+							EmailOfTemp[p] = marshal_as<String^>(res);
+						}
+						else if (Name == PaswdOf) {
+							PaswdOfTemp[p] = marshal_as<String^>(res);
+						}
+					}
 					res = "";
 					how = 0;
 					cout << endl;
@@ -1230,6 +1252,27 @@ private: System::Windows::Forms::Label^ label2;
 				return true;
 			}
 			else cout << "Невірний пароль";
+		}
+
+		bool CheckForEqual(cli::array<String^>^ Name) {
+			for (int i = 0; i < NumOfAll; i++) {
+				if (Name == NameOf) {
+					if (NameOfTemp[i] != Name[i]) {
+						return false;
+					}
+				}
+				else if (Name == EmailOf) {
+					if (EmailOfTemp[i] != Name[i]) {
+						return false;
+					}
+				}
+				else if (Name == PaswdOf) {
+					if (PaswdOfTemp[i] != Name[i]) {
+						return false;
+					}
+				}
+			}
+			return true;
 		}
 
 		void crypt(string passw, int countofpass, cli::array<String^>^ Name, string Nam) {
@@ -1284,7 +1327,7 @@ private: System::Windows::Forms::Label^ label2;
 				nam << mai;
 			}
 			nam.close();
-			if (!decrypt(Nam, Name)) {
+			if (!decrypt(Nam, Name, true) && !CheckForEqual(Name)) {
 				MpassInd = 0;
 				crypt(passw, countofpass, Name, Nam);
 			}
@@ -1479,14 +1522,15 @@ private: System::Windows::Forms::Label^ label2;
 			Application::Exit();
 		}
 
+		//Данные в программу
 		void ApplyConfig() {
 			if (verify == 1) {
 
-				decrypt("Names.acm", NameOf);
+				decrypt("Names.acm", NameOf, false);
 
-				decrypt("Emails.acm", EmailOf);
+				decrypt("Emails.acm", EmailOf, false);
 
-				decrypt("Passwords.acm", PaswdOf);
+				decrypt("Passwords.acm", PaswdOf, false);
 
 				if (!(Mpass[0] == Mpass[1] && Mpass[0] == Mpass[2] && Mpass[1] == Mpass[2])) {
 					//Что произойдёт, если пароли не совпадают
@@ -1576,6 +1620,9 @@ private: System::Windows::Forms::Label^ label2;
 		Begin->Show(this);
 		Begin->Location = Location;
 		System::Type^ controlType = System::Windows::Forms::Control::typeid;
+		controlType->InvokeMember("DoubleBuffered",
+			System::Reflection::BindingFlags::SetProperty | System::Reflection::BindingFlags::Instance | System::Reflection::BindingFlags::NonPublic,
+			nullptr, this, gcnew cli::array<Object^>{ true });
 		controlType->InvokeMember("DoubleBuffered",
 			System::Reflection::BindingFlags::SetProperty | System::Reflection::BindingFlags::Instance | System::Reflection::BindingFlags::NonPublic,
 			nullptr, tabControl1, gcnew cli::array<Object^>{ true });
@@ -2281,7 +2328,6 @@ private: System::Void Del_QueryContinueDrag(System::Object^ sender, System::Wind
 	}
 }
 	
-
 	void TurnOnSearch() {
 		
 	}
@@ -2423,4 +2469,4 @@ private: System::Void ClearRepeat_Tick(System::Object^ sender, System::EventArgs
 }
 };
 }
-//Нужно отшлифовать некоторые фичи. разобраться с окном регистрации, добавить при шифровании проверку на правильность данных
+//Нужно отшлифовать некоторые фичи. разобраться с окном регистрации
