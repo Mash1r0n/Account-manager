@@ -20,7 +20,9 @@
 #include "Etcent.h"
 #include "Notify.h"
 #include "Confirm.h"
+#include "Guide.h"
 #include <cctype>
+#include "About.h"
 #pragma warning(disable:4996)
 static int massiveofseed[999];
 static bool bns[50] = { false, false, false, false, false, false, false };
@@ -56,7 +58,8 @@ namespace AccountManager {
 
 
 	private: System::Windows::Forms::PictureBox^ Settings;
-	private: System::Windows::Forms::PictureBox^ About;
+	private: System::Windows::Forms::PictureBox^ AboutMe;
+
 	private: System::Windows::Forms::Timer^ SearchRepeat;
 	private: System::Windows::Forms::Timer^ SettingsRepeat;
 	private: System::Windows::Forms::Timer^ AboutRepeat;
@@ -118,6 +121,21 @@ private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Timer^ ClearRepeat;
 	private: System::Windows::Forms::PictureBox^ Nothing;
 	private: System::Windows::Forms::TabPage^ tabPage4;
+	private: System::Windows::Forms::TabPage^ Afk;
+	private: System::Windows::Forms::Label^ AfkText;
+
+
+	private: System::Windows::Forms::PictureBox^ AfkAgree;
+	private: System::Windows::Forms::PictureBox^ AfkBarPic;
+	private: System::Windows::Forms::TextBox^ AfkBar;
+	private: System::Windows::Forms::Panel^ AfkError;
+	private: System::Windows::Forms::Label^ Error1;
+	private: System::Windows::Forms::Timer^ TimeToAfk;
+	private: System::Windows::Forms::ToolTip^ AboutAllFunc;
+
+
+
+
 
 
 
@@ -234,7 +252,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->AddNewFor = (gcnew System::Windows::Forms::PictureBox());
 			this->CopyPassword = (gcnew System::Windows::Forms::PictureBox());
 			this->CopyEmail = (gcnew System::Windows::Forms::PictureBox());
-			this->About = (gcnew System::Windows::Forms::PictureBox());
+			this->AboutMe = (gcnew System::Windows::Forms::PictureBox());
 			this->Settings = (gcnew System::Windows::Forms::PictureBox());
 			this->Search = (gcnew System::Windows::Forms::PictureBox());
 			this->All = (gcnew System::Windows::Forms::Panel());
@@ -247,6 +265,13 @@ private: System::Windows::Forms::Label^ label2;
 			this->Pas1 = (gcnew System::Windows::Forms::Label());
 			this->Ema1 = (gcnew System::Windows::Forms::Label());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->Afk = (gcnew System::Windows::Forms::TabPage());
+			this->AfkError = (gcnew System::Windows::Forms::Panel());
+			this->Error1 = (gcnew System::Windows::Forms::Label());
+			this->AfkBar = (gcnew System::Windows::Forms::TextBox());
+			this->AfkAgree = (gcnew System::Windows::Forms::PictureBox());
+			this->AfkBarPic = (gcnew System::Windows::Forms::PictureBox());
+			this->AfkText = (gcnew System::Windows::Forms::Label());
 			this->OpacityBkg = (gcnew System::Windows::Forms::PictureBox());
 			this->LefTo = (gcnew System::Windows::Forms::PictureBox());
 			this->ToLow = (gcnew System::Windows::Forms::PictureBox());
@@ -273,6 +298,8 @@ private: System::Windows::Forms::Label^ label2;
 			this->RepetProcess = (gcnew System::Windows::Forms::Timer(this->components));
 			this->RepeatSearchReq = (gcnew System::Windows::Forms::Timer(this->components));
 			this->ClearRepeat = (gcnew System::Windows::Forms::Timer(this->components));
+			this->TimeToAfk = (gcnew System::Windows::Forms::Timer(this->components));
+			this->AboutAllFunc = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->BeginInit();
@@ -297,7 +324,7 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AddNewFor))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->About))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AboutMe))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Settings))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Search))->BeginInit();
 			this->All->SuspendLayout();
@@ -306,6 +333,10 @@ private: System::Windows::Forms::Label^ label2;
 			this->panel3->SuspendLayout();
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
+			this->Afk->SuspendLayout();
+			this->AfkError->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AfkAgree))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AfkBarPic))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->OpacityBkg))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LefTo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToLow))->BeginInit();
@@ -322,6 +353,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->Controls->Add(this->tabPage4);
+			this->tabControl1->Controls->Add(this->Afk);
 			this->tabControl1->Location = System::Drawing::Point(-4, 34);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->Padding = System::Drawing::Point(0, 0);
@@ -456,7 +488,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->tabPage3->Controls->Add(this->SearchBar);
 			this->tabPage3->Controls->Add(this->Vline);
 			this->tabPage3->Controls->Add(this->panel2);
-			this->tabPage3->Controls->Add(this->About);
+			this->tabPage3->Controls->Add(this->AboutMe);
 			this->tabPage3->Controls->Add(this->Settings);
 			this->tabPage3->Controls->Add(this->Search);
 			this->tabPage3->Controls->Add(this->All);
@@ -574,6 +606,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->Srh->Size = System::Drawing::Size(41, 41);
 			this->Srh->TabIndex = 1;
 			this->Srh->TabStop = false;
+			this->AboutAllFunc->SetToolTip(this->Srh, L"Пошук");
 			this->Srh->Click += gcnew System::EventHandler(this, &MainForm::Srh_Click);
 			this->Srh->MouseEnter += gcnew System::EventHandler(this, &MainForm::Srh_MouseEnter);
 			this->Srh->MouseLeave += gcnew System::EventHandler(this, &MainForm::Srh_MouseLeave);
@@ -586,6 +619,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->ShowCensore->Size = System::Drawing::Size(41, 41);
 			this->ShowCensore->TabIndex = 1;
 			this->ShowCensore->TabStop = false;
+			this->AboutAllFunc->SetToolTip(this->ShowCensore, L"Приховати дані");
 			this->ShowCensore->QueryContinueDrag += gcnew System::Windows::Forms::QueryContinueDragEventHandler(this, &MainForm::ShowCensore_QueryContinueDrag);
 			this->ShowCensore->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::ShowCensore_MouseDown);
 			this->ShowCensore->MouseEnter += gcnew System::EventHandler(this, &MainForm::ShowCensore_MouseEnter);
@@ -599,6 +633,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->Del->Size = System::Drawing::Size(41, 41);
 			this->Del->TabIndex = 40;
 			this->Del->TabStop = false;
+			this->AboutAllFunc->SetToolTip(this->Del, L"Видалити комірку");
 			this->Del->QueryContinueDrag += gcnew System::Windows::Forms::QueryContinueDragEventHandler(this, &MainForm::Del_QueryContinueDrag);
 			this->Del->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::Del_MouseDown);
 			this->Del->MouseEnter += gcnew System::EventHandler(this, &MainForm::Del_MouseEnter);
@@ -612,6 +647,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->Etc->Size = System::Drawing::Size(41, 41);
 			this->Etc->TabIndex = 39;
 			this->Etc->TabStop = false;
+			this->AboutAllFunc->SetToolTip(this->Etc, L"Редагувати дані");
 			this->Etc->QueryContinueDrag += gcnew System::Windows::Forms::QueryContinueDragEventHandler(this, &MainForm::Etc_QueryContinueDrag);
 			this->Etc->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::Etc_MouseDown);
 			this->Etc->MouseEnter += gcnew System::EventHandler(this, &MainForm::Etc_MouseEnter);
@@ -625,6 +661,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->AddNewFor->Size = System::Drawing::Size(41, 41);
 			this->AddNewFor->TabIndex = 38;
 			this->AddNewFor->TabStop = false;
+			this->AboutAllFunc->SetToolTip(this->AddNewFor, L"Додати комірку");
 			this->AddNewFor->Click += gcnew System::EventHandler(this, &MainForm::AddFormNow_Click);
 			this->AddNewFor->MouseEnter += gcnew System::EventHandler(this, &MainForm::Add5_MouseEnter);
 			this->AddNewFor->MouseLeave += gcnew System::EventHandler(this, &MainForm::Add5_MouseLeave);
@@ -637,6 +674,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->CopyPassword->Size = System::Drawing::Size(41, 41);
 			this->CopyPassword->TabIndex = 37;
 			this->CopyPassword->TabStop = false;
+			this->AboutAllFunc->SetToolTip(this->CopyPassword, L"Скопіювати пароль");
 			this->CopyPassword->QueryContinueDrag += gcnew System::Windows::Forms::QueryContinueDragEventHandler(this, &MainForm::CopyPassword_QueryContinueDrag);
 			this->CopyPassword->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::CopyPassword_MouseDown);
 			this->CopyPassword->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyPassword_MouseEnter);
@@ -650,22 +688,23 @@ private: System::Windows::Forms::Label^ label2;
 			this->CopyEmail->Size = System::Drawing::Size(41, 41);
 			this->CopyEmail->TabIndex = 36;
 			this->CopyEmail->TabStop = false;
+			this->AboutAllFunc->SetToolTip(this->CopyEmail, L"Скопіювати пошту");
 			this->CopyEmail->QueryContinueDrag += gcnew System::Windows::Forms::QueryContinueDragEventHandler(this, &MainForm::CopyEmail_QueryContinueDrag);
 			this->CopyEmail->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::CopyEmail_MouseDown);
 			this->CopyEmail->MouseEnter += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseEnter);
 			this->CopyEmail->MouseLeave += gcnew System::EventHandler(this, &MainForm::CopyEmail_MouseLeave);
 			// 
-			// About
+			// AboutMe
 			// 
-			this->About->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"About.Image")));
-			this->About->Location = System::Drawing::Point(0, 320);
-			this->About->Name = L"About";
-			this->About->Size = System::Drawing::Size(229, 134);
-			this->About->TabIndex = 4;
-			this->About->TabStop = false;
-			this->About->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::About_MouseClick);
-			this->About->MouseEnter += gcnew System::EventHandler(this, &MainForm::About_MouseEnter);
-			this->About->MouseLeave += gcnew System::EventHandler(this, &MainForm::About_MouseLeave);
+			this->AboutMe->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AboutMe.Image")));
+			this->AboutMe->Location = System::Drawing::Point(0, 320);
+			this->AboutMe->Name = L"AboutMe";
+			this->AboutMe->Size = System::Drawing::Size(229, 134);
+			this->AboutMe->TabIndex = 4;
+			this->AboutMe->TabStop = false;
+			this->AboutMe->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::About_MouseClick);
+			this->AboutMe->MouseEnter += gcnew System::EventHandler(this, &MainForm::About_MouseEnter);
+			this->AboutMe->MouseLeave += gcnew System::EventHandler(this, &MainForm::About_MouseLeave);
 			// 
 			// Settings
 			// 
@@ -687,6 +726,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->Search->Size = System::Drawing::Size(229, 134);
 			this->Search->TabIndex = 2;
 			this->Search->TabStop = false;
+			this->Search->Click += gcnew System::EventHandler(this, &MainForm::Search_Click);
 			this->Search->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::Search_MouseClick);
 			this->Search->MouseEnter += gcnew System::EventHandler(this, &MainForm::Search_MouseEnter);
 			this->Search->MouseLeave += gcnew System::EventHandler(this, &MainForm::Search_MouseLeave);
@@ -805,6 +845,94 @@ private: System::Windows::Forms::Label^ label2;
 			this->tabPage4->Size = System::Drawing::Size(1053, 518);
 			this->tabPage4->TabIndex = 3;
 			this->tabPage4->Text = L"tabPage4";
+			// 
+			// Afk
+			// 
+			this->Afk->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
+				static_cast<System::Int32>(static_cast<System::Byte>(39)));
+			this->Afk->Controls->Add(this->AfkError);
+			this->Afk->Controls->Add(this->AfkBar);
+			this->Afk->Controls->Add(this->AfkAgree);
+			this->Afk->Controls->Add(this->AfkBarPic);
+			this->Afk->Controls->Add(this->AfkText);
+			this->Afk->Location = System::Drawing::Point(4, 4);
+			this->Afk->Name = L"Afk";
+			this->Afk->Padding = System::Windows::Forms::Padding(3);
+			this->Afk->Size = System::Drawing::Size(1053, 518);
+			this->Afk->TabIndex = 4;
+			this->Afk->Text = L"tabPage5";
+			// 
+			// AfkError
+			// 
+			this->AfkError->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AfkError.BackgroundImage")));
+			this->AfkError->Controls->Add(this->Error1);
+			this->AfkError->Location = System::Drawing::Point(353, 273);
+			this->AfkError->Name = L"AfkError";
+			this->AfkError->Size = System::Drawing::Size(358, 45);
+			this->AfkError->TabIndex = 4;
+			this->AfkError->Visible = false;
+			this->AfkError->MouseEnter += gcnew System::EventHandler(this, &MainForm::AfkError_MouseEnter);
+			// 
+			// Error1
+			// 
+			this->Error1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(49)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->Error1->Font = (gcnew System::Drawing::Font(L"Arial Black", 11.25F, System::Drawing::FontStyle::Bold));
+			this->Error1->ForeColor = System::Drawing::Color::Maroon;
+			this->Error1->Location = System::Drawing::Point(54, 11);
+			this->Error1->Name = L"Error1";
+			this->Error1->Size = System::Drawing::Size(247, 26);
+			this->Error1->TabIndex = 15;
+			this->Error1->Text = L"Невірний пароль";
+			this->Error1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// AfkBar
+			// 
+			this->AfkBar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(49)), static_cast<System::Int32>(static_cast<System::Byte>(55)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->AfkBar->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->AfkBar->Font = (gcnew System::Drawing::Font(L"Arial Black", 15.25F, System::Drawing::FontStyle::Bold));
+			this->AfkBar->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->AfkBar->Location = System::Drawing::Point(370, 284);
+			this->AfkBar->MaxLength = 25;
+			this->AfkBar->Name = L"AfkBar";
+			this->AfkBar->Size = System::Drawing::Size(328, 29);
+			this->AfkBar->TabIndex = 3;
+			// 
+			// AfkAgree
+			// 
+			this->AfkAgree->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AfkAgree.Image")));
+			this->AfkAgree->Location = System::Drawing::Point(353, 324);
+			this->AfkAgree->Name = L"AfkAgree";
+			this->AfkAgree->Size = System::Drawing::Size(358, 34);
+			this->AfkAgree->TabIndex = 2;
+			this->AfkAgree->TabStop = false;
+			this->AfkAgree->Click += gcnew System::EventHandler(this, &MainForm::AfkAgree_Click);
+			this->AfkAgree->MouseEnter += gcnew System::EventHandler(this, &MainForm::AfkAgree_MouseEnter);
+			this->AfkAgree->MouseLeave += gcnew System::EventHandler(this, &MainForm::AfkAgree_MouseLeave);
+			// 
+			// AfkBarPic
+			// 
+			this->AfkBarPic->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AfkBarPic.Image")));
+			this->AfkBarPic->Location = System::Drawing::Point(353, 273);
+			this->AfkBarPic->Name = L"AfkBarPic";
+			this->AfkBarPic->Size = System::Drawing::Size(358, 45);
+			this->AfkBarPic->TabIndex = 1;
+			this->AfkBarPic->TabStop = false;
+			// 
+			// AfkText
+			// 
+			this->AfkText->Font = (gcnew System::Drawing::Font(L"Arial Black", 17.25F, System::Drawing::FontStyle::Bold));
+			this->AfkText->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->AfkText->Location = System::Drawing::Point(87, 125);
+			this->AfkText->Name = L"AfkText";
+			this->AfkText->Size = System::Drawing::Size(890, 99);
+			this->AfkText->TabIndex = 0;
+			this->AfkText->Text = L"Ви були перенаправлені сюди через бездіяльність у програмі. Для продовження, введ"
+				L"іть пароль";
+			this->AfkText->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// OpacityBkg
 			// 
@@ -981,6 +1109,23 @@ private: System::Windows::Forms::Label^ label2;
 			this->ClearRepeat->Interval = 300;
 			this->ClearRepeat->Tick += gcnew System::EventHandler(this, &MainForm::ClearRepeat_Tick);
 			// 
+			// TimeToAfk
+			// 
+			this->TimeToAfk->Interval = 300000;
+			this->TimeToAfk->Tick += gcnew System::EventHandler(this, &MainForm::TimeToAfk_Tick);
+			// 
+			// AboutAllFunc
+			// 
+			this->AboutAllFunc->AutoPopDelay = 5000;
+			this->AboutAllFunc->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(47)),
+				static_cast<System::Int32>(static_cast<System::Byte>(50)));
+			this->AboutAllFunc->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->AboutAllFunc->InitialDelay = 500;
+			this->AboutAllFunc->OwnerDraw = true;
+			this->AboutAllFunc->ReshowDelay = 100;
+			this->AboutAllFunc->Draw += gcnew System::Windows::Forms::DrawToolTipEventHandler(this, &MainForm::AboutAllFunc_Draw);
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1006,6 +1151,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MainForm::MainForm_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->SizeChanged += gcnew System::EventHandler(this, &MainForm::MainForm_SizeChanged);
+			this->VisibleChanged += gcnew System::EventHandler(this, &MainForm::MainForm_VisibleChanged);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::MainForm_MouseDown);
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::MainForm_MouseMove);
 			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::MainForm_MouseUp);
@@ -1036,7 +1182,7 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AddNewFor))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyPassword))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CopyEmail))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->About))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AboutMe))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Settings))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Search))->EndInit();
 			this->All->ResumeLayout(false);
@@ -1045,6 +1191,11 @@ private: System::Windows::Forms::Label^ label2;
 			this->panel3->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
+			this->Afk->ResumeLayout(false);
+			this->Afk->PerformLayout();
+			this->AfkError->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AfkAgree))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AfkBarPic))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->OpacityBkg))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LefTo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToLow))->EndInit();
@@ -1076,6 +1227,8 @@ private: System::Windows::Forms::Label^ label2;
 		Etcent^ etc = gcnew Etcent;
 		Notify^ Notif = gcnew Notify;
 		Confirm^ Con = gcnew Confirm;
+		Guide^ Guid = gcnew Guide;
+		About^ Me = gcnew About;
 
 		//Тут вообще трындец
 		private: System::Void CheckLabelOverflow(Label^ label) {
@@ -2063,14 +2216,17 @@ private: System::Void SigPas_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void ToLow_Click(System::Object^ sender, System::EventArgs^ e) {
 	WindowState = FormWindowState::Minimized;
 }
+
 private: System::Void MainForm_SizeChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (WindowState == FormWindowState::Minimized && DiscoverIsEnd)
 	{
 		Opacity = 0;
+		TimeToAfk->Enabled = true;
 	}
 	else if (WindowState == FormWindowState::Normal && DiscoverIsEnd)
 	{
 		OpacityMinimized->Enabled = true;
+		TimeToAfk->Enabled = false;
 	}
 }
 
@@ -2097,10 +2253,10 @@ private: System::Void HideTxt_Tick(System::Object^ sender, System::EventArgs^ e)
 }
 	   //Тут самый сок крч (Главная страница)
 private: System::Void Search_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	Search->Image = gcnew Bitmap("Resources\\MainPart\\SearchEnter.png");
+	Search->Image = gcnew Bitmap("Resources\\MainPart\\GuideEnter.png");
 }
 private: System::Void Search_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	Search->Image = gcnew Bitmap("Resources\\MainPart\\Search.png");
+	Search->Image = gcnew Bitmap("Resources\\MainPart\\Guide.png");
 	buttons[0] = 0;
 }
 private: System::Void Settings_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
@@ -2111,22 +2267,29 @@ private: System::Void Settings_MouseLeave(System::Object^ sender, System::EventA
 	buttons[1] = 0;
 }
 private: System::Void About_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	About->Image = gcnew Bitmap("Resources\\MainPart\\AboutEnter.png");
+	AboutMe->Image = gcnew Bitmap("Resources\\MainPart\\AboutEnter.png");
 }
 private: System::Void About_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	About->Image = gcnew Bitmap("Resources\\MainPart\\About.png");
+	AboutMe->Image = gcnew Bitmap("Resources\\MainPart\\About.png");
 	buttons[2] = 0;
 }   
 private: System::Void SearchRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
 	if (buttons[0] == 1) {
-		Search->Image = gcnew Bitmap("Resources\\MainPart\\SearchEnter.png");
+		Search->Image = gcnew Bitmap("Resources\\MainPart\\GuideEnter.png");
 	}
 	SearchRepeat->Enabled = false;
 }
+	   void CallGuid() {
+		   Opacity = 0.3;
+		   Guid->StartPosition = FormStartPosition::CenterParent;
+		   Guid->ShowDialog(this);
+		   Opacity = 1;
+	   }
 private: System::Void Search_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	Search->Image = gcnew Bitmap("Resources\\MainPart\\SearchClick.png");
+	Search->Image = gcnew Bitmap("Resources\\MainPart\\GuideClick.png");
 	buttons[0] = 1;
 	SearchRepeat->Enabled = true;
+	CallGuid();
 }
 private: System::Void Settings_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	Settings->Image = gcnew Bitmap("Resources\\MainPart\\SettingsClick.png");
@@ -2139,14 +2302,21 @@ private: System::Void SettingsRepeat_Tick(System::Object^ sender, System::EventA
 	}
 	SettingsRepeat->Enabled = false;
 }
+	void CallAboutMe() {
+		Opacity = 0.3;
+		Me->StartPosition = FormStartPosition::CenterParent;
+		Me->ShowDialog(this);
+		Opacity = 1;
+	}
 private: System::Void About_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	About->Image = gcnew Bitmap("Resources\\MainPart\\AboutClick.png");
+	AboutMe->Image = gcnew Bitmap("Resources\\MainPart\\AboutClick.png");
 	buttons[2] = 1;
 	AboutRepeat->Enabled = true;
+	CallAboutMe();
 }
 private: System::Void AboutRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
 	if (buttons[2] == 1) {
-		About->Image = gcnew Bitmap("Resources\\MainPart\\AboutEnter.png");
+		AboutMe->Image = gcnew Bitmap("Resources\\MainPart\\AboutEnter.png");
 	}
 	AboutRepeat->Enabled = false;
 }
@@ -2481,18 +2651,66 @@ private: System::Void SearchRequest_KeyPress(System::Object^ sender, System::Win
 		e->Handled = true;
 	}
 }
+
 private: System::Void RepeatSearchReq_Tick(System::Object^ sender, System::EventArgs^ e) {
 	SearchReq->BackgroundImage = gcnew Bitmap("Resources\\MainPart\\SearchIcon.png");
 	RepeatSearchReq->Enabled = false;
 }
+
 private: System::Void ClearRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
 	ClearSearchBar->BackgroundImage = gcnew Bitmap("Resources\\MainPart\\Clear.png");
 	ClearRepeat->Enabled = false;
 }
+
 private: System::Void SigPas_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	SigPas->Text = "";
 }
+private: System::Void AfkAgree_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	AfkAgree->Image = gcnew Bitmap("Resources\\LogInPart\\AgreeEnter.png");
+}
+private: System::Void AfkAgree_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	AfkAgree->Image = gcnew Bitmap("Resources\\LogInPart\\Agree.png");
+}
+private: System::Void AfkAgree_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (AfkBar->Text == MainPassword) {
+		tabControl1->SelectedIndex = 2;
+		AfkBar->Text = "";
+	}
+	else {
+		AfkError->Visible = true;
+	}
+}
+private: System::Void AfkError_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	AfkError->Visible = false;
+}
+private: System::Void TimeToAfk_Tick(System::Object^ sender, System::EventArgs^ e) {
+	tabControl1->SelectedIndex = 4;
+	TimeToAfk->Enabled = false;
+}
+private: System::Void MainForm_VisibleChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (Visible == false && DiscoverIsEnd) {
+		TimeToAfk->Enabled = true;
+	}
+	else if (Visible && DiscoverIsEnd) {
+		TimeToAfk->Enabled = false;
+	}
+}
+private: System::Void Search_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void AboutAllFunc_Draw(System::Object^ sender, System::Windows::Forms::DrawToolTipEventArgs^ e) {
+	Color backgroundColor = Color::FromArgb(44, 47, 50);
+	Color textColor = Color::FromArgb(133, 141, 140);   
+	SolidBrush^ backgroundBrush = gcnew SolidBrush(backgroundColor);
+	e->Graphics->FillRectangle(backgroundBrush, e->Bounds);
+	e->DrawBorder();
+	SolidBrush^ textBrush = gcnew SolidBrush(textColor);
+	TextFormatFlags flags = TextFormatFlags::HorizontalCenter | TextFormatFlags::VerticalCenter;
+	e->DrawText(flags);
+	delete backgroundBrush;
+	delete textBrush;
+}
 };
 }
+
 //Добавить переход на вкладку бездействия если не использовать программу более 5 минут
 //Добавить вкладки инструкции и О нас

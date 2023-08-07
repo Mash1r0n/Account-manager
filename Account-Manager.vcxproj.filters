@@ -39,6 +39,12 @@
     <ClCompile Include="Confirm.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="Guide.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="About.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Start.h">
@@ -63,6 +69,12 @@
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
     <ClInclude Include="Confirm.h">
+      <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
+    <ClInclude Include="Guide.h">
+      <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
+    <ClInclude Include="About.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
   </ItemGroup>
