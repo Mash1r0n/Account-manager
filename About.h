@@ -168,6 +168,7 @@ namespace AccountManager {
 			this->TipForLogo->OwnerDraw = true;
 			this->TipForLogo->ReshowDelay = 100;
 			this->TipForLogo->Draw += gcnew System::Windows::Forms::DrawToolTipEventHandler(this, &About::TipForLogo_Draw);
+			this->TipForLogo->Popup += gcnew System::Windows::Forms::PopupEventHandler(this, &About::TipForLogo_Popup);
 			// 
 			// About
 			// 
@@ -271,6 +272,9 @@ private: System::Void TipForLogo_Draw(System::Object^ sender, System::Windows::F
 	e->DrawText(flags);
 	delete backgroundBrush;
 	delete textBrush;
+}
+private: System::Void TipForLogo_Popup(System::Object^ sender, System::Windows::Forms::PopupEventArgs^ e) {
+	System::Threading::Thread::Sleep(100);
 }
 };
 }

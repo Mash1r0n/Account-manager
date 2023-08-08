@@ -21,6 +21,7 @@
 #include "Notify.h"
 #include "Confirm.h"
 #include "Guide.h"
+#include "LetsSet.h"
 #include <cctype>
 #include "About.h"
 #pragma warning(disable:4996)
@@ -69,6 +70,7 @@ namespace AccountManager {
 	private: System::Windows::Forms::Timer^ AddDat;
 	private: System::Windows::Forms::PictureBox^ OpacityBkg;
 	private: System::Windows::Forms::Timer^ ConAdd;
+	private: System::Windows::Forms::Panel^ Trash;
 
 
 
@@ -77,7 +79,9 @@ namespace AccountManager {
 
 
 
-private: System::Windows::Forms::Panel^ panel1;
+
+
+
 
 
 
@@ -91,13 +95,19 @@ private: System::Windows::Forms::PictureBox^ pictureBox9;
 
 
 private: System::Windows::Forms::Panel^ All;
+	private: System::Windows::Forms::Panel^ CensoreTrash;
 
 
-private: System::Windows::Forms::Panel^ panel3;
+
+
+
 private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::PictureBox^ CopyEmail;
+	private: System::Windows::Forms::Panel^ ToolPanel;
 
-	private: System::Windows::Forms::Panel^ panel2;
+
+
+
 	private: System::Windows::Forms::PictureBox^ Del;
 
 	private: System::Windows::Forms::PictureBox^ Etc;
@@ -244,7 +254,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->SearchRequest = (gcnew System::Windows::Forms::TextBox());
 			this->Vline = (gcnew System::Windows::Forms::PictureBox());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->ToolPanel = (gcnew System::Windows::Forms::Panel());
 			this->Srh = (gcnew System::Windows::Forms::PictureBox());
 			this->ShowCensore = (gcnew System::Windows::Forms::PictureBox());
 			this->Del = (gcnew System::Windows::Forms::PictureBox());
@@ -258,9 +268,9 @@ private: System::Windows::Forms::Label^ label2;
 			this->All = (gcnew System::Windows::Forms::Panel());
 			this->Nothing = (gcnew System::Windows::Forms::PictureBox());
 			this->ProcessOfDrag = (gcnew System::Windows::Forms::PictureBox());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->CensoreTrash = (gcnew System::Windows::Forms::Panel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->Trash = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
 			this->Pas1 = (gcnew System::Windows::Forms::Label());
 			this->Ema1 = (gcnew System::Windows::Forms::Label());
@@ -316,7 +326,7 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Vline))->BeginInit();
-			this->panel2->SuspendLayout();
+			this->ToolPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Srh))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ShowCensore))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Del))->BeginInit();
@@ -330,8 +340,8 @@ private: System::Windows::Forms::Label^ label2;
 			this->All->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Nothing))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ProcessOfDrag))->BeginInit();
-			this->panel3->SuspendLayout();
-			this->panel1->SuspendLayout();
+			this->CensoreTrash->SuspendLayout();
+			this->Trash->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
 			this->Afk->SuspendLayout();
 			this->AfkError->SuspendLayout();
@@ -487,13 +497,13 @@ private: System::Windows::Forms::Label^ label2;
 			this->tabPage3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tabPage3.BackgroundImage")));
 			this->tabPage3->Controls->Add(this->SearchBar);
 			this->tabPage3->Controls->Add(this->Vline);
-			this->tabPage3->Controls->Add(this->panel2);
+			this->tabPage3->Controls->Add(this->ToolPanel);
 			this->tabPage3->Controls->Add(this->AboutMe);
 			this->tabPage3->Controls->Add(this->Settings);
 			this->tabPage3->Controls->Add(this->Search);
 			this->tabPage3->Controls->Add(this->All);
-			this->tabPage3->Controls->Add(this->panel3);
-			this->tabPage3->Controls->Add(this->panel1);
+			this->tabPage3->Controls->Add(this->CensoreTrash);
+			this->tabPage3->Controls->Add(this->Trash);
 			this->tabPage3->ForeColor = System::Drawing::Color::Transparent;
 			this->tabPage3->Location = System::Drawing::Point(4, 4);
 			this->tabPage3->Name = L"tabPage3";
@@ -581,21 +591,21 @@ private: System::Windows::Forms::Label^ label2;
 			this->Vline->TabIndex = 36;
 			this->Vline->TabStop = false;
 			// 
-			// panel2
+			// ToolPanel
 			// 
-			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
+			this->ToolPanel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
 				static_cast<System::Int32>(static_cast<System::Byte>(39)));
-			this->panel2->Controls->Add(this->Srh);
-			this->panel2->Controls->Add(this->ShowCensore);
-			this->panel2->Controls->Add(this->Del);
-			this->panel2->Controls->Add(this->Etc);
-			this->panel2->Controls->Add(this->AddNewFor);
-			this->panel2->Controls->Add(this->CopyPassword);
-			this->panel2->Controls->Add(this->CopyEmail);
-			this->panel2->Location = System::Drawing::Point(986, 12);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(108, 500);
-			this->panel2->TabIndex = 33;
+			this->ToolPanel->Controls->Add(this->Srh);
+			this->ToolPanel->Controls->Add(this->ShowCensore);
+			this->ToolPanel->Controls->Add(this->Del);
+			this->ToolPanel->Controls->Add(this->Etc);
+			this->ToolPanel->Controls->Add(this->AddNewFor);
+			this->ToolPanel->Controls->Add(this->CopyPassword);
+			this->ToolPanel->Controls->Add(this->CopyEmail);
+			this->ToolPanel->Location = System::Drawing::Point(986, 12);
+			this->ToolPanel->Name = L"ToolPanel";
+			this->ToolPanel->Size = System::Drawing::Size(108, 500);
+			this->ToolPanel->TabIndex = 33;
 			// 
 			// Srh
 			// 
@@ -765,15 +775,15 @@ private: System::Windows::Forms::Label^ label2;
 			this->ProcessOfDrag->TabStop = false;
 			this->ProcessOfDrag->Visible = false;
 			// 
-			// panel3
+			// CensoreTrash
 			// 
-			this->panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
-			this->panel3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel3->Controls->Add(this->label2);
-			this->panel3->Location = System::Drawing::Point(288, 124);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(698, 55);
-			this->panel3->TabIndex = 35;
+			this->CensoreTrash->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CensoreTrash.BackgroundImage")));
+			this->CensoreTrash->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->CensoreTrash->Controls->Add(this->label2);
+			this->CensoreTrash->Location = System::Drawing::Point(288, 124);
+			this->CensoreTrash->Name = L"CensoreTrash";
+			this->CensoreTrash->Size = System::Drawing::Size(698, 55);
+			this->CensoreTrash->TabIndex = 35;
 			// 
 			// label2
 			// 
@@ -790,17 +800,17 @@ private: System::Windows::Forms::Label^ label2;
 			this->label2->Text = L"Akayn Team";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// panel1
+			// Trash
 			// 
-			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
-			this->panel1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel1->Controls->Add(this->pictureBox9);
-			this->panel1->Controls->Add(this->Pas1);
-			this->panel1->Controls->Add(this->Ema1);
-			this->panel1->Location = System::Drawing::Point(290, 66);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(698, 55);
-			this->panel1->TabIndex = 29;
+			this->Trash->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Trash.BackgroundImage")));
+			this->Trash->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Trash->Controls->Add(this->pictureBox9);
+			this->Trash->Controls->Add(this->Pas1);
+			this->Trash->Controls->Add(this->Ema1);
+			this->Trash->Location = System::Drawing::Point(290, 66);
+			this->Trash->Name = L"Trash";
+			this->Trash->Size = System::Drawing::Size(698, 55);
+			this->Trash->TabIndex = 29;
 			// 
 			// pictureBox9
 			// 
@@ -1125,6 +1135,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->AboutAllFunc->OwnerDraw = true;
 			this->AboutAllFunc->ReshowDelay = 100;
 			this->AboutAllFunc->Draw += gcnew System::Windows::Forms::DrawToolTipEventHandler(this, &MainForm::AboutAllFunc_Draw);
+			this->AboutAllFunc->Popup += gcnew System::Windows::Forms::PopupEventHandler(this, &MainForm::AboutAllFunc_Popup);
 			// 
 			// MainForm
 			// 
@@ -1174,7 +1185,7 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Vline))->EndInit();
-			this->panel2->ResumeLayout(false);
+			this->ToolPanel->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Srh))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ShowCensore))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Del))->EndInit();
@@ -1188,8 +1199,8 @@ private: System::Windows::Forms::Label^ label2;
 			this->All->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Nothing))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ProcessOfDrag))->EndInit();
-			this->panel3->ResumeLayout(false);
-			this->panel1->ResumeLayout(false);
+			this->CensoreTrash->ResumeLayout(false);
+			this->Trash->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
 			this->Afk->ResumeLayout(false);
 			this->Afk->PerformLayout();
@@ -1223,6 +1234,7 @@ private: System::Windows::Forms::Label^ label2;
 		String^ MainPassword;
 		bool LetsBack = false;
 		AddPassword^ PassAdd = gcnew AddPassword;
+		LetsSet^ St = gcnew LetsSet;
 		Start^ Begin = gcnew Start;
 		Etcent^ etc = gcnew Etcent;
 		Notify^ Notif = gcnew Notify;
@@ -2128,7 +2140,7 @@ private: System::Void Agree_MouseClick(System::Object^ sender, System::Windows::
 			EmailOf[0] = "Akayn.Team@gmail.com";
 			PaswdOf[0] = SigPas->Text;
 			NameOf[0] = "Це ваш перший пароль";
-			panel1->Show();
+			Trash->Show();
 			MainPassword = SigPas->Text;
 			SaveConfig();
 			open();
@@ -2291,10 +2303,22 @@ private: System::Void Search_MouseClick(System::Object^ sender, System::Windows:
 	SearchRepeat->Enabled = true;
 	CallGuid();
 }
+	void CallSettings() {
+		St->Ver = verify;
+		St->Num = NumOfAll;
+		St->ActualPassword = MainPassword;
+		Opacity = 0.3;
+		St->ShowDialog(this);
+		Opacity = 1;
+		if (St->ApplyStatus){
+			MainPassword = St->NewPassword->Text;
+		}
+	}
 private: System::Void Settings_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 	Settings->Image = gcnew Bitmap("Resources\\MainPart\\SettingsClick.png");
 	buttons[1] = 1;
 	SettingsRepeat->Enabled = true;
+	CallSettings();
 }
 private: System::Void SettingsRepeat_Tick(System::Object^ sender, System::EventArgs^ e) {
 	if (buttons[1] == 1) {
@@ -2709,8 +2733,10 @@ private: System::Void AboutAllFunc_Draw(System::Object^ sender, System::Windows:
 	delete backgroundBrush;
 	delete textBrush;
 }
+private: System::Void AboutAllFunc_Popup(System::Object^ sender, System::Windows::Forms::PopupEventArgs^ e) {
+	System::Threading::Thread::Sleep(100);
+
+}
 };
 }
 
-//Добавить переход на вкладку бездействия если не использовать программу более 5 минут
-//Добавить вкладки инструкции и О нас

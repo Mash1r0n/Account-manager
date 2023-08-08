@@ -127,6 +127,7 @@
     <ClCompile Include="Notify.cpp" />
     <ClCompile Include="OpacityBkg.cpp" />
     <ClCompile Include="OurFunc.cpp" />
+    <ClCompile Include="LetsSet.cpp" />
     <ClCompile Include="Start.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +156,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="LetsSet.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Start.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -183,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OpacityBkg.resx">
       <DependentUpon>OpacityBkg.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LetsSet.resx">
+      <DependentUpon>LetsSet.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.h</DependentUpon>
