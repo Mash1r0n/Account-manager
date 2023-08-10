@@ -9,6 +9,7 @@ using namespace AccountManager;
 HANDLE hMutex;
 void OnFormClosed(Object^ sender, FormClosedEventArgs^ e);
 [STAThreadAttribute]
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 
     hMutex = CreateMutex(NULL, true, _T("AMR"));

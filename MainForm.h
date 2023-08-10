@@ -24,6 +24,7 @@
 #include "LetsSet.h"
 #include <cctype>
 #include "About.h"
+
 #pragma warning(disable:4996)
 static int massiveofseed[999];
 static bool bns[50] = { false, false, false, false, false, false, false };
@@ -42,11 +43,16 @@ namespace AccountManager {
 	using namespace std;
 	using namespace msclr::interop;
 	using namespace cli;
+	using namespace System::Drawing;
+	using namespace System::Windows::Forms::VisualStyles;
+
 	/// <summary>
 	/// Сводка для MainForm
 	/// </summary>
+	/// 
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
+
 	public:
 		bool isDragging;
 	private: System::Windows::Forms::TabPage^ tabPage3;
@@ -54,66 +60,30 @@ namespace AccountManager {
 	private: System::Windows::Forms::NotifyIcon^ Traaay;
 	private: System::Windows::Forms::Timer^ FromHide;
 	private: System::Windows::Forms::Timer^ HideTxt;
-
 	private: System::Windows::Forms::PictureBox^ Search;
-
-
 	private: System::Windows::Forms::PictureBox^ Settings;
 	private: System::Windows::Forms::PictureBox^ AboutMe;
-
 	private: System::Windows::Forms::Timer^ SearchRepeat;
 	private: System::Windows::Forms::Timer^ SettingsRepeat;
 	private: System::Windows::Forms::Timer^ AboutRepeat;
-
 	private: System::Windows::Forms::Timer^ Discover;
 	private: System::Windows::Forms::Timer^ Bck;
 	private: System::Windows::Forms::Timer^ AddDat;
 	private: System::Windows::Forms::PictureBox^ OpacityBkg;
 	private: System::Windows::Forms::Timer^ ConAdd;
 	private: System::Windows::Forms::Panel^ Trash;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 private: System::Windows::Forms::PictureBox^ pictureBox9;
 	private: System::Windows::Forms::Label^ Pas1;
 
 	private: System::Windows::Forms::Label^ Ema1;
-
-
-
-
 private: System::Windows::Forms::Panel^ All;
 	private: System::Windows::Forms::Panel^ CensoreTrash;
-
-
-
-
-
 private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::PictureBox^ CopyEmail;
 	private: System::Windows::Forms::Panel^ ToolPanel;
-
-
-
-
 	private: System::Windows::Forms::PictureBox^ Del;
-
 	private: System::Windows::Forms::PictureBox^ Etc;
-
 	private: System::Windows::Forms::PictureBox^ AddNewFor;
-
 	private: System::Windows::Forms::PictureBox^ CopyPassword;
 	private: System::Windows::Forms::PictureBox^ ProcessOfDrag;
 	private: System::Windows::Forms::Timer^ RepetProcess;
@@ -123,7 +93,6 @@ private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Panel^ SearchBar;
 	private: System::Windows::Forms::TextBox^ SearchRequest;
 	private: System::Windows::Forms::PictureBox^ SearchReq;
-
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::PictureBox^ ClearSearchBar;
@@ -133,8 +102,6 @@ private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::TabPage^ tabPage4;
 	private: System::Windows::Forms::TabPage^ Afk;
 	private: System::Windows::Forms::Label^ AfkText;
-
-
 	private: System::Windows::Forms::PictureBox^ AfkAgree;
 	private: System::Windows::Forms::PictureBox^ AfkBarPic;
 	private: System::Windows::Forms::TextBox^ AfkBar;
@@ -142,36 +109,45 @@ private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ Error1;
 	private: System::Windows::Forms::Timer^ TimeToAfk;
 	private: System::Windows::Forms::ToolTip^ AboutAllFunc;
+	private: System::ComponentModel::BackgroundWorker^ TestThis;
+	private: System::Windows::Forms::ContextMenuStrip^ TrayMenu;
+	private: System::Windows::Forms::ToolStripMenuItem^ TeamName;
+	private: System::Windows::Forms::ToolStripSeparator^ toolStripSeparator1;
+	private: System::Windows::Forms::ToolStripMenuItem^ OpenForm;
+	public: ref class CustomRenderer : ToolStripProfessionalRenderer
+	{
+	protected:
+		virtual void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs^ e) override
+		{
+			if (e->Item->Selected)
+			{
+				if (e->Item->Enabled)
+				{
+					e->Graphics->FillRectangle(gcnew SolidBrush(ColorTranslator::FromHtml("#54555A")), e->Item->ContentRectangle);
+				}
+				else
+				{
+					e->Graphics->FillRectangle(gcnew SolidBrush(Color::FromArgb(31, 35, 39)), e->Item->ContentRectangle);
+				}
+			}
+			else
+			{
+				ToolStripProfessionalRenderer::OnRenderMenuItemBackground(e);
+			}
+		}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		virtual void OnRenderItemCheck(ToolStripItemImageRenderEventArgs^ e) override
+		{
+			if (e->Item->Enabled)
+			{
+				ToolStripProfessionalRenderer::OnRenderItemCheck(e);
+			}
+		}
+	};
 	public:
 		Point dragStartPosition;
 		MainForm(void)
 		{
-			StartPosition = FormStartPosition::CenterScreen;
 			
 			InitializeComponent();
 			
@@ -296,6 +272,10 @@ private: System::Windows::Forms::Label^ label2;
 			this->Lgn = (gcnew System::Windows::Forms::Timer(this->components));
 			this->OpacityMinimized = (gcnew System::Windows::Forms::Timer(this->components));
 			this->Traaay = (gcnew System::Windows::Forms::NotifyIcon(this->components));
+			this->TrayMenu = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
+			this->TeamName = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->OpenForm = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->FromHide = (gcnew System::Windows::Forms::Timer(this->components));
 			this->HideTxt = (gcnew System::Windows::Forms::Timer(this->components));
 			this->SearchRepeat = (gcnew System::Windows::Forms::Timer(this->components));
@@ -310,6 +290,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->ClearRepeat = (gcnew System::Windows::Forms::Timer(this->components));
 			this->TimeToAfk = (gcnew System::Windows::Forms::Timer(this->components));
 			this->AboutAllFunc = (gcnew System::Windows::Forms::ToolTip(this->components));
+			this->TestThis = (gcnew System::ComponentModel::BackgroundWorker());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Gen))->BeginInit();
@@ -354,6 +335,7 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Clo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HorLin))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->TrayMenu->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -400,6 +382,8 @@ private: System::Windows::Forms::Label^ label2;
 			this->SigPas->Size = System::Drawing::Size(338, 23);
 			this->SigPas->TabIndex = 3;
 			this->SigPas->Click += gcnew System::EventHandler(this, &MainForm::SigPas_Click);
+			this->SigPas->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MainForm::SigPas_KeyDown);
+			this->SigPas->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainForm::SigPas_KeyPress);
 			this->SigPas->MouseEnter += gcnew System::EventHandler(this, &MainForm::SigPas_MouseEnter);
 			// 
 			// Gen
@@ -461,6 +445,9 @@ private: System::Windows::Forms::Label^ label2;
 			this->LogInBox->Name = L"LogInBox";
 			this->LogInBox->Size = System::Drawing::Size(337, 23);
 			this->LogInBox->TabIndex = 4;
+			this->LogInBox->TabStop = false;
+			this->LogInBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MainForm::LogInBox_KeyDown);
+			this->LogInBox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MainForm::LogInBox_KeyPress);
 			// 
 			// AgreeLogIn
 			// 
@@ -909,6 +896,7 @@ private: System::Windows::Forms::Label^ label2;
 			this->AfkBar->Name = L"AfkBar";
 			this->AfkBar->Size = System::Drawing::Size(328, 29);
 			this->AfkBar->TabIndex = 3;
+			this->AfkBar->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MainForm::AfkBar_KeyDown);
 			// 
 			// AfkAgree
 			// 
@@ -1052,10 +1040,57 @@ private: System::Windows::Forms::Label^ label2;
 			// 
 			// Traaay
 			// 
+			this->Traaay->ContextMenuStrip = this->TrayMenu;
 			this->Traaay->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"Traaay.Icon")));
-			this->Traaay->Text = L"Account Manager by Akayn team";
+			this->Traaay->Text = L"Account Manager";
 			this->Traaay->Visible = true;
 			this->Traaay->DoubleClick += gcnew System::EventHandler(this, &MainForm::Traaay_DoubleClick);
+			// 
+			// TrayMenu
+			// 
+			this->TrayMenu->AutoSize = false;
+			this->TrayMenu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
+				static_cast<System::Int32>(static_cast<System::Byte>(39)));
+			this->TrayMenu->Font = (gcnew System::Drawing::Font(L"Arial Black", 15.25F, System::Drawing::FontStyle::Bold));
+			this->TrayMenu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->TeamName, this->toolStripSeparator1,
+					this->OpenForm
+			});
+			this->TrayMenu->Name = L"TrayMenu";
+			this->TrayMenu->RenderMode = System::Windows::Forms::ToolStripRenderMode::Professional;
+			this->TrayMenu->ShowImageMargin = false;
+			this->TrayMenu->Size = System::Drawing::Size(276, 69);
+			// 
+			// TeamName
+			// 
+			this->TeamName->AutoSize = false;
+			this->TeamName->Enabled = false;
+			this->TeamName->Font = (gcnew System::Drawing::Font(L"Arial Black", 10.25F));
+			this->TeamName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->TeamName->Name = L"TeamName";
+			this->TeamName->Size = System::Drawing::Size(276, 24);
+			this->TeamName->Text = L"                Akayn team";
+			this->TeamName->TextImageRelation = System::Windows::Forms::TextImageRelation::TextAboveImage;
+			// 
+			// toolStripSeparator1
+			// 
+			this->toolStripSeparator1->Name = L"toolStripSeparator1";
+			this->toolStripSeparator1->Size = System::Drawing::Size(272, 6);
+			// 
+			// OpenForm
+			// 
+			this->OpenForm->AutoSize = false;
+			this->OpenForm->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Text;
+			this->OpenForm->Font = (gcnew System::Drawing::Font(L"Arial Black", 10.25F));
+			this->OpenForm->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->OpenForm->ImageScaling = System::Windows::Forms::ToolStripItemImageScaling::None;
+			this->OpenForm->Name = L"OpenForm";
+			this->OpenForm->Padding = System::Windows::Forms::Padding(0);
+			this->OpenForm->Size = System::Drawing::Size(276, 24);
+			this->OpenForm->Text = L"        Розгорнути програму";
+			this->OpenForm->TextImageRelation = System::Windows::Forms::TextImageRelation::TextAboveImage;
 			// 
 			// FromHide
 			// 
@@ -1137,6 +1172,10 @@ private: System::Windows::Forms::Label^ label2;
 			this->AboutAllFunc->Draw += gcnew System::Windows::Forms::DrawToolTipEventHandler(this, &MainForm::AboutAllFunc_Draw);
 			this->AboutAllFunc->Popup += gcnew System::Windows::Forms::PopupEventHandler(this, &MainForm::AboutAllFunc_Popup);
 			// 
+			// TestThis
+			// 
+			this->TestThis->DoWork += gcnew System::ComponentModel::DoWorkEventHandler(this, &MainForm::TestThis_DoWork);
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1158,9 +1197,11 @@ private: System::Windows::Forms::Label^ label2;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MainForm";
-			this->Text = L"MainForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Account Manager";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MainForm::MainForm_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
+			this->Shown += gcnew System::EventHandler(this, &MainForm::MainForm_Shown);
 			this->SizeChanged += gcnew System::EventHandler(this, &MainForm::MainForm_SizeChanged);
 			this->VisibleChanged += gcnew System::EventHandler(this, &MainForm::MainForm_VisibleChanged);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::MainForm_MouseDown);
@@ -1214,6 +1255,7 @@ private: System::Windows::Forms::Label^ label2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Clo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HorLin))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->TrayMenu->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -1244,25 +1286,15 @@ private: System::Windows::Forms::Label^ label2;
 
 		//Тут вообще трындец
 		private: System::Void CheckLabelOverflow(Label^ label) {
-			// Создаем объект Graphics для текущего элемента
 			Graphics^ g = label->CreateGraphics();
-
-			// Получаем размер текста в элементе
 			SizeF textSize = g->MeasureString(label->Text, label->Font);
-
-			// Проверяем, выходит ли текст за пределы элемента
 			bool isOverflowed = (textSize.Width > label->ClientSize.Width) || (textSize.Height > label->ClientSize.Height);
-
-			// Если текст выходит за пределы элемента, обрезаем его и заменяем последние три символа на точки
 			if (isOverflowed) {
 				String^ text = label->Text;
 				int textLength = text->Length;
 
 				if (textLength > 3) {
-					// Вычисляем новую длину текста, чтобы уместить его в элементе
 					int newLength = textLength - (int)(textSize.Width - label->ClientSize.Width) / (int)(textSize.Width / textLength);
-
-					// Обрезаем текст и заменяем последние три символа на точки
 					label->Text = text->Substring(0, newLength - 3) + "...";
 				}
 				else {
@@ -1270,7 +1302,6 @@ private: System::Windows::Forms::Label^ label2;
 				}
 			}
 
-			// Освобождаем ресурсы
 			delete g;
 		}
 		int hwm(int num) {
@@ -1279,24 +1310,14 @@ private: System::Windows::Forms::Label^ label2;
 		}
 
 		string ConvertToStdString(String^ managedString) {
-			// Получить длину строки String^
 			int length = managedString->Length;
-
-			// Создать массив char с дополнительным местом для завершающего нулевого символа
 			char* charArray = new char[length + 1];
-
-			// Конвертировать String^ в массив char
 			for (int i = 0; i < length; i++) {
 				charArray[i] = static_cast<char>(managedString[i]);
 			}
-
-			// Завершить массив нулевым символом, чтобы создать корректную строку C-style
 			charArray[length] = '\0';
+			string stdString(charArray);
 
-			// Создать std::string из массива char
-			std::string stdString(charArray);
-
-			// Освободить память, выделенную для массива char
 			delete[] charArray;
 
 			return stdString;
@@ -1539,6 +1560,7 @@ private: System::Windows::Forms::Label^ label2;
 				Emails[i]->Name = "Email" + i;
 				Emails[i]->Size = System::Drawing::Size(403, 25);
 				Emails[i]->TabIndex = 0;
+				Emails[i]->TextChanged += gcnew System::EventHandler(this, &MainForm::Labels_TextChanged);
 				Emails[i]->Text = EmailOf[i];
 				Emails[i]->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				Places[i]->Controls->Add(Emails[i]);
@@ -1551,6 +1573,7 @@ private: System::Windows::Forms::Label^ label2;
 				Passwords[i]->Name = "Password" + i;
 				Passwords[i]->Size = System::Drawing::Size(245, 25);
 				Passwords[i]->TabIndex = 1;
+				Passwords[i]->TextChanged += gcnew System::EventHandler(this, &MainForm::Labels_TextChanged);
 				Passwords[i]->Text = PaswdOf[i];
 				Passwords[i]->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				Places[i]->Controls->Add(Passwords[i]);
@@ -1614,6 +1637,7 @@ private: System::Windows::Forms::Label^ label2;
 			Emails[i]->Name = "Email" + i;
 			Emails[i]->Size = System::Drawing::Size(403, 25);
 			Emails[i]->TabIndex = 0;
+			Emails[i]->TextChanged += gcnew System::EventHandler(this, &MainForm::Labels_TextChanged);
 			Emails[i]->Text = EmailOf[i];
 			Emails[i]->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			Places[i]->Controls->Add(Emails[i]);
@@ -1626,6 +1650,7 @@ private: System::Windows::Forms::Label^ label2;
 			Passwords[i]->Name = "Password" + i;
 			Passwords[i]->Size = System::Drawing::Size(245, 25);
 			Passwords[i]->TabIndex = 1;
+			Passwords[i]->TextChanged += gcnew System::EventHandler(this, &MainForm::Labels_TextChanged);
 			Passwords[i]->Text = PaswdOf[i];
 			Passwords[i]->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			Places[i]->Controls->Add(Passwords[i]);
@@ -1672,6 +1697,7 @@ private: System::Windows::Forms::Label^ label2;
 		bool ByError = false;
 
 		void CallNotifForm(String^ Text) {
+			PlaySound(L"Resources\\Sounds\\NotifySound.wav", NULL, SND_FILENAME | SND_ASYNC);
 			Notif->StartPosition = FormStartPosition::CenterParent;
 			Notif->NotifyText->Text = Text;
 			Opacity = 0.3;
@@ -1680,11 +1706,11 @@ private: System::Windows::Forms::Label^ label2;
 		}
 
 		void CallErrorForm(String^ Text, int code) {
+			PlaySound(L"Resources\\Sounds\\ErrorSound.wav", NULL, SND_FILENAME | SND_ASYNC);
 			Begin->Close();
 			tabControl1->SelectedIndex = 3;
 			CallNotifForm(Text +  " Код помилки: " + code);
 			ByError = true;
-			System::Environment::Exit(0);
 			Application::Exit();
 		}
 
@@ -1703,7 +1729,6 @@ private: System::Windows::Forms::Label^ label2;
 				}
 
 				if (!(Mpass[0] == Mpass[1] && Mpass[0] == Mpass[2] && Mpass[1] == Mpass[2])) {
-					//Что произойдёт, если пароли не совпадают
 					CallErrorForm("Файли даних відрізняються. Можливо, вони були пошкоджені або відредаговані.", 1);
 				}
 				else {
@@ -1712,14 +1737,12 @@ private: System::Windows::Forms::Label^ label2;
 				MpassInd = 0;
 			}
 		}
-		//Выгружаем настройки из
 		void cfgfrom() {
 			fstream CfgUpd("Config.acm", ios::in);
 			CfgUpd >> verify;
 			CfgUpd >> NumOfAll;
 			CfgUpd.close();
 		}
-		//Загружаем настройки в
 		void cfgto() {
 			fstream cfg("Config.acm", ios::out);
 			if (cfg.is_open()) {
@@ -1729,7 +1752,6 @@ private: System::Windows::Forms::Label^ label2;
 			cfg.close();
 		}
 
-		//Генерация паролей тут
 		int RN(int min, int max) {
 			random_device rd;
 			mt19937 gen(rd());
@@ -1762,19 +1784,18 @@ private: System::Windows::Forms::Label^ label2;
 			const char* password = passw.c_str();
 			return marshal_as<String^>(password);
 		}
-		//Весь фарш там
 		
-		//Вісчитіваем кол-во страниц
 		int CFP() {
 			CountOfPages = NumOfAll/5;
 			return NumOfAll / 5;
 	}
 
-		//Откроем доступные страницы 
 		int ActualPage = 0;
-		//Спрячем все страницы
 	Bitmap^ LefTop = gcnew Bitmap("Resources\\TopPart\\LeftTop.png");
+
 	private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		TrayMenu->Renderer = gcnew CustomRenderer();
+		
 		All->Location = System::Drawing::Point(266, 19);
 		All->Size = System::Drawing::Size(774, 475);
 		this->ClientSize = System::Drawing::Size(1050, 550);
@@ -1786,9 +1807,7 @@ private: System::Windows::Forms::Label^ label2;
 		Agree->Image = gcnew Bitmap("Resources\\SignUpPart\\Agree.png");
 		Gen->Image = gcnew Bitmap("Resources\\SignUpPart\\Gen.png");
 		// После этого всё в основном окне
-		Opacity = 0;
-		Begin->Show(this);
-		Begin->Location = Location;
+		
 		System::Type^ controlType = System::Windows::Forms::Control::typeid;
 		controlType->InvokeMember("DoubleBuffered",
 			System::Reflection::BindingFlags::SetProperty | System::Reflection::BindingFlags::Instance | System::Reflection::BindingFlags::NonPublic,
@@ -1808,7 +1827,9 @@ private: System::Windows::Forms::Label^ label2;
 			ApplyConfig();
 			open();
 		}
-		BringToFront();
+
+		CenterToScreen();
+
 	}
 		   void SetRegion()
 		   {
@@ -1900,6 +1921,7 @@ private: System::Windows::Forms::Label^ label2;
 	}
 
 	bool CallConfirm() {
+		PlaySound(L"Resources\\Sounds\\NotifySound.wav", NULL, SND_FILENAME | SND_ASYNC);
 		Con->StartPosition = FormStartPosition::CenterParent;
 		Opacity = 0.3;
 		Con->GetPassword = MainPassword;
@@ -1917,6 +1939,10 @@ private: System::Windows::Forms::Label^ label2;
 
 
 
+	private: System::Void Labels_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		Label^ label = safe_cast<Label^>(sender);
+		CheckLabelOverflow(label);
+	}
 
 
 private: System::Void Add_Tick(System::Object^ sender, System::EventArgs^ e) {
@@ -2081,11 +2107,7 @@ private: System::Void Clo_MouseLeave(System::Object^ sender, System::EventArgs^ 
 	Clo->Image = gcnew Bitmap("Resources\\TopPart\\CloseNonAct.png");
 }
 private: System::Void Clo_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	if (!ByError) {
-		cfgto();
-		SaveConfig();
-	}
-	System::Environment::Exit(0);
+
 	Application::Exit();
 }
 private: System::Void ToBackgr_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
@@ -2380,6 +2402,7 @@ private: System::Void Clo_Click(System::Object^ sender, System::EventArgs^ e) {
 private: System::Void Discover_Tick(System::Object^ sender, System::EventArgs^ e) {
 	DiscoverIsEnd = Begin->end;
 	if (DiscoverIsEnd) {
+		Show();
 		if (verify == 1) {
 			tabControl1->SelectedIndex = 1;
 			Lgn->Enabled = true;
@@ -2424,8 +2447,10 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 	PlusForm(1);
 }
 private: System::Void MainForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-	cfgto();
-	SaveConfig();
+	if (!ByError && !St->Imported) {
+		cfgto();
+		SaveConfig();
+	}
 }
 private: System::Void Add5_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	PictureBox^ clickedButton = safe_cast<PictureBox^>(sender);
@@ -2712,12 +2737,13 @@ private: System::Void TimeToAfk_Tick(System::Object^ sender, System::EventArgs^ 
 	TimeToAfk->Enabled = false;
 }
 private: System::Void MainForm_VisibleChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (Visible == false && DiscoverIsEnd) {
+	if (!Visible && DiscoverIsEnd) {
 		TimeToAfk->Enabled = true;
 	}
 	else if (Visible && DiscoverIsEnd) {
 		TimeToAfk->Enabled = false;
 	}
+
 }
 private: System::Void Search_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -2735,8 +2761,74 @@ private: System::Void AboutAllFunc_Draw(System::Object^ sender, System::Windows:
 }
 private: System::Void AboutAllFunc_Popup(System::Object^ sender, System::Windows::Forms::PopupEventArgs^ e) {
 	System::Threading::Thread::Sleep(100);
-
 }
+
+private: System::Void LogInBox_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	
+}
+private: System::Void SigPas_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	
+}
+private: System::Void LogInBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyCode == Keys::Enter) {
+		e->SuppressKeyPress = true;
+		if (MainPassword == LogInBox->Text) {
+			tabControl1->SelectedIndex = 2;
+		}
+		else {
+			LogInBox->Text = "Неправильний пароль"; HideTxt->Enabled = true; LogInBox->Enabled = false;
+		}
+	}
+}
+private: System::Void SigPas_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyCode == Keys::Enter) {
+		e->SuppressKeyPress = true;
+			if (isLatinOrDigit(SigPas->Text)) {
+				if (VerifyPassword()) {
+					tabControl1->SelectedIndex = 2;
+					verify = 1;
+					NumOfAll = 1;
+					EmailOf[0] = "Akayn.Team@gmail.com";
+					PaswdOf[0] = SigPas->Text;
+					NameOf[0] = "Це ваш перший пароль";
+					Trash->Show();
+					MainPassword = SigPas->Text;
+					SaveConfig();
+					open();
+					Names[0]->Text = NameOf[0];
+					Emails[0]->Text = EmailOf[0];
+					Passwords[0]->Text = PaswdOf[0];
+				}
+				else {
+					SigPas->Text = "Від 8 до 25 символів";
+				}
+			}
+			else {
+				SigPas->Text = "Тільки латиниця та цифри";
+			}
+	}
+}
+private: System::Void TestThis_DoWork(System::Object^ sender, System::ComponentModel::DoWorkEventArgs^ e) {
+	
+}
+private: System::Void MainForm_Shown(System::Object^ sender, System::EventArgs^ e) {
+	Hide();
+	
+	Begin->Show(this);
+}
+private: System::Void AfkBar_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyCode == Keys::Enter) {
+		e->SuppressKeyPress = true;
+		if (AfkBar->Text == MainPassword) {
+			tabControl1->SelectedIndex = 2;
+			AfkBar->Text = "";
+		}
+		else {
+			AfkError->Visible = true;
+		}
+	}
+}
+
 };
 }
 

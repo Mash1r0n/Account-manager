@@ -185,7 +185,7 @@ namespace AccountManager {
 			this->Controls->Add(this->NameOfMe);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"About";
-			this->Text = L"About";
+			this->Text = L"Про нас";
 			this->Load += gcnew System::EventHandler(this, &About::About_Load);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &About::About_MouseDown);
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &About::About_MouseMove);

@@ -559,7 +559,7 @@ namespace AccountManager {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Guide";
-			this->Text = L"Guide";
+			this->Text = L"Посібник";
 			this->Load += gcnew System::EventHandler(this, &Guide::Guide_Load);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Guide::Guide_MouseDown);
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &Guide::Guide_MouseMove);

@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include <mmsystem.h>
+#include <random>
+#include <cstdio>
 #pragma comment(lib, "winmm.lib")
 namespace AccountManager {
 
@@ -50,7 +52,13 @@ namespace AccountManager {
 	private: System::Windows::Forms::OpenFileDialog^ AskForExport;
 	public: int Ver = 0, Num = 0;
 	private: System::Windows::Forms::Label^ label3;
-	public:
+	private: System::Windows::Forms::Label^ Error1;
+	private: System::Windows::Forms::PictureBox^ Three;
+	private: System::Windows::Forms::PictureBox^ Two;
+	private: System::Windows::Forms::PictureBox^ One;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label4;
+	public: bool Imported = false;
 
 
 	public:
@@ -100,18 +108,24 @@ namespace AccountManager {
 			this->Page1 = (gcnew System::Windows::Forms::TabPage());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->NewPasswordPanel = (gcnew System::Windows::Forms::Panel());
+			this->Error1 = (gcnew System::Windows::Forms::Label());
 			this->NewPassword = (gcnew System::Windows::Forms::TextBox());
 			this->Page2 = (gcnew System::Windows::Forms::TabPage());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->Imp = (gcnew System::Windows::Forms::PictureBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->Exp = (gcnew System::Windows::Forms::PictureBox());
 			this->Page3 = (gcnew System::Windows::Forms::TabPage());
+			this->Three = (gcnew System::Windows::Forms::PictureBox());
+			this->Two = (gcnew System::Windows::Forms::PictureBox());
+			this->One = (gcnew System::Windows::Forms::PictureBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->Agree = (gcnew System::Windows::Forms::PictureBox());
 			this->Back = (gcnew System::Windows::Forms::PictureBox());
 			this->HidetabControlLine = (gcnew System::Windows::Forms::PictureBox());
 			this->AskForSave = (gcnew System::Windows::Forms::FolderBrowserDialog());
 			this->AskForExport = (gcnew System::Windows::Forms::OpenFileDialog());
-			this->label3 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Separate))->BeginInit();
 			this->SettingsPages->SuspendLayout();
 			this->tabPage1->SuspendLayout();
@@ -120,6 +134,10 @@ namespace AccountManager {
 			this->Page2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Imp))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Exp))->BeginInit();
+			this->Page3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Three))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Two))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->One))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Agree))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Back))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HidetabControlLine))->BeginInit();
@@ -221,11 +239,25 @@ namespace AccountManager {
 			// 
 			this->NewPasswordPanel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"NewPasswordPanel.BackgroundImage")));
 			this->NewPasswordPanel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->NewPasswordPanel->Controls->Add(this->Error1);
 			this->NewPasswordPanel->Controls->Add(this->NewPassword);
 			this->NewPasswordPanel->Location = System::Drawing::Point(106, 102);
 			this->NewPasswordPanel->Name = L"NewPasswordPanel";
 			this->NewPasswordPanel->Size = System::Drawing::Size(384, 56);
 			this->NewPasswordPanel->TabIndex = 0;
+			// 
+			// Error1
+			// 
+			this->Error1->Font = (gcnew System::Drawing::Font(L"Arial Black", 11.25F, System::Drawing::FontStyle::Bold));
+			this->Error1->ForeColor = System::Drawing::Color::Maroon;
+			this->Error1->Location = System::Drawing::Point(3, 13);
+			this->Error1->Name = L"Error1";
+			this->Error1->Size = System::Drawing::Size(378, 29);
+			this->Error1->TabIndex = 15;
+			this->Error1->Text = L"Мінімальна кількість символів: 8";
+			this->Error1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Error1->Visible = false;
+			this->Error1->MouseEnter += gcnew System::EventHandler(this, &LetsSet::Error1_MouseEnter);
 			// 
 			// NewPassword
 			// 
@@ -240,6 +272,8 @@ namespace AccountManager {
 			this->NewPassword->Name = L"NewPassword";
 			this->NewPassword->Size = System::Drawing::Size(378, 29);
 			this->NewPassword->TabIndex = 0;
+			this->NewPassword->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &LetsSet::NewPassword_KeyPress);
+			this->NewPassword->MouseEnter += gcnew System::EventHandler(this, &LetsSet::NewPassword_MouseEnter);
 			// 
 			// Page2
 			// 
@@ -255,6 +289,18 @@ namespace AccountManager {
 			this->Page2->Size = System::Drawing::Size(578, 306);
 			this->Page2->TabIndex = 1;
 			this->Page2->Text = L"tabPage2";
+			// 
+			// label3
+			// 
+			this->label3->Font = (gcnew System::Drawing::Font(L"Arial Black", 6.25F, System::Drawing::FontStyle::Bold));
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->label3->Location = System::Drawing::Point(123, 206);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(310, 17);
+			this->label3->TabIndex = 3;
+			this->label3->Text = L"Після успішного імпорту програму буде миттєво закрито";
+			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Imp
 			// 
@@ -298,12 +344,72 @@ namespace AccountManager {
 			// 
 			this->Page3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
 				static_cast<System::Int32>(static_cast<System::Byte>(39)));
+			this->Page3->Controls->Add(this->Three);
+			this->Page3->Controls->Add(this->Two);
+			this->Page3->Controls->Add(this->One);
+			this->Page3->Controls->Add(this->label5);
+			this->Page3->Controls->Add(this->label4);
 			this->Page3->Location = System::Drawing::Point(4, 4);
 			this->Page3->Name = L"Page3";
 			this->Page3->Padding = System::Windows::Forms::Padding(3);
 			this->Page3->Size = System::Drawing::Size(578, 306);
 			this->Page3->TabIndex = 2;
 			this->Page3->Text = L"tabPage3";
+			// 
+			// Three
+			// 
+			this->Three->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Three.Image")));
+			this->Three->Location = System::Drawing::Point(524, 215);
+			this->Three->Name = L"Three";
+			this->Three->Size = System::Drawing::Size(15, 15);
+			this->Three->TabIndex = 7;
+			this->Three->TabStop = false;
+			this->Three->Click += gcnew System::EventHandler(this, &LetsSet::Three_Click);
+			// 
+			// Two
+			// 
+			this->Two->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Two.Image")));
+			this->Two->Location = System::Drawing::Point(225, 193);
+			this->Two->Name = L"Two";
+			this->Two->Size = System::Drawing::Size(15, 15);
+			this->Two->TabIndex = 6;
+			this->Two->TabStop = false;
+			this->Two->Click += gcnew System::EventHandler(this, &LetsSet::Two_Click);
+			// 
+			// One
+			// 
+			this->One->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"One.Image")));
+			this->One->Location = System::Drawing::Point(36, 96);
+			this->One->Name = L"One";
+			this->One->Size = System::Drawing::Size(15, 15);
+			this->One->TabIndex = 5;
+			this->One->TabStop = false;
+			this->One->Click += gcnew System::EventHandler(this, &LetsSet::One_Click);
+			// 
+			// label5
+			// 
+			this->label5->Font = (gcnew System::Drawing::Font(L"Arial Black", 6.25F, System::Drawing::FontStyle::Bold));
+			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->label5->Location = System::Drawing::Point(120, 232);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(318, 30);
+			this->label5->TabIndex = 4;
+			this->label5->Text = L"Одразу після успішного результату програма буде миттєво закрита а налаштування ск"
+				L"инуті";
+			this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label4
+			// 
+			this->label4->Font = (gcnew System::Drawing::Font(L"Arial Black", 15.25F, System::Drawing::FontStyle::Bold));
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->label4->Location = System::Drawing::Point(118, 18);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(320, 69);
+			this->label4->TabIndex = 2;
+			this->label4->Text = L"Натисніть кнопки у правильному порядку";
+			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Agree
 			// 
@@ -333,18 +439,6 @@ namespace AccountManager {
 			this->HidetabControlLine->TabIndex = 6;
 			this->HidetabControlLine->TabStop = false;
 			// 
-			// label3
-			// 
-			this->label3->Font = (gcnew System::Drawing::Font(L"Arial Black", 6.25F, System::Drawing::FontStyle::Bold));
-			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
-				static_cast<System::Int32>(static_cast<System::Byte>(140)));
-			this->label3->Location = System::Drawing::Point(123, 206);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(310, 17);
-			this->label3->TabIndex = 3;
-			this->label3->Text = L"Після успішного імпорту програму буде миттєво закрито";
-			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
 			// LetsSet
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -362,7 +456,7 @@ namespace AccountManager {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"LetsSet";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
-			this->Text = L"LetsSet";
+			this->Text = L"Налаштування";
 			this->Load += gcnew System::EventHandler(this, &LetsSet::Settings_Load);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &LetsSet::Settings_MouseDown);
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &LetsSet::Settings_MouseMove);
@@ -378,6 +472,10 @@ namespace AccountManager {
 			this->Page2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Imp))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Exp))->EndInit();
+			this->Page3->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Three))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Two))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->One))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Agree))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Back))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HidetabControlLine))->EndInit();
@@ -468,15 +566,62 @@ private: System::Void Settings_MouseDown(System::Object^ sender, System::Windows
 	}
 }
 private: System::Void Agree_Click(System::Object^ sender, System::EventArgs^ e) {
-	Hide();
-	ApplyStatus = true;
+	if (NewPassword->Text->Length >= 8) {
+		Hide();
+		ApplyStatus = true;
+		ActiveControl = nullptr;
+	}
+	else {
+		Error1->Visible = true;
+	}
 }
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	Hide();
 	ApplyStatus = false;
+	ActiveControl = nullptr;
 }
+	   void RandomLocationCaptcha() {
+		   const int elementSize = 15;
+		   vector<pair<int, int>> locations;
+		   for (int i = 0; i < 3; i++) {
+			   bool validLocation = false;
+			   int X, Y;
+			   while (!validLocation) {
+				   random_device rdX;
+				   mt19937 genX(rdX());
+				   uniform_int_distribution<> disX(36, 524);
+				   X = disX(genX);
+
+				   random_device rdY;
+				   mt19937 genY(rdY());
+				   uniform_int_distribution<> disY(96, 215);
+				   Y = disY(genY);
+
+				   validLocation = true;
+				   for (auto& loc : locations) {
+					   if (abs(X - loc.first) < elementSize && abs(Y - loc.second) < elementSize) {
+						   validLocation = false;
+						   break;
+					   }
+				   }
+			   }
+			   locations.push_back({ X, Y });
+
+			   switch (i) {
+			   case(0): One->Location = System::Drawing::Point(X, Y); break;
+			   case(1): Two->Location = System::Drawing::Point(X, Y); break;
+			   case(2): Three->Location = System::Drawing::Point(X, Y); break;
+			   }
+		   }
+	   }
+
+
 private: System::Void ThemeList_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (ThemeList->SelectedIndex == 2) {
+		RandomLocationCaptcha();
+	}
 	SettingsPages->SelectedIndex = ThemeList->SelectedIndex+1;
+	
 }
 private: System::Void Exp_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	Exp->Image = gcnew Bitmap("Resources\\SettingsPart\\ExportFileEnter.png");
@@ -499,7 +644,7 @@ private: System::Void Exp_MouseDown(System::Object^ sender, System::Windows::For
 	void LetsImport() {
 		if (AskForExport->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 		{
-			if (AskForExport->FileName == "ExportDTA.amcfg") {
+			if (AskForExport->FileName->Substring(AskForExport->FileName->Length - 16) == "ExportDATA.amcfg") {
 				string Crypt[5];
 				String^ selectedFile = AskForExport->FileName;
 				marshal_context context;
@@ -518,7 +663,7 @@ private: System::Void Exp_MouseDown(System::Object^ sender, System::Windows::For
 					}
 					ins.close();
 				}
-				System::Environment::Exit(0);
+				Imported = true;
 				Application::Exit();
 			}
 			else  PlaySound((LPCWSTR)SND_ALIAS_SYSTEMHAND, NULL, SND_ALIAS_ID | SND_ASYNC);
@@ -546,6 +691,52 @@ private: System::Void Imp_MouseUp(System::Object^ sender, System::Windows::Forms
 	Imp->Image = gcnew Bitmap("Resources\\SettingsPart\\ImportFileEnter.png");
 	//Действия
 	LetsImport();
+}
+private: System::Void NewPassword_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	
+}
+private: System::Void NewPassword_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+
+}
+private: System::Void Error1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	Error1->Visible = false;
+}
+
+	   //Добавить контекстное меню
+
+	   int AmountOfTrue = 0;
+private: System::Void One_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (AmountOfTrue == 0) {
+		AmountOfTrue++;
+	}
+	else { 
+		AmountOfTrue = 0;
+	}
+}
+private: System::Void Two_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (AmountOfTrue == 1) {
+		AmountOfTrue++;
+	}
+	else {
+		AmountOfTrue = 0;
+	}
+}
+	void DeleteAll() {
+		string ArrOfNames[4] = { "Config.acm", "Names.acm", "Emails.acm", "Passwords.acm" };
+		for (string txt : ArrOfNames) {
+			remove(txt.c_str());
+		}
+		Imported = true;
+		Application::Exit();
+	}
+
+private: System::Void Three_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (AmountOfTrue == 2) {
+		DeleteAll();
+	}
+	else {
+		AmountOfTrue = 0;
+	}
 }
 };
 }

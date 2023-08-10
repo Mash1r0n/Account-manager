@@ -241,7 +241,7 @@ namespace AccountManager {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"AddPassword";
-			this->Text = L"AddPassword";
+			this->Text = L"Додати комірку";
 			this->Load += gcnew System::EventHandler(this, &AddPassword::AddPassword_Load);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &AddPassword::AddPassword_MouseDown);
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &AddPassword::AddPassword_MouseMove);

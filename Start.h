@@ -165,7 +165,8 @@ namespace AccountManager {
             this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
             this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
             this->Name = L"Start";
-            this->Text = L"Start";
+            this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+            this->Text = L"Account Manager";
             this->Load += gcnew System::EventHandler(this, &Start::Start_Load);
             this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Start::Start_Paint);
             this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &Start::Start_MouseDown);
@@ -185,8 +186,7 @@ namespace AccountManager {
         {
             this->timer1->Enabled = true;
             SetRegion();
-            BringToFront();
-            Focus();
+            
         }
         void SetRegion()
         {
@@ -266,7 +266,10 @@ namespace AccountManager {
             this->timer1->Enabled = false; 
         }
         else if (i == 1) { this->Opacity = 1; }
-        if (i == 69) {PlaySound(L"Str.wav", NULL, SND_FILENAME | SND_ASYNC); }
+        else if (i == 5) {
+            this->Focus();
+        }
+        if (i == 69) {PlaySound(L"Resources\\Sounds\\Str.wav", NULL, SND_FILENAME | SND_ASYNC); }
 
     }
     private: System::Void timer2_Tick(System::Object^ sender, System::EventArgs^ e) {

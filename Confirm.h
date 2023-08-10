@@ -163,7 +163,7 @@ namespace AccountManager {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Confirm";
-			this->Text = L"Confirm";
+			this->Text = L"Підтвердження";
 			this->Load += gcnew System::EventHandler(this, &Confirm::Confirm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Exit))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Agree))->EndInit();

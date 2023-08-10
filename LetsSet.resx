@@ -216,6 +216,38 @@
         YII=
 </value>
   </data>
+  <data name="Three.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsMAAALDAE/QCLIAAAA80lE
+        QVQ4T52TSw6CMBCGCUeRhB0r3eheT6ALMIQEE0NEQ/BxMTccQq8hiXoCVnX+0jaDAUWn+dIyM38fQ2tx
+        c33XJtDOxIMQqsc3mq1Sm0aBAXElIOgC8YGS1AYHcVcJ30BePQENsNWLCvQF+TbEAXMKb+mJeLcSh+NJ
+        gvEwHHGhJoC44M4wjYxQ428CLtIUED/fnIZ5spBi9C3xEuK2gFwNwmyfi2k8a8upPq48jiZmgpa4XLlx
+        5nWWmLNq0nzLRRp55ka1UVlebUzWsW1Z7f//s7ooDvHLDXOkUBscRJ+73RRqowB/VTeiIkr1jdqwV2VZ
+        L5XKQ7T0Ei0OAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Two.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsMAAALDAE/QCLIAAAA7klE
+        QVQ4T52TOw6CQBCGCUeBhI5KG2200RNooYYQMTEkaIivi9l4CL2GJOoJqNb5l4HMGlR0Nl/YnZl/X8xa
+        0ryJZxNoR+JOKP5ijGZzqmkUcIgLAcE7EHdYUhgcxI0TvoG8YgLqYKtnDjQF+TbEU+FUnbCrlmmsdvuD
+        JtmstE/mMFOIT9IphXICmcOcIH68OCt68/4ncQZxXUANomG1C/RrcvLalaP1QouCJFStoG3EBHpl48yj
+        eFydVeLPfCkE+szGbafbTVOxvu3//zMXikv8UmGuFpYGB9Gktk1haRSQr+pK5ETGY9yNeFWW9QRsO0Wk
+        yjggvQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="One.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsMAAALDAE/QCLIAAAAy0lE
+        QVQ4T52TQQ6CMBBFSY8CCXfQS+hCFzQx7IzRpXoxNxxCryGJegJW9f8yTVpRGZ3mBTrTR2kpWRxlVRrA
+        dgJ34OTKPpuRoWmgkIMLoPAJ1nNR+mAC3GTAGBzXPwA3fNWzFLRwvKFso6RnUk/dale7/eHor691wVJu
+        4uRis/RS4IvcUH7EScrV1rrZej4mt5TfFTRyN5g5oJ05WXNAIfs1D3abKGS/2/9/ZzkoBfjlhBVeDMEE
+        0JztVAyBQvxXXUEHWulzb6K/KsueFvk+rox/M8EAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="Agree.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAiYAAAASCAYAAABvuhXUAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
