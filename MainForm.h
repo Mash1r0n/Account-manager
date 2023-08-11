@@ -2213,7 +2213,7 @@ private: System::Void StartAnimation_Tick(System::Object^ sender, System::EventA
 
 //Проверяем пароль на действительность
 	bool VerifyPassword() {
-		if (SigPas->Text->Length > 8 && SigPas->Text->Length <= 25) {
+		if (SigPas->Text->Length >= 8 && SigPas->Text->Length <= 25) {
 			return true;
 		}
 		return false;
@@ -2242,7 +2242,7 @@ private: System::Void Agree_MouseClick(System::Object^ sender, System::Windows::
 			tabControl1->SelectedIndex = 2;
 			verify = 1;
 			NumOfAll = 1;
-			EmailOf[0] = "Akayn.Team@gmail.com";
+			EmailOf[0] = "akayn.team@gmail.com";
 			PaswdOf[0] = SigPas->Text;
 			NameOf[0] = "Це ваш перший пароль";
 			Trash->Show();
@@ -2260,6 +2260,7 @@ private: System::Void Agree_MouseClick(System::Object^ sender, System::Windows::
 	else {
 		SigPas->Text = "Тільки латиниця та цифри";
 	}
+	ActiveControl = nullptr;
 }
 	   
 private: System::Void Gen_MouseEnter(System::Object^ sender, System::EventArgs^ e) {

@@ -54,6 +54,16 @@ END
 // remains consistent on all systems.
 IDI_ICON1               ICON                    "Resources\\TripAppLogo.ico"
 
+#endif    // Русский (Россия) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Украинский (Украина) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_UKR)
+LANGUAGE LANG_UKRAINIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -77,13 +87,13 @@ BEGIN
     BEGIN
         BLOCK "042204b0"
         BEGIN
-            VALUE "CompanyName", "TODO: Akayn team"
-            VALUE "FileDescription", "TODO: Account Manager by Akaayn team"
+            VALUE "CompanyName", "Akayn team"
+            VALUE "FileDescription", "Account Manager by Akaayn team"
             VALUE "FileVersion", "1.0.0.1"
             VALUE "InternalName", "Account-.exe"
             VALUE "LegalCopyright", "Copyright (C) 2023"
             VALUE "OriginalFilename", "Account-.exe"
-            VALUE "ProductName", "TODO: Account Manager"
+            VALUE "ProductName", "Account Manager"
             VALUE "ProductVersion", "1.0.0.1"
         END
     END
@@ -93,7 +103,7 @@ BEGIN
     END
 END
 
-#endif    // Русский (Россия) resources
+#endif    // Украинский (Украина) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
