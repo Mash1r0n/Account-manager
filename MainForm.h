@@ -24,6 +24,9 @@
 #include "LetsSet.h"
 #include <cctype>
 #include "About.h"
+#include <Shlobj.h>
+#pragma comment(lib, "Shell32.lib")
+#pragma comment(lib, "Ole32.lib")
 
 #pragma warning(disable:4996)
 static int massiveofseed[999];
@@ -45,6 +48,7 @@ namespace AccountManager {
 	using namespace cli;
 	using namespace System::Drawing;
 	using namespace System::Windows::Forms::VisualStyles;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Сводка для MainForm
@@ -112,8 +116,12 @@ private: System::Windows::Forms::Label^ label2;
 	private: System::ComponentModel::BackgroundWorker^ TestThis;
 	private: System::Windows::Forms::ContextMenuStrip^ TrayMenu;
 	private: System::Windows::Forms::ToolStripMenuItem^ TeamName;
-	private: System::Windows::Forms::ToolStripSeparator^ toolStripSeparator1;
+	private: System::Windows::Forms::ToolStripSeparator^ MenuSepartor;
+
 	private: System::Windows::Forms::ToolStripMenuItem^ OpenForm;
+	private: System::Windows::Forms::ToolStripMenuItem^ AddMenu;
+	private: System::Windows::Forms::ToolStripMenuItem^ GenAndCopy;
+	private: System::Windows::Forms::ToolStripMenuItem^ MenuClose;
 	public: ref class CustomRenderer : ToolStripProfessionalRenderer
 	{
 	protected:
@@ -274,8 +282,11 @@ private: System::Windows::Forms::Label^ label2;
 			this->Traaay = (gcnew System::Windows::Forms::NotifyIcon(this->components));
 			this->TrayMenu = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->TeamName = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->MenuSepartor = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->OpenForm = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->AddMenu = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->GenAndCopy = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->MenuClose = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->FromHide = (gcnew System::Windows::Forms::Timer(this->components));
 			this->HideTxt = (gcnew System::Windows::Forms::Timer(this->components));
 			this->SearchRepeat = (gcnew System::Windows::Forms::Timer(this->components));
@@ -1051,15 +1062,15 @@ private: System::Windows::Forms::Label^ label2;
 			this->TrayMenu->AutoSize = false;
 			this->TrayMenu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(35)),
 				static_cast<System::Int32>(static_cast<System::Byte>(39)));
-			this->TrayMenu->Font = (gcnew System::Drawing::Font(L"Arial Black", 15.25F, System::Drawing::FontStyle::Bold));
-			this->TrayMenu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->TeamName, this->toolStripSeparator1,
-					this->OpenForm
+			this->TrayMenu->Font = (gcnew System::Drawing::Font(L"Arial Black", 10.25F));
+			this->TrayMenu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
+				this->TeamName, this->MenuSepartor,
+					this->OpenForm, this->AddMenu, this->GenAndCopy, this->MenuClose
 			});
 			this->TrayMenu->Name = L"TrayMenu";
 			this->TrayMenu->RenderMode = System::Windows::Forms::ToolStripRenderMode::Professional;
 			this->TrayMenu->ShowImageMargin = false;
-			this->TrayMenu->Size = System::Drawing::Size(276, 69);
+			this->TrayMenu->Size = System::Drawing::Size(276, 118);
 			// 
 			// TeamName
 			// 
@@ -1068,15 +1079,17 @@ private: System::Windows::Forms::Label^ label2;
 			this->TeamName->Font = (gcnew System::Drawing::Font(L"Arial Black", 10.25F));
 			this->TeamName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->TeamName->Margin = System::Windows::Forms::Padding(0, 0, 0, -5);
 			this->TeamName->Name = L"TeamName";
+			this->TeamName->Padding = System::Windows::Forms::Padding(0);
 			this->TeamName->Size = System::Drawing::Size(276, 24);
 			this->TeamName->Text = L"                Akayn team";
 			this->TeamName->TextImageRelation = System::Windows::Forms::TextImageRelation::TextAboveImage;
 			// 
-			// toolStripSeparator1
+			// MenuSepartor
 			// 
-			this->toolStripSeparator1->Name = L"toolStripSeparator1";
-			this->toolStripSeparator1->Size = System::Drawing::Size(272, 6);
+			this->MenuSepartor->Name = L"MenuSepartor";
+			this->MenuSepartor->Size = System::Drawing::Size(272, 6);
 			// 
 			// OpenForm
 			// 
@@ -1086,11 +1099,48 @@ private: System::Windows::Forms::Label^ label2;
 			this->OpenForm->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
 			this->OpenForm->ImageScaling = System::Windows::Forms::ToolStripItemImageScaling::None;
+			this->OpenForm->Margin = System::Windows::Forms::Padding(0, -4, 0, 0);
 			this->OpenForm->Name = L"OpenForm";
 			this->OpenForm->Padding = System::Windows::Forms::Padding(0);
 			this->OpenForm->Size = System::Drawing::Size(276, 24);
-			this->OpenForm->Text = L"        Розгорнути програму";
+			this->OpenForm->Text = L"Розгорнути програму";
 			this->OpenForm->TextImageRelation = System::Windows::Forms::TextImageRelation::TextAboveImage;
+			this->OpenForm->Click += gcnew System::EventHandler(this, &MainForm::OpenForm_Click);
+			// 
+			// AddMenu
+			// 
+			this->AddMenu->AutoSize = false;
+			this->AddMenu->Font = (gcnew System::Drawing::Font(L"Arial Black", 10.25F));
+			this->AddMenu->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->AddMenu->Margin = System::Windows::Forms::Padding(0, -4, 0, 0);
+			this->AddMenu->Name = L"AddMenu";
+			this->AddMenu->Size = System::Drawing::Size(276, 24);
+			this->AddMenu->Text = L"Додати комірку";
+			this->AddMenu->Click += gcnew System::EventHandler(this, &MainForm::AddMenu_Click);
+			// 
+			// GenAndCopy
+			// 
+			this->GenAndCopy->AutoSize = false;
+			this->GenAndCopy->Font = (gcnew System::Drawing::Font(L"Arial Black", 9.7F));
+			this->GenAndCopy->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->GenAndCopy->Margin = System::Windows::Forms::Padding(0, -4, 0, 0);
+			this->GenAndCopy->Name = L"GenAndCopy";
+			this->GenAndCopy->Size = System::Drawing::Size(276, 24);
+			this->GenAndCopy->Text = L"Сгенерувати і скопіювати пароль";
+			this->GenAndCopy->Click += gcnew System::EventHandler(this, &MainForm::GenAndCopy_Click);
+			// 
+			// MenuClose
+			// 
+			this->MenuClose->AutoSize = false;
+			this->MenuClose->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(133)), static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->MenuClose->Margin = System::Windows::Forms::Padding(0, -4, 0, 0);
+			this->MenuClose->Name = L"MenuClose";
+			this->MenuClose->Size = System::Drawing::Size(276, 24);
+			this->MenuClose->Text = L"Закрити програму";
+			this->MenuClose->Click += gcnew System::EventHandler(this, &MainForm::MenuClose_Click);
 			// 
 			// FromHide
 			// 
@@ -1260,6 +1310,38 @@ private: System::Windows::Forms::Label^ label2;
 
 		}
 #pragma endregion
+		String^ GetRoamingDataOfAMPath()
+		{
+			PWSTR wszPath = nullptr;
+			HRESULT hr = SHGetKnownFolderPath(FOLDERID_RoamingAppData, 0, nullptr, &wszPath);
+
+			if (SUCCEEDED(hr))
+			{
+				String^ roamingPath = marshal_as<String^>(wszPath);
+				CoTaskMemFree(wszPath);
+
+				String^ dataOfAMPath = Path::Combine(roamingPath, "DataOfAM");
+
+				if (!Directory::Exists(dataOfAMPath))
+				{
+					Directory::CreateDirectory(dataOfAMPath);
+				}
+
+				return dataOfAMPath;
+			}
+			else
+			{
+				throw gcnew Exception("Неможливо знайти Roaming");
+			}
+		}
+
+		String^ Way = GetRoamingDataOfAMPath();
+
+		String^ WayEmail = Way + "\\SomeData15.acm";
+		String^ WayPass = Way + "\\SomeData95.acm";
+		String^ WayName = Way + "\\SomeData3.acm";
+		String^ WayConfig = Way + "\\Data.acm";
+
 		cli::array<String^>^ NameOf = gcnew cli::array<String^>(100);
 		cli::array<String^>^ EmailOf = gcnew cli::array<String^>(100);
 		cli::array<String^>^ PaswdOf = gcnew cli::array<String^>(100);
@@ -1524,9 +1606,9 @@ private: System::Windows::Forms::Label^ label2;
 		void SaveConfig() {
 			if (verify == 1) {
 				string password = ConvertToStdString(MainPassword);
-				crypt(password, NumOfAll, NameOf, "Names.acm");
-				crypt(password, NumOfAll, EmailOf, "Emails.acm");
-				crypt(password, NumOfAll, PaswdOf, "Passwords.acm");
+				crypt(password, NumOfAll, NameOf, ConvertToStdString(WayName));
+				crypt(password, NumOfAll, EmailOf, ConvertToStdString(WayEmail));
+				crypt(password, NumOfAll, PaswdOf, ConvertToStdString(WayPass));
 				MpassInd = 0;
 			}
 		}
@@ -1718,11 +1800,11 @@ private: System::Windows::Forms::Label^ label2;
 		void ApplyConfig() {
 			if (verify == 1) {
 				try {
-					decrypt("Names.acm", NameOf, false);
+					decrypt(ConvertToStdString(WayName), NameOf, false);
 
-					decrypt("Emails.acm", EmailOf, false);
+					decrypt(ConvertToStdString(WayEmail), EmailOf, false);
 
-					decrypt("Passwords.acm", PaswdOf, false);
+					decrypt(ConvertToStdString(WayPass), PaswdOf, false);
 				}
 				catch (System::Runtime::InteropServices::SEHException^) {
 					CallErrorForm("Відсутні деякі файли з даними.", 3);
@@ -1738,13 +1820,13 @@ private: System::Windows::Forms::Label^ label2;
 			}
 		}
 		void cfgfrom() {
-			fstream CfgUpd("Config.acm", ios::in);
+			fstream CfgUpd(ConvertToStdString(WayConfig), ios::in);
 			CfgUpd >> verify;
 			CfgUpd >> NumOfAll;
 			CfgUpd.close();
 		}
 		void cfgto() {
-			fstream cfg("Config.acm", ios::out);
+			fstream cfg(ConvertToStdString(WayConfig), ios::out);
 			if (cfg.is_open()) {
 				cfg << verify << endl;
 				cfg << NumOfAll << endl;
@@ -1917,6 +1999,7 @@ private: System::Windows::Forms::Label^ label2;
 		PassAdd->StartPosition = FormStartPosition::CenterParent;
 		Opacity = 0.3;
 		PassAdd->ShowDialog(this);
+		Opacity = 1;
 		AddDat->Enabled = true;
 	}
 
@@ -1946,7 +2029,7 @@ private: System::Windows::Forms::Label^ label2;
 
 
 private: System::Void Add_Tick(System::Object^ sender, System::EventArgs^ e) {
-	Opacity = 1;
+	
 	if (PassAdd->ConfirmAdd) {
 		NameOf[AddIndex] = PassAdd->name->Text;
 		EmailOf[AddIndex] = PassAdd->email->Text;
@@ -2829,6 +2912,27 @@ private: System::Void AfkBar_KeyDown(System::Object^ sender, System::Windows::Fo
 	}
 }
 
+private: System::Void OpenForm_Click(System::Object^ sender, System::EventArgs^ e) {
+	Show();
+	FromHide->Enabled = true;
+}
+private: System::Void GenAndCopy_Click(System::Object^ sender, System::EventArgs^ e) {
+	Clipboard::SetText(RandomPass());
+}
+private: System::Void MenuClose_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
+}
+	void MenuPlusForm(int ind) {
+		AddIndex = ind;
+		PassAdd->StartPosition = FormStartPosition::CenterScreen;
+		PassAdd->ShowDialog(this);
+		AddDat->Enabled = true;
+	}
+private: System::Void AddMenu_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (verify && !Visible) {
+		MenuPlusForm(NumOfAll);
+	}
+}
 };
 }
 

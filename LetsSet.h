@@ -6,7 +6,11 @@
 #include <mmsystem.h>
 #include <random>
 #include <cstdio>
+#include <Shlobj.h>
+#pragma comment(lib, "Shell32.lib")
+#pragma comment(lib, "Ole32.lib")
 #pragma comment(lib, "winmm.lib")
+#include <Windows.h>
 namespace AccountManager {
 
 	using namespace System;
@@ -17,6 +21,9 @@ namespace AccountManager {
 	using namespace System::Drawing;
 	using namespace msclr::interop;
 	using namespace std;
+	using namespace System::Drawing;
+	using namespace System::Windows::Forms::VisualStyles;
+	using namespace System::IO;
 	/// <summary>
 	/// Сводка для Settings
 	/// </summary>
@@ -482,7 +489,42 @@ namespace AccountManager {
 			this->ResumeLayout(false);
 
 		}
+
+		//Поменять пути файлов
+
 #pragma endregion
+		String^ GetRoamingDataOfAMPath()
+		{
+			PWSTR wszPath = nullptr;
+			HRESULT hr = SHGetKnownFolderPath(FOLDERID_RoamingAppData, 0, nullptr, &wszPath);
+
+			if (SUCCEEDED(hr))
+			{
+				String^ roamingPath = marshal_as<String^>(wszPath);
+				CoTaskMemFree(wszPath);
+
+				String^ dataOfAMPath = Path::Combine(roamingPath, "DataOfAM");
+
+				if (!Directory::Exists(dataOfAMPath))
+				{
+					Directory::CreateDirectory(dataOfAMPath);
+				}
+
+				return dataOfAMPath;
+			}
+			else
+			{
+				throw gcnew Exception("Неможливо знайти Roaming");
+			}
+		}
+
+		String^ Way = GetRoamingDataOfAMPath();
+
+		String^ WayEmail = Way + "\\SomeData15.acm";
+		String^ WayPass = Way + "\\SomeData95.acm";
+		String^ WayName = Way + "\\SomeData3.acm";
+		String^ WayConfig = Way + "\\Data.acm";
+
 		bool isHovered = false;
 		public: String^ CryptedEmail; String^ CryptedPassword; String^ CryptedName; String^ ActualPassword;
 		string ConvertToStdString(String^ managedString) {
@@ -523,9 +565,9 @@ namespace AccountManager {
 		SetRegion();
 		ThemeList->DrawMode = DrawMode::OwnerDrawFixed;
 		this->ClientSize = System::Drawing::Size(900, 300);
-		RetFromFile("Emails.acm", CryptedEmail);
-		RetFromFile("Passwords.acm", CryptedPassword);
-		RetFromFile("Names.acm", CryptedName);
+		RetFromFile(ConvertToStdString(WayEmail), CryptedEmail);
+		RetFromFile(ConvertToStdString(WayPass), CryptedPassword);
+		RetFromFile(ConvertToStdString(WayName), CryptedName);
 		NewPassword->Text = ActualPassword;
 	}
 	void SetRegion()
@@ -652,7 +694,7 @@ private: System::Void Exp_MouseDown(System::Object^ sender, System::Windows::For
 				fstream to(path, ios::in);
 				to >> Crypt[0] >> Crypt[1] >> Crypt[2] >> Crypt[3] >> Crypt[4];
 				to.close();
-				string names[4] = { "Config.acm", "Emails.acm", "Passwords.acm", "Names.acm" };
+				string names[4] = { ConvertToStdString(WayConfig), ConvertToStdString(WayEmail), ConvertToStdString(WayPass), ConvertToStdString(WayName) };
 				for (int i = 0; i < 4; i++) {
 					fstream ins(names[i], ios::out);
 					if (i == 0) {
@@ -722,7 +764,7 @@ private: System::Void Two_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 }
 	void DeleteAll() {
-		string ArrOfNames[4] = { "Config.acm", "Names.acm", "Emails.acm", "Passwords.acm" };
+		string ArrOfNames[4] = { ConvertToStdString(WayConfig), ConvertToStdString(WayEmail), ConvertToStdString(WayPass), ConvertToStdString(WayName) };
 		for (string txt : ArrOfNames) {
 			remove(txt.c_str());
 		}

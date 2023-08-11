@@ -190,9 +190,9 @@ namespace AccountManager {
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
 			this->ThemeList->FormattingEnabled = true;
 			this->ThemeList->ItemHeight = 22;
-			this->ThemeList->Items->AddRange(gcnew cli::array< System::Object^  >(7) {
+			this->ThemeList->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
 				L"- DragAndDrop система", L"- Копіювання паролю та пошти",
-					L"- Створення нової комірки", L"- Цензура", L"- Редагування даних комірки", L"- Видалення комірки", L"- Пошук"
+					L"- Створення нової комірки", L"- Цензура", L"- Редагування даних комірки", L"- Видалення комірки", L"- Пошук", L"- Контекстне меню"
 			});
 			this->ThemeList->Location = System::Drawing::Point(12, 12);
 			this->ThemeList->Name = L"ThemeList";
@@ -532,9 +532,7 @@ namespace AccountManager {
 			this->Txt8->Name = L"Txt8";
 			this->Txt8->Size = System::Drawing::Size(554, 240);
 			this->Txt8->TabIndex = 10;
-			this->Txt8->Text = L"Суть вкладки бездіяльності полягає у тому, щоб перенаправити вас на сторінку з вв"
-				L"одом паролю, якщо ви не проявляли активність у програмі протягом кількох хвилин."
-				L"";
+			this->Txt8->Text = resources->GetString(L"Txt8.Text");
 			// 
 			// HidetabControlLine
 			// 
@@ -592,9 +590,9 @@ namespace AccountManager {
 #pragma endregion
 		bool isHovered = false;
 	private: System::Void Guide_Load(System::Object^ sender, System::EventArgs^ e) {
-		SetRegion();
 		ThemeList->DrawMode = DrawMode::OwnerDrawFixed;
 		this->ClientSize = System::Drawing::Size(874, 298);
+		SetRegion();
 
 	}
 	void SetRegion()
